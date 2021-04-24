@@ -13,7 +13,8 @@ import { NebularModule } from './modules/nebular/nebular.module';
 import { SigninComponent } from './authentication/signin/signin.component';
 import { SignupComponent } from './authentication/signup/signup.component';
 import { ResetPasswordComponent } from './authentication/reset-password/reset-password.component';
-import { LayoutComponent } from './user/layout/layout.component';
+import { LayoutComponent } from './authentication/layout/layout.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { LayoutComponent } from './user/layout/layout.component';
     SignupComponent,
     ResetPasswordComponent,
     LayoutComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

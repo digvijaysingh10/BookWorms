@@ -12,4 +12,11 @@ export class SigninComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  toggleSignUp(){
+    document.getElementById('container').classList.add("right-panel-active");
+  }
+
+  toggleSignIn(){
+    document.getElementById('container').classList.remove("right-panel-active");
+  }
 }
