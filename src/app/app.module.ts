@@ -11,10 +11,12 @@ import { LayoutComponent as UserLayout } from './user/layout/layout.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { NebularModule } from './modules/nebular/nebular.module';
 import { SigninComponent } from './authentication/signin/signin.component';
-import { SignupComponent } from './authentication/signup/signup.component';
+
 import { ResetPasswordComponent } from './authentication/reset-password/reset-password.component';
 import { LayoutComponent } from './authentication/layout/layout.component';
 import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -23,10 +25,12 @@ import { HomeComponent } from './home/home.component';
     UserLayout,
     DashboardComponent,
     SigninComponent,
-    SignupComponent,
+
     ResetPasswordComponent,
     LayoutComponent,
     HomeComponent,
+    HeaderComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
