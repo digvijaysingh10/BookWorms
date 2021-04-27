@@ -1,7 +1,35 @@
 <nb-layout>
-    <nb-layout-header>
+  <nb-layout-header fixed>
 
-    </nb-layout-header>
+    <!-- always visible -->
+    <nb-actions size="medium">
+        <nb-action class="mt-4" nbTooltip="Home" nbTooltipIcon="home-outline" [routerLink]="['/blog/home']" routerLinkActive="router-link-active" >
+            <h1 class="site-title">{{title}}</h1>
+        </nb-action>
+        <nb-action nbTooltip="Home" nbTooltipIcon="home-outline" [routerLink]="['/blog/home']">Home</nb-action>
+        <nb-action nbTooltip="Home" nbTooltipIcon="home-outline" [routerLink]="['/app/signup']">About Us</nb-action>
+        <nb-action nbTooltip="Home" nbTooltipIcon="home-outline" [routerLink]="['/app/signup']">Any Queries?Contact Us</nb-action>
+      </nb-actions>
+
+      <!-- visible when not logged in -->
+      <nb-actions size="medium"  *ngIf="!userService.loggedin">
+        <nb-action nbTooltip="Home" nbTooltipIcon="home-outline" [routerLink]="['/app/signup']">Register</nb-action>
+        <nb-action nbTooltip="Home" nbTooltipIcon="home-outline" [routerLink]="['/app/signin']">Login</nb-action>
+      </nb-actions>
+
+      <!-- visible when logged in -->
+      <nb-actions size="medium" *ngIf="userService.loggedin">
+        <nb-action nbTooltip="Home" nbTooltipIcon="home-outline" [routerLink]="[userService.currentUser.isadmin?'/admin':'/user']" >{{userService.currentUser.isadmin?'Admin Dashboard': 'User Dashboard'}}</nb-action>
+        <nb-action nbTooltip="Home" nbTooltipIcon="home-outline" (click)="userService.logout()">Logout</nb-action>
+      </nb-actions>
+      <nb-user *ngIf="userService.loggedin"
+         size="large"
+         [name]="userService.currentUser.fullname"
+         [title]="userService.currentUser.email"
+         [picture]="url+userService.currentUser.avatar"
+         [routerLink]="[userService.currentUser.isadmin?'/admin':'/user']">
+    </nb-user>
+</nb-layout-header>
     <nb-layout-column>
       <router-outlet></router-outlet>
     </nb-layout-column>
