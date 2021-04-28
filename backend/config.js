@@ -1,6 +1,6 @@
 const api_config = {
     port: 3000,
-    conn_url: 'mongodb+srv://mmm:mmm@cluster0.gvyon.mongodb.net/projectDB?retryWrites=true&w=majority'
+    conn_url: 'mongodb+srv://valiantguardian:golu123@valiantguardiankaaasmaa.xkihd.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 
 }
 

@@ -15,7 +15,7 @@ import { SigninComponent } from './authentication/signin/signin.component';
 import { ResetPasswordComponent } from './authentication/reset-password/reset-password.component';
 import { LayoutComponent } from './authentication/layout/layout.component';
 import { HomeComponent } from './home/home.component';
-import { HeaderComponent } from './header/header.component';
+
 import { FooterComponent } from './footer/footer.component';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -34,6 +34,7 @@ import {
 import { GoogleLoginProvider } from 'angularx-social-login';
 import { app_config } from 'src/config';
 import { AddNovelComponent } from './user/add-novel/add-novel.component';
+import { ManageUserComponent } from './admin/manage-user/manage-user.component';
 
 
 @NgModule({
@@ -47,9 +48,10 @@ import { AddNovelComponent } from './user/add-novel/add-novel.component';
     ResetPasswordComponent,
     LayoutComponent,
     HomeComponent,
-    HeaderComponent,
+
     FooterComponent,
     AddNovelComponent,
+    ManageUserComponent,
   ],
   imports: [
     BrowserModule,

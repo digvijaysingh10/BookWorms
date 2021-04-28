@@ -1,0 +1,29 @@
+<div class="col-md-11 mx-auto mt-5">
+
+  <nb-card accent="primary">
+      <nb-card-header>
+          <p class="h4">Manage Users </p>
+      </nb-card-header>
+      <nb-card-body>
+          <nb-accordion *ngIf="usersList">
+              <nb-accordion-item *ngFor="let user of usersList">
+                <nb-accordion-item-header>
+                  {{user.fullname}}
+                </nb-accordion-item-header>
+                <nb-accordion-item-body>
+                  {{user.email}}
+                  <div class="row mt-5">
+                      <div class="col text-center">
+                          <button class="col-10" nbButton (click)="updateUser(user._id)">Edit</button>
+                      </div>
+
+                      <div class="col text-center">
+                          <button class="col-10" nbButton hero (click)="deleteUser(user._id)" status  ="danger">Delete</button>
+                      </div>
+                  </div>
+                </nb-accordion-item-body>
+              </nb-accordion-item>
+          </nb-accordion>
+      </nb-card-body>
+  </nb-card>
+</div>
