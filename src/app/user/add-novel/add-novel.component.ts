@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 import Swal from 'sweetalert2';
@@ -11,8 +11,8 @@ import Swal from 'sweetalert2';
 })
 export class AddNovelComponent implements OnInit {
 
-  signupform: any;
-  avatarImage: any;
+  novelform: any;
+  novelImage: any;
   erroMsg: string;
   imgURL: string | ArrayBuffer;
   constructor(
@@ -22,7 +22,7 @@ export class AddNovelComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.initSignupForm();
+    this.initNovelForm();
     document
       .getElementsByTagName('nb-layout-column')[0]
       .classList.add('register');
@@ -34,20 +34,25 @@ export class AddNovelComponent implements OnInit {
       .classList.remove('register');
   }
 
-  initSignupForm() {
-    this.signupform = this.fb.group({
-      fullname: '',
-      avatar: '',
-      email: '',
-      password: '',
-      confirm: '',
-      age: 0,
-      created: new Date(),
-      isadmin: false,
+  initNovelForm() {
+    this.novelform = this.fb.group({
+      title : '',
+      desc : '',
+      author : '',
+      genre : '',
+      created : new Date(),
+      price : 0,
+      rating : 0,
+      rentable : true,
+      exchangable : true,
+      soldable : true,
+      rentPrice : 0,
+      toppings : '',
+
     });
   }
 
-  uploadAvatar(event: any) {
+  uploadNovel(event: any) {
     let files = event.target.files;
     if (files.length === 0) return;
 
@@ -58,7 +63,7 @@ export class AddNovelComponent implements OnInit {
     }
     this.preview(event.target.files);
     let formData = new FormData();
-    this.avatarImage = files[0].name;
+    this.novelImage = files[0].name;
     formData.append('image', files[0], files[0].name);
     this.userService.uploadAvatar(formData).subscribe((response) => {
       console.log(response);
@@ -81,9 +86,9 @@ export class AddNovelComponent implements OnInit {
     };
   }
 
-  submitSignupForm() {
-    let formdata = this.signupform.value;
-    formdata.avatar = this.avatarImage;
+  submitNovelForm() {
+    let formdata = this.novelform.value;
+    formdata.avatar = this.novelImage;
     this.userService.addUser(formdata).subscribe((res) => {
       console.log(res);
       Swal.fire({
@@ -95,4 +100,11 @@ export class AddNovelComponent implements OnInit {
       });
     });
   }
+
+  SelectCustomTriggerExample () {
+    toppings = new FormControl();
+
+    toppingList: String[] = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
+  }
+
 }

@@ -6,9 +6,9 @@
       <div class="col-md-6">
           <nb-card style="margin-top:10%;border-radius: 0.5rem; box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12);">
               <nb-card-body style="padding: 2rem;">
-                  <form [formGroup]="signupform" (ngSubmit)="submitSignupForm()">
-                      <h3 class="text-center">Signup Here</h3>
-                      <div class="row mt-4">
+                  <form [formGroup]="novelform" (ngSubmit)="submitNovelForm()">
+                      <h3 class="text-center">Upload Novel</h3>
+                      <!-- <div class="row mt-4">
                           <div class="col-6">
                               <button class="w-100" nbButton status="danger"><nb-icon icon="google"></nb-icon>GOOGLE</button>
                           </div>
@@ -16,19 +16,19 @@
                               <button class="w-100" nbButton status="primary"><nb-icon icon="facebook"></nb-icon>FACEBOOK</button>
                           </div>
                       </div>
-                      <h5 class="text-center mt-3">OR</h5>
+                      <h5 class="text-center mt-3">OR</h5> -->
                       <div class="row mt-5">
                           <div class="col-md-6">
                               <mat-form-field class="mt-2 w-100" appearance="outline">
-                                  <mat-label>Full Name</mat-label>
-                                  <input type="text" matInput formControlName="fullname">
+                                  <mat-label>Novel Title</mat-label>
+                                  <input type="text" matInput formControlName="title">
                               </mat-form-field>
                           </div>
 
                           <div class="col-md-6">
                               <mat-form-field class="mt-2 w-100" appearance="outline">
-                                  <mat-label>Email</mat-label>
-                                  <input type="email" matInput formControlName="email">
+                                  <mat-label>Description</mat-label>
+                                  <input type="text" matInput formControlName="desc">
                               </mat-form-field>
                           </div>
 
@@ -38,14 +38,14 @@
                       <div class="row">
                           <div class="col-md-6">
                               <mat-form-field class="mt-2 w-100" appearance="outline">
-                                  <mat-label>Password</mat-label>
-                                  <input type="password" matInput formControlName="password">
+                                  <mat-label>Author Name</mat-label>
+                                  <input type="text" matInput formControlName="author">
                               </mat-form-field>
                           </div>
                           <div class="col-md-6">
                               <mat-form-field class="mt-2 w-100" appearance="outline">
-                                  <mat-label>Confirm Password</mat-label>
-                                  <input type="password" matInput formControlName="confirm">
+                                  <mat-label>Genre</mat-label>
+                                  <input type="text" matInput formControlName="genre">
                               </mat-form-field>
                           </div>
                       </div>
@@ -53,13 +53,13 @@
                       <div class="row">
                           <div class="col-md-6">
                               <mat-form-field class="mt-2 w-100" appearance="outline">
-                                  <mat-label>Age</mat-label>
-                                  <input type="number" matInput formControlName="age">
+                                  <mat-label>price</mat-label>
+                                  <input type="number" matInput formControlName="price">
                               </mat-form-field>
                           </div>
                           <div class="col-md-6">
                               <label class="mt-2">Upload Image</label><br>
-                              <input type="file" class="form-control" (change)="uploadAvatar($event)">
+                              <input type="file" class="form-control" (change)="uploadNovel($event)">
                           </div>
                       </div>
                       <img [src]="imgURL" *ngIf="imgURL" alt="" class="img-fluid mt-4">
@@ -67,13 +67,27 @@
                       <button class="w-100 mt-5" nbButton status="primary">Submit</button>
 
                   </form>
-                  <div class="mt-3">
+                  <!-- <div class="mt-3">
 
                       <a style="font-family: Roboto;text-decoration: none;" [routerLink]="['/app/signin']">Already Registered? Login Here</a>
-                      <!-- <div class="float-end">
+                      <div class="float-end">
                           <a style="font-family: Roboto;text-decoration: none;" [routerLink]="['/app/reset']">Forgot Password?</a>
-                      </div> -->
-                  </div>
+                      </div>
+                  </div> -->
+
+                  <mat-form-field appearance="fill">
+                    <mat-label>Toppings</mat-label>
+                    <mat-select [formControl]="toppings" multiple>
+                      <mat-select-trigger>
+                        {{toppings.value ? toppings.value[0] : ''}}
+                        <span *ngIf="toppings.value?.length > 1" class="example-additional-selection">
+                          (+{{toppings.value.length - 1}} {{toppings.value?.length === 2 ? 'other' : 'others'}})
+                        </span>
+                      </mat-select-trigger>
+                      <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+
               </nb-card-body>
           </nb-card>
       </div>
