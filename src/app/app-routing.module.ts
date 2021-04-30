@@ -11,6 +11,7 @@ import { LoginGuard } from './guards/login.guard';
 import { HomeComponent } from './home/home.component';
 import { AddNovelComponent } from './user/add-novel/add-novel.component';
 import { LayoutComponent as UserLayout } from './user/layout/layout.component';
+import { ManageNovelsComponent } from './user/manage-novels/manage-novels.component';
 
 const routes: Routes = [ { path: '', redirectTo: '/app/signin', pathMatch: 'full' },
 {
@@ -41,6 +42,7 @@ const routes: Routes = [ { path: '', redirectTo: '/app/signin', pathMatch: 'full
   children: [
     { path: '', component: AddNovelComponent },
     { path: 'addnovel', component: AddNovelComponent },
+    { path: 'managenovel', component: ManageNovelsComponent},
   ],
 },
 {

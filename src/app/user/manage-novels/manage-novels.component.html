@@ -1,0 +1,15 @@
+<mat-tab-group mat-stretch-tabs class="example-stretched-tabs mat-elevation-z4">
+  <mat-tab label="Rent Novels"> Rent Novels</mat-tab>
+  <mat-tab label="Sell Novels"> Sell Novels </mat-tab>
+  <mat-tab label="Exchange Novels"> Exchange Novels </mat-tab>
+</mat-tab-group>
+
+<div class="row mt-5">
+  <div class="col text-center">
+      <button class="col-10" nbButton (click)="updateNovel(novels._id)">Edit</button>
+  </div>
+
+  <div class="col text-center">
+      <button class="col-10" nbButton hero (click)="deleteUser(novels._id)" status  ="danger">Delete</button>
+  </div>
+</div>

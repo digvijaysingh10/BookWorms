@@ -6,11 +6,11 @@ const schema = mongoose.Schema({
     title : String,
     data : Object,
     created : Date,
-   
-    
+
+
 
 })
 
-const model = mongoose.model('Users', schema);
+const model = mongoose.model('Requests', schema);
 
 module.exports = model;

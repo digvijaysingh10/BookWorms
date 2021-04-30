@@ -35,7 +35,9 @@ import { GoogleLoginProvider } from 'angularx-social-login';
 import { app_config } from 'src/config';
 import { AddNovelComponent } from './user/add-novel/add-novel.component';
 import { ManageUserComponent } from './admin/manage-user/manage-user.component';
-
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { ManageNovelsComponent } from './user/manage-novels/manage-novels.component';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -52,6 +54,7 @@ import { ManageUserComponent } from './admin/manage-user/manage-user.component';
     FooterComponent,
     AddNovelComponent,
     ManageUserComponent,
+    ManageNovelsComponent,
   ],
   imports: [
     BrowserModule,
@@ -73,6 +76,8 @@ import { ManageUserComponent } from './admin/manage-user/manage-user.component';
     ReactiveFormsModule,
     FormsModule,
     SocialLoginModule,
+    MatCheckboxModule,
+    MatTabsModule,
 
 
   ],

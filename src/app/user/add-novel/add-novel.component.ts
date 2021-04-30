@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NovelService } from 'src/app/services/novel.service';
 import { UserService } from 'src/app/services/user.service';
 import Swal from 'sweetalert2';
 
@@ -15,10 +16,14 @@ export class AddNovelComponent implements OnInit {
   novelImage: any;
   erroMsg: string;
   imgURL: string | ArrayBuffer;
+
   constructor(
     private fb: FormBuilder,
     private userService: UserService,
-    private router: Router
+    private router: Router,
+    private novelService: NovelService,
+
+
   ) {}
 
   ngOnInit(): void {
@@ -36,6 +41,7 @@ export class AddNovelComponent implements OnInit {
 
   initNovelForm() {
     this.novelform = this.fb.group({
+      user:this.userService.currentUser,
       title : '',
       desc : '',
       author : '',
@@ -43,12 +49,10 @@ export class AddNovelComponent implements OnInit {
       created : new Date(),
       price : 0,
       rating : 0,
-      rentable : true,
-      exchangable : true,
-      soldable : true,
+      rentable : false,
+      exchangable : false,
+      soldable : false,
       rentPrice : 0,
-      toppings : '',
-
     });
   }
 
@@ -65,7 +69,7 @@ export class AddNovelComponent implements OnInit {
     let formData = new FormData();
     this.novelImage = files[0].name;
     formData.append('image', files[0], files[0].name);
-    this.userService.uploadAvatar(formData).subscribe((response) => {
+    this.novelService.uploadAvatar(formData).subscribe((response) => {
       console.log(response);
     });
   }
@@ -87,24 +91,22 @@ export class AddNovelComponent implements OnInit {
   }
 
   submitNovelForm() {
+
     let formdata = this.novelform.value;
     formdata.avatar = this.novelImage;
-    this.userService.addUser(formdata).subscribe((res) => {
+
+    this.novelService.addNovel(formdata).subscribe((res) => {
+      console.log(formdata);
       console.log(res);
       Swal.fire({
         icon: 'success',
         title: 'Great!',
-        text: 'Successfully Registered, Now Login to Continue.',
+        text: 'Novel Successfully Saved!!!',
       }).then(() => {
-        this.router.navigate(['/app/signin']);
+         this.router.navigate(['/user/addnovel']);
       });
     });
   }
 
-  SelectCustomTriggerExample () {
-    toppings = new FormControl();
-
-    toppingList: String[] = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
-  }
 
 }

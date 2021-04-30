@@ -6,6 +6,7 @@ const schema = mongoose.Schema({
     desc : String,
     author : String,
     genre : String,
+    avatar : String,
     data : Object,
     created : Date,
     price : Number,
@@ -19,6 +20,6 @@ const schema = mongoose.Schema({
 
 })
 
-const model = mongoose.model('Users', schema);
+const model = mongoose.model('Novels', schema);
 
 module.exports = model;

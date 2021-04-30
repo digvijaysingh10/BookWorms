@@ -1,3 +1,6 @@
+const Model = require('../models/requestModel');
+const router = require('express').Router();
+
 router.get('/getall', (req, res) => {
 
     Model.find( {})
@@ -10,5 +13,6 @@ router.get('/getall', (req, res) => {
             res.status(500).json(err);
         })
   })
-  
+
+
   module.exports = router;
