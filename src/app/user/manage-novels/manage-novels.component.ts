@@ -23,6 +23,7 @@ export class ManageNovelsComponent implements OnInit {
     this.novelService.getAll().subscribe((res) => {
       this.novelsList = res;
       this.loadingNovels = false;
+      console.log(this.novelsList);
     });
   }
 
