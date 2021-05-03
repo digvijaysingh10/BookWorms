@@ -45,6 +45,7 @@ export class AddNovelComponent implements OnInit {
       title : '',
       desc : '',
       author : '',
+      avatar : '',
       genre : '',
       created : new Date(),
       price : 0,
