@@ -6,11 +6,13 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-manage-novels',
   templateUrl: './manage-novels.component.html',
-  styleUrls: ['./manage-novels.component.css']
+  styleUrls: ['./manage-novels.component.css'],
 })
 export class ManageNovelsComponent implements OnInit {
-
   novelsList: any;
+  rentNovels: any;
+  exchangeNovels: any;
+  sellNovels: any;
   loadingNovels = true;
 
   constructor(public novelService: NovelService, private router: Router) {}
@@ -19,14 +21,25 @@ export class ManageNovelsComponent implements OnInit {
     this.fetchNovels();
   }
 
+  filterNovels() {
+    this.rentNovels = this.novelsList.filter((novel) => novel.rentable);
+    console.log(this.rentNovels);
+    this.exchangeNovels = this.novelsList.filter((novel) => novel.exchangable);
+    console.log(this.exchangeNovels);
+    this.sellNovels = this.novelsList.filter((novel) => novel.soldable);
+    console.log(this.sellNovels);
+  }
+
   fetchNovels() {
     this.novelService.getAll().subscribe((res) => {
       this.novelsList = res;
       this.loadingNovels = false;
+      console.log(this.novelsList);
+      this.filterNovels();
     });
   }
 
-  deleteUser(id) {
+  deleteNovel(id) {
     Swal.fire({
       title: 'Are you sure?',
       text: "You won't be able to revert this!",
@@ -52,5 +65,4 @@ export class ManageNovelsComponent implements OnInit {
   }
 
   updateNovel(id) {}
-
 }
