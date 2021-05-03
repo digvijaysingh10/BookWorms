@@ -1,38 +1,28 @@
 <mat-tab-group mat-stretch-tabs class="example-stretched-tabs mat-elevation-z4">
   <mat-tab label="Rent Novels">
-    <nb-accordion>
-      <div *ngFor="let novel of novelsList">
-          <nb-accordion-item >
-                <nb-accordion-item-header>
-                  {{novel.title}}
-                </nb-accordion-item-header>
-                <nb-accordion-item-body>
-                  {{novel.genre}}
-                  <div class="row mt-5">
-                      <div class="col text-center">
-                          <button class="col-10" nbButton (click)="updateNovel(user._id)">Edit</button>
-                      </div>
+    <nb-accordion *ngIf="rentNovels">
+      <nb-accordion-item *ngFor="let novel of rentNovels">
+        <nb-accordion-item-header>
+          {{novel.title}}
+        </nb-accordion-item-header>
+        <nb-accordion-item-body>
+          {{novel.desc}}
 
-                      <div class="col text-center">
-                          <button class="col-10" nbButton hero (click)="deleteNovel(user._id)" status  ="danger">Delete</button>
-                      </div>
-                  </div>
-                </nb-accordion-item-body>
-              </nb-accordion-item>
-      </div>
 
+
+          <div class="row mt-5">
+              <div class="col text-center">
+                  <button class="col-10" nbButton (click)="updateNovel(novel._id)">Edit</button>
+              </div>
+
+              <div class="col text-center">
+                  <button class="col-10" nbButton hero (click)="deleteNovel(novel._id)" status  ="danger">Delete</button>
+              </div>
+          </div>
+        </nb-accordion-item-body>
+      </nb-accordion-item>
   </nb-accordion>
   </mat-tab>
   <mat-tab label="Sell Novels"> Sell Novels </mat-tab>
   <mat-tab label="Exchange Novels"> Exchange Novels </mat-tab>
 </mat-tab-group>
-
-<!-- <div class="row mt-5">
-  <div class="col text-center">
-      <button class="col-10" nbButton (click)="updateNovel(novel._id)">Edit</button>
-  </div>
-
-  <div class="col text-center">
-      <button class="col-10" nbButton hero (click)="deleteUser(novel._id)" status  ="danger">Delete</button>
-  </div>
-</div> -->
