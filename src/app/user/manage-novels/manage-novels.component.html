@@ -6,9 +6,15 @@
           {{novel.title}}
         </nb-accordion-item-header>
         <nb-accordion-item-body>
+
           {{novel.desc}}
           <hr>
           <p>{{novel.genre}}</p>
+          <hr>
+          <div class="col-md-4">
+            <img [src]="url+fetchNovels.avatar" class="img-fluid" alt="">
+        </div>
+        <hr>
 
 
 
@@ -35,8 +41,6 @@
           {{novel.desc}}
           <hr>
           <p>{{novel.genre}}</p>
-
-
 
           <div class="row mt-5">
               <div class="col text-center">
