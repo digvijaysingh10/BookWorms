@@ -26,7 +26,7 @@ const routes: Routes = [
       { path: 'reset', component: ResetPasswordComponent },
       { path: 'rentnovel', component: ListRentComponent },
       { path: 'exchangenovel', component: ListExchangeComponent },
-      { path: 'purchasenovel', component: ListSellComponent },
+      { path: 'buynovel', component: ListSellComponent },
     ],
   },
 
