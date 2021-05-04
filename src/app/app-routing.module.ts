@@ -4,6 +4,9 @@ import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { LayoutComponent as AdminLayout } from './admin/layout/layout.component';
 import { ManageUserComponent } from './admin/manage-user/manage-user.component';
 import { LayoutComponent as AppLayoutComponent } from './authentication/layout/layout.component';
+import { ListExchangeComponent } from './authentication/list-exchange/list-exchange.component';
+import { ListRentComponent } from './authentication/list-rent/list-rent.component';
+import { ListSellComponent } from './authentication/list-sell/list-sell.component';
 import { ResetPasswordComponent } from './authentication/reset-password/reset-password.component';
 import { SigninComponent } from './authentication/signin/signin.component';
 import { AdminGuard } from './guards/admin.guard';
@@ -13,42 +16,45 @@ import { AddNovelComponent } from './user/add-novel/add-novel.component';
 import { LayoutComponent as UserLayout } from './user/layout/layout.component';
 import { ManageNovelsComponent } from './user/manage-novels/manage-novels.component';
 
-const routes: Routes = [ { path: '', redirectTo: '/app/signin', pathMatch: 'full' },
-{
-  path: 'app',
-  component: AppLayoutComponent,
-  children: [
+const routes: Routes = [
+  { path: '', redirectTo: '/app/signin', pathMatch: 'full' },
+  {
+    path: 'app',
+    component: AppLayoutComponent,
+    children: [
+      { path: 'signin', component: SigninComponent },
+      { path: 'reset', component: ResetPasswordComponent },
+      { path: 'rentnovel', component: ListRentComponent },
+      { path: 'exchangenovel', component: ListExchangeComponent },
+      { path: 'purchasenovel', component: ListSellComponent },
+    ],
+  },
 
-    { path: 'signin', component: SigninComponent },
-    { path: 'reset', component: ResetPasswordComponent },
-  ],
-},
-
-{
-  path: 'admin',
-  component: AdminLayout,
-  canActivate: [AdminGuard],
-  children: [
-    { path: '', component: DashboardComponent },
-    { path: 'dashboard', component: DashboardComponent },
-    { path: 'manageuser', component: ManageUserComponent },
-    // { path: 'profile', component: ProfileComponent },
-  ],
-},
-{
-  path: 'user',
-  component: UserLayout,
-  // canActivate: [LoginGuard],
-  children: [
-    { path: '', component: AddNovelComponent },
-    { path: 'addnovel', component: AddNovelComponent },
-    { path: 'managenovel', component: ManageNovelsComponent},
-  ],
-},
-{
-  path:'home', component: HomeComponent
-},
-
+  {
+    path: 'admin',
+    component: AdminLayout,
+    canActivate: [AdminGuard],
+    children: [
+      { path: '', component: DashboardComponent },
+      { path: 'dashboard', component: DashboardComponent },
+      { path: 'manageuser', component: ManageUserComponent },
+      // { path: 'profile', component: ProfileComponent },
+    ],
+  },
+  {
+    path: 'user',
+    component: UserLayout,
+    // canActivate: [LoginGuard],
+    children: [
+      { path: '', component: AddNovelComponent },
+      { path: 'addnovel', component: AddNovelComponent },
+      { path: 'managenovel', component: ManageNovelsComponent },
+    ],
+  },
+  {
+    path: 'home',
+    component: HomeComponent,
+  },
 ];
 
 @NgModule({

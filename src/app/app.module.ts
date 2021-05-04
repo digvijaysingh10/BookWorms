@@ -38,6 +38,11 @@ import { ManageUserComponent } from './admin/manage-user/manage-user.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { ManageNovelsComponent } from './user/manage-novels/manage-novels.component';
 import { MatTabsModule } from '@angular/material/tabs';
+import { ListRentComponent } from './authentication/list-rent/list-rent.component';
+import { ListExchangeComponent } from './authentication/list-exchange/list-exchange.component';
+import { ListSellComponent } from './authentication/list-sell/list-sell.component';
+import { NovelDetailsComponent } from './authentication/novel-details/novel-details.component';
+import { ChatComponent } from './chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +60,11 @@ import { MatTabsModule } from '@angular/material/tabs';
     AddNovelComponent,
     ManageUserComponent,
     ManageNovelsComponent,
+    ListRentComponent,
+    ListExchangeComponent,
+    ListSellComponent,
+    NovelDetailsComponent,
+    ChatComponent,
   ],
   imports: [
     BrowserModule,

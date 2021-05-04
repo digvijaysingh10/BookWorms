@@ -6,6 +6,7 @@ import {
   NbButtonModule,
   NbCardModule,
   NbIconModule,
+  NbListModule,
   NbMenuModule,
   NbSearchModule,
   NbSidebarModule,
@@ -26,6 +27,7 @@ import {
     NbMenuModule,
     NbActionsModule,
     NbCardModule,
+    NbListModule,
   ],
   imports: [CommonModule],
 })

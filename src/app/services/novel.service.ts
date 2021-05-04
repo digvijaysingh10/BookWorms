@@ -4,24 +4,20 @@ import { Router } from '@angular/router';
 import { app_config } from 'src/config';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class NovelService {
-
   url = app_config.api_url + '/novel';
 
-  constructor(private http: HttpClient, private router: Router) {
-
-  }
+  constructor(private http: HttpClient, private router: Router) {}
 
   addNovel(data: any) {
     return this.http.post(this.url + '/add', data);
   }
 
-  getbyid(id){
+  getbyid(id) {
     return this.http.get(this.url + '/getbyid/' + id);
   }
-
 
   deleteNovel(id) {
     return this.http.delete(this.url + '/delete/' + id);
@@ -39,4 +35,15 @@ export class NovelService {
     return this.http.post(app_config.api_url + '/util/addimg', file);
   }
 
+  getRentNovel() {
+    return this.http.get(this.url + '/getrent');
+  }
+
+  getSellNovels() {
+    return this.http.get(this.url + '/getsell');
+  }
+
+  getExchangeNovel() {
+    return this.http.get(this.url + '/getexchange');
+  }
 }
