@@ -1,1 +1,29 @@
-<p>list-rent works!</p>
+<div class="row mt-5">
+  <div class="col-md-4">
+
+  </div>
+
+  <div class="col-md-8">
+      <nb-card size="medium" style="size: 40rem;">
+          <nb-card-header>
+            Rent Your Novels
+          </nb-card-header>
+          <nb-list>
+            <nb-list-item *ngFor="let novel of novelList">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-4">
+                    <img [src]="url+novel.avatar" class="img-fluid" alt="">
+                  </div>
+                  <div class="col-md-8">
+                    <h3>{{novel.title}}</h3>
+                    <h6 class="text-muted">{{novel.genre}}</h6>
+                    <button nbButton class="mt-4">{{novel.price | currency:'INR'}}</button>
+                  </div>
+                </div>
+              </div>
+            </nb-list-item>
+          </nb-list>
+        </nb-card>
+  </div>
+</div>

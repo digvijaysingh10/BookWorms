@@ -39,7 +39,7 @@ export class NovelService {
     return this.http.get(this.url + '/getrent');
   }
 
-  getSellNovels() {
+  getSellNovel() {
     return this.http.get(this.url + '/getsell');
   }
 
