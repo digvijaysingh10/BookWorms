@@ -43,6 +43,7 @@ import { ListExchangeComponent } from './authentication/list-exchange/list-excha
 import { ListSellComponent } from './authentication/list-sell/list-sell.component';
 import { NovelDetailsComponent } from './authentication/novel-details/novel-details.component';
 import { ChatComponent } from './chat/chat.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import { ChatComponent } from './chat/chat.component';
     ListSellComponent,
     NovelDetailsComponent,
     ChatComponent,
+    ContactUsComponent,
   ],
   imports: [
     BrowserModule,

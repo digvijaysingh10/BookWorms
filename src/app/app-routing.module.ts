@@ -9,6 +9,7 @@ import { ListRentComponent } from './authentication/list-rent/list-rent.componen
 import { ListSellComponent } from './authentication/list-sell/list-sell.component';
 import { ResetPasswordComponent } from './authentication/reset-password/reset-password.component';
 import { SigninComponent } from './authentication/signin/signin.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AdminGuard } from './guards/admin.guard';
 import { LoginGuard } from './guards/login.guard';
 import { HomeComponent } from './home/home.component';
@@ -27,6 +28,7 @@ const routes: Routes = [
       { path: 'rentnovel', component: ListRentComponent },
       { path: 'exchangenovel', component: ListExchangeComponent },
       { path: 'buynovel', component: ListSellComponent },
+      { path: 'contactus', component: ContactUsComponent },
     ],
   },
 
@@ -55,6 +57,7 @@ const routes: Routes = [
     path: 'home',
     component: HomeComponent,
   },
+
 ];
 
 @NgModule({
