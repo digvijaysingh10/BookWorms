@@ -1,17 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
-import { GoogleLoginProvider, SocialAuthService, SocialUser } from 'angularx-social-login';
+import {
+  GoogleLoginProvider,
+  SocialAuthService,
+  SocialUser,
+} from 'angularx-social-login';
 import { UserService } from 'src/app/services/user.service';
 import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',
-  styleUrls: ['./signin.component.css']
+  styleUrls: ['./signin.component.css'],
 })
 export class SigninComponent implements OnInit {
-
   signupform: any;
   avatarImage: any;
   erroMsg: string;
@@ -33,13 +36,13 @@ export class SigninComponent implements OnInit {
     //   .getElementsByTagName('nb-layout-column')[0]
     //   .classList.add('register');
 
-      this.initSigninForm();
+    this.initSigninForm();
 
-      this.socialAuthService.authState.subscribe((user) => {
-        this.socialUser = user;
-        this.isLoggedin = user != null;
-        console.log(this.socialUser);
-      });
+    this.socialAuthService.authState.subscribe((user) => {
+      this.socialUser = user;
+      this.isLoggedin = user != null;
+      console.log(this.socialUser);
+    });
   }
 
   ngOnDestroy() {
@@ -110,7 +113,6 @@ export class SigninComponent implements OnInit {
     });
   }
 
-
   initSigninForm() {
     this.signinform = this.fb.group({
       email: '',
@@ -164,16 +166,11 @@ export class SigninComponent implements OnInit {
     this.socialAuthService.signOut();
   }
 
-
-
-
-
-  toggleSignUp(){
-    document.getElementById('container').classList.add("right-panel-active");
+  toggleSignUp() {
+    document.getElementById('container').classList.add('right-panel-active');
   }
 
-  toggleSignIn(){
-    document.getElementById('container').classList.remove("right-panel-active");
+  toggleSignIn() {
+    document.getElementById('container').classList.remove('right-panel-active');
   }
-
 }
