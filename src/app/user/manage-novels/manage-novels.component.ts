@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NovelService } from 'src/app/services/novel.service';
+import { app_config } from 'src/config';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -9,6 +10,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./manage-novels.component.css'],
 })
 export class ManageNovelsComponent implements OnInit {
+  url = app_config.api_url+'/';
   novelsList: any;
   rentNovels: any;
   exchangeNovels: any;
