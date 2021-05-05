@@ -13,6 +13,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AdminGuard } from './guards/admin.guard';
 import { LoginGuard } from './guards/login.guard';
 import { HomeComponent } from './home/home.component';
+import { ProfileComponent } from './profile/profile.component';
 import { AddNovelComponent } from './user/add-novel/add-novel.component';
 import { LayoutComponent as UserLayout } from './user/layout/layout.component';
 import { ManageNovelsComponent } from './user/manage-novels/manage-novels.component';
@@ -40,13 +41,13 @@ const routes: Routes = [
       { path: '', component: DashboardComponent },
       { path: 'dashboard', component: DashboardComponent },
       { path: 'manageuser', component: ManageUserComponent },
-      // { path: 'profile', component: ProfileComponent },
+
     ],
   },
   {
     path: 'user',
     component: UserLayout,
-    // canActivate: [LoginGuard],
+    canActivate: [LoginGuard],
     children: [
       { path: '', component: AddNovelComponent },
       { path: 'addnovel', component: AddNovelComponent },
@@ -57,7 +58,9 @@ const routes: Routes = [
     path: 'home',
     component: HomeComponent,
   },
-
+  {
+    path: 'profile', component: ProfileComponent
+  },
 ];
 
 @NgModule({
