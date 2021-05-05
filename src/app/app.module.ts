@@ -44,6 +44,7 @@ import { ListSellComponent } from './authentication/list-sell/list-sell.componen
 import { NovelDetailsComponent } from './authentication/novel-details/novel-details.component';
 import { ChatComponent } from './chat/chat.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +68,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
     NovelDetailsComponent,
     ChatComponent,
     ContactUsComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
