@@ -46,4 +46,8 @@ export class NovelService {
   getExchangeNovel() {
     return this.http.get(this.url + '/getexchange');
   }
+
+  getNovelByUser(id){
+    return this.http.get(this.url + '/getbyuser/' + id);
+  }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NovelService } from 'src/app/services/novel.service';
+import { UserService } from 'src/app/services/user.service';
 import { app_config } from 'src/config';
 import Swal from 'sweetalert2';
 
@@ -17,7 +18,7 @@ export class ManageNovelsComponent implements OnInit {
   sellNovels: any;
   loadingNovels = true;
 
-  constructor(public novelService: NovelService, private router: Router) {}
+  constructor(public novelService: NovelService, private router: Router, private userservice: UserService) {}
 
   ngOnInit(): void {
     this.fetchNovels();
@@ -33,7 +34,7 @@ export class ManageNovelsComponent implements OnInit {
   }
 
   fetchNovels() {
-    this.novelService.getAll().subscribe((res) => {
+    this.novelService.getNovelByUser(this.userservice.currentUser._id).subscribe((res) => {
       this.novelsList = res;
       this.loadingNovels = false;
       console.log(this.novelsList);
@@ -66,5 +67,7 @@ export class ManageNovelsComponent implements OnInit {
     });
   }
 
-  updateNovel(id) {}
+  updateNovel(id) {
+    
+  }
 }

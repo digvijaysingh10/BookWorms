@@ -93,7 +93,7 @@ router.get('/getexchange', (req, res) => {
 
 router.delete('/delete/:id', (req, res) => {
 
-    Model.findByIdAndDelete({})
+    Model.findByIdAndDelete(req.params.id)
         .then(data => {
             console.log('novel data deleted');
             res.status(200).json(data);
@@ -103,6 +103,20 @@ router.delete('/delete/:id', (req, res) => {
             res.status(500).json(err);
         })
 })
+
+router.get('/getbyuser/:user', (req, res) => {
+
+  Model.find({ user: req.params.user })
+      .populate('user').then(data => {
+          console.log('novel fetched by user');
+          res.status(200).json(data);
+      })
+      .catch(err => {
+          console.error(err);
+          res.status(500).json(err);
+      })
+})
+
 
 module.exports = router;
 
