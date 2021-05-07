@@ -1,10 +1,10 @@
 <div class="row mt-5">
-  <div class="col-md-4">
+  <div class="col-md-3">
 
   </div>
 
-  <div class="col-md-8">
-      <nb-card size="medium" style="size: 40rem;">
+  <div class="col-md-9">
+      <nb-card >
           <nb-card-header>
             Rent Your Novels
           </nb-card-header>
@@ -18,7 +18,7 @@
                   <div class="col-md-8">
                     <h3>{{novel.title}}</h3>
                     <h6 class="text-muted">{{novel.genre}}</h6>
-                    <button nbButton class="mt-4">{{novel.price | currency:'INR'}}</button>
+                    <button [routerLink]="['/app/noveldetails', novel._id]" routerLinkActive="router-link-active"  nbButton class="mt-4">{{novel.price | currency:'INR'}}</button>
                   </div>
                 </div>
               </div>

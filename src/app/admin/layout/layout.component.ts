@@ -10,6 +10,25 @@ import { app_config } from 'src/config';
 export class LayoutComponent implements OnInit {
   url = app_config.api_url + '/';
   title = app_config.title;
+
+  sidebarItems = [
+    {
+      title: 'Profile',
+      icon: 'person-outline',
+      link: 'profile',
+    },
+    {
+      title: 'Manage Users',
+      icon: 'person-outline',
+      link: 'manageuser',
+    },
+    {
+      title: 'View Dashboard',
+      icon: 'person-outline',
+      link: 'dashboard',
+    },
+  ];
+
   constructor(public userService: UserService) {}
 
   ngOnInit(): void {}

@@ -4,7 +4,12 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NbThemeModule, NbLayoutModule, NbSidebarModule } from '@nebular/theme';
+import {
+  NbThemeModule,
+  NbLayoutModule,
+  NbSidebarModule,
+  NbMenuModule,
+} from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { LayoutComponent as AdminLayout } from './admin/layout/layout.component';
 import { LayoutComponent as UserLayout } from './user/layout/layout.component';
@@ -92,8 +97,7 @@ import { ProfileComponent } from './profile/profile.component';
     SocialLoginModule,
     MatCheckboxModule,
     MatTabsModule,
-
-
+    NbMenuModule.forRoot(),
   ],
   providers: [
     {

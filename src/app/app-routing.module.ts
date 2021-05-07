@@ -31,7 +31,7 @@ const routes: Routes = [
       { path: 'exchangenovel', component: ListExchangeComponent },
       { path: 'buynovel', component: ListSellComponent },
       { path: 'contactus', component: ContactUsComponent },
-      { path: 'noveldetails', component: NovelDetailsComponent },
+      { path: 'noveldetails/:id', component: NovelDetailsComponent },
     ],
   },
 
@@ -43,7 +43,6 @@ const routes: Routes = [
       { path: '', component: DashboardComponent },
       { path: 'dashboard', component: DashboardComponent },
       { path: 'manageuser', component: ManageUserComponent },
-
     ],
   },
   {
@@ -61,7 +60,8 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: 'profile', component: ProfileComponent
+    path: 'profile',
+    component: ProfileComponent,
   },
 ];
 
