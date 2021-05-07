@@ -50,5 +50,7 @@ export class ManageUserComponent implements OnInit {
     });
   }
 
-  updateUser(id) {}
+  updateUser(id) {
+
+  }
 }

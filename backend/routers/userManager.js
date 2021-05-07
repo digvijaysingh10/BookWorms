@@ -67,7 +67,7 @@ router.get('/getall', (req, res) => {
 
 router.delete('/delete/:id', (req, res) => {
 
-    Model.findByIdAndDelete( {})
+    Model.findByIdAndDelete(req.params.id)
         .then(data => {
             console.log('user data deleted');
             res.status(200).json(data);
