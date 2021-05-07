@@ -2,12 +2,16 @@
     <nb-card *ngIf="novelData">
         <div class="row">
             <div class="col-md-5">
-                <img src="" alt="">
+                <img [src] ="url+novelData.avatar" class="img-fluid"  alt="">
             </div>
 
             <div class="col-md-7">
                 <nb-card-content style="padding: 5rem;">
-                    <h2>{{novelData.title}}</h2>
+                    <h2>{{novelData.title}}</h2><hr>
+                    <h6>{{novelData.genre}}</h6> <hr>
+                    <p> {{novelData.desc}} </p> <hr>
+
+                    <button nbButton class="mt-4"> {{novel.price | currency:'INR'}} </button>
                 </nb-card-content>
             </div>
         </div>
