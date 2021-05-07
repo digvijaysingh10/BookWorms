@@ -7,6 +7,7 @@ import { LayoutComponent as AppLayoutComponent } from './authentication/layout/l
 import { ListExchangeComponent } from './authentication/list-exchange/list-exchange.component';
 import { ListRentComponent } from './authentication/list-rent/list-rent.component';
 import { ListSellComponent } from './authentication/list-sell/list-sell.component';
+import { NovelDetailsComponent } from './authentication/novel-details/novel-details.component';
 import { ResetPasswordComponent } from './authentication/reset-password/reset-password.component';
 import { SigninComponent } from './authentication/signin/signin.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
@@ -30,6 +31,7 @@ const routes: Routes = [
       { path: 'exchangenovel', component: ListExchangeComponent },
       { path: 'buynovel', component: ListSellComponent },
       { path: 'contactus', component: ContactUsComponent },
+      { path: 'noveldetails', component: NovelDetailsComponent },
     ],
   },
 
