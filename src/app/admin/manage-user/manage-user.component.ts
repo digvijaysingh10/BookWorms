@@ -9,6 +9,10 @@ import Swal from 'sweetalert2';
   styleUrls: ['./manage-user.component.css'],
 })
 export class ManageUserComponent implements OnInit {
+
+
+  currentUser: any;
+  updateForm;
   usersList: any;
   loadingUsers = true;
 
@@ -51,6 +55,17 @@ export class ManageUserComponent implements OnInit {
   }
 
   updateUser(id) {
-
+    let formdata = this.updateForm.value;
+    this.userService
+      .update(this.currentUser._id, formdata)
+      .subscribe((data) => {
+        this.userService.refreshUser();
+        this.currentUser = this.userService.currentUser;
+        Swal.fire({
+          icon: 'success',
+          title: 'Success!',
+          text: 'Profile updated.',
+        });
+      });
   }
 }
