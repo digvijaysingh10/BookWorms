@@ -20,7 +20,7 @@ import { SigninComponent } from './authentication/signin/signin.component';
 import { ResetPasswordComponent } from './authentication/reset-password/reset-password.component';
 import { LayoutComponent } from './authentication/layout/layout.component';
 import { HomeComponent } from './home/home.component';
-
+import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -62,7 +62,7 @@ import { ProfileComponent } from './profile/profile.component';
     ResetPasswordComponent,
     LayoutComponent,
     HomeComponent,
-
+    HeaderComponent,
     FooterComponent,
     AddNovelComponent,
     ManageUserComponent,
