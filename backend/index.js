@@ -8,6 +8,20 @@ const novelRouter = require('./routers/novelManager');
 const requestRouter = require('./routers/requestManager');
 const cors = require('cors');
 
+// This is how to initialize Socket.io at backend
+const http = require('http');
+const server = http.createServer(express);
+const io = require('socket.io')(server, {
+    cors: {
+        origin: "http://localhost:3000",
+        methods: ["GET", "POST"]
+    }
+});
+
+io.on('connection', (socket) => {
+    console.on('client connected!!');
+})
+
 app.use(express.json());
 app.use(cors());
 
