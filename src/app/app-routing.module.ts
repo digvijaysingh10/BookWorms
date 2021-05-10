@@ -10,6 +10,7 @@ import { ListSellComponent } from './authentication/list-sell/list-sell.componen
 import { NovelDetailsComponent } from './authentication/novel-details/novel-details.component';
 import { ResetPasswordComponent } from './authentication/reset-password/reset-password.component';
 import { SigninComponent } from './authentication/signin/signin.component';
+import { ChatComponent } from './chat/chat.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AdminGuard } from './guards/admin.guard';
 import { LoginGuard } from './guards/login.guard';
@@ -53,6 +54,7 @@ const routes: Routes = [
       { path: '', component: AddNovelComponent },
       { path: 'addnovel', component: AddNovelComponent },
       { path: 'managenovel', component: ManageNovelsComponent },
+      { path: 'chat', component: ChatComponent },
     ],
   },
   {
