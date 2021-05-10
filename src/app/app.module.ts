@@ -43,6 +43,7 @@ import { ManageUserComponent } from './admin/manage-user/manage-user.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { ManageNovelsComponent } from './user/manage-novels/manage-novels.component';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatSliderModule } from '@angular/material/slider';
 import { ListRentComponent } from './authentication/list-rent/list-rent.component';
 import { ListExchangeComponent } from './authentication/list-exchange/list-exchange.component';
 import { ListSellComponent } from './authentication/list-sell/list-sell.component';
@@ -83,7 +84,7 @@ import { ProfileComponent } from './profile/profile.component';
     NbLayoutModule,
     NbEvaIconsModule,
     NbSidebarModule.forRoot(),
-
+    MatSliderModule,
     NebularModule,
     SweetAlert2Module.forRoot(),
     MatFormFieldModule,
