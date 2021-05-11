@@ -51,6 +51,7 @@ import { NovelDetailsComponent } from './authentication/novel-details/novel-deta
 import { ChatComponent } from './chat/chat.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { ProfileComponent } from './profile/profile.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -75,6 +76,7 @@ import { ProfileComponent } from './profile/profile.component';
     ChatComponent,
     ContactUsComponent,
     ProfileComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,
