@@ -17,6 +17,7 @@ import { LoginGuard } from './guards/login.guard';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AddNovelComponent } from './user/add-novel/add-novel.component';
+import { CheckoutComponent } from './user/checkout/checkout.component';
 import { LayoutComponent as UserLayout } from './user/layout/layout.component';
 import { ManageNovelsComponent } from './user/manage-novels/manage-novels.component';
 
@@ -55,6 +56,7 @@ const routes: Routes = [
       { path: 'addnovel', component: AddNovelComponent },
       { path: 'managenovel', component: ManageNovelsComponent },
       { path: 'chat', component: ChatComponent },
+      { path: 'checkout', component: CheckoutComponent },
     ],
   },
   {
