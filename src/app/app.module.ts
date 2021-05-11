@@ -51,7 +51,6 @@ import { NovelDetailsComponent } from './authentication/novel-details/novel-deta
 import { ChatComponent } from './chat/chat.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { ProfileComponent } from './profile/profile.component';
-import { CheckoutComponent } from './user/checkout/checkout.component';
 
 
 @NgModule({
@@ -77,7 +76,7 @@ import { CheckoutComponent } from './user/checkout/checkout.component';
     ChatComponent,
     ContactUsComponent,
     ProfileComponent,
-    CheckoutComponent,
+
   ],
   imports: [
     BrowserModule,
