@@ -5,6 +5,7 @@ import {
   NbActionsModule,
   NbButtonModule,
   NbCardModule,
+  NbChatModule,
   NbIconModule,
   NbListModule,
   NbSearchModule,
@@ -26,6 +27,7 @@ import {
     NbActionsModule,
     NbCardModule,
     NbListModule,
+    NbChatModule,
   ],
   imports: [CommonModule],
 })

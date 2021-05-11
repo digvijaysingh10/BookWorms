@@ -10,16 +10,25 @@ const cors = require('cors');
 
 // This is how to initialize Socket.io at backend
 const http = require('http');
-const server = http.createServer(express);
+const server = http.createServer(app);
 const io = require('socket.io')(server, {
     cors: {
-        origin: "http://localhost:3000",
+        origin: "http://localhost:4200",
         methods: ["GET", "POST"]
     }
 });
 
 io.on('connection', (socket) => {
-    console.on('client connected!!');
+    console.log('client connected!!');
+
+    socket.on('sendmsg', (data) => {
+        console.log('a message from client');
+        console.log(data);
+
+        data.reply = false;
+        socket.broadcast.emit('recmsg', data);
+    })
+
 })
 
 app.use(express.json());
@@ -32,6 +41,6 @@ app.use('/request', requestRouter);
 
 app.use(express.static('./uploads'))
 
-app.listen(port, () => {
+server.listen(port, () => {
     console.log('Hurray!!!!! server started on port ' + port);
 });
