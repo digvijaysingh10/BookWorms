@@ -1,17 +1,92 @@
-<div class="col-md-10 mx-auto">
+<div class="col-md-12 mx-auto bookDetail">
     <nb-card *ngIf="novelData">
         <div class="row">
-            <div class="col-md-5">
-                <img [src] ="url+novelData.avatar" class="img-fluid"  alt="">
+            <div class="col-md-6" >
+                <img [src] ="url+novelData.avatar" class="img-fluid"  alt="" style="width: 460px">
             </div>
 
-            <div class="col-md-7">
+            <div class="col-md-6 product-details-wrap">
                 <nb-card-body style="padding: 5rem;">
-                    <h2>{{novelData.title}}</h2><hr>
-                    <h6>{{novelData.genre}}</h6> <hr>
-                    <p> {{novelData.desc}} </p> <hr>
+                  <div class="product-detail-main-details">
+                    <h1 class="product-detail-name">{{novelData.title}}</h1>
+                    <div class="product-detail-price">{{novelData.price | currency:'INR'}}</div>
+                    <div class="paragraph-light">{{novelData.desc}}</div>
+                    
+                    
 
-                    <button nbButton class="mt-4" > {{novelData.price | currency:'INR'}} </button>
+                  </div>
+
+                  <div class="divider cc-dark-divider"></div>
+
+                  <div class="product-informations">
+                    <ul role="list" class="w-list-unstyled">
+                      <li class="list-item">
+                          <div class="paragraph-light2">Author</div>
+                          <div class="product-detail-measurement">
+                              <div class="product-detail-unit-text">{{novelData.author}}</div>
+                          </div>
+                      </li>
+                      <li class="list-item">
+                            <div class="paragraph-light2">Genre</div>
+                            <div class="product-detail-measurement">
+
+                                <div class="product-detail-unit-text">{{novelData.genre}}</div>
+                            </div>
+                        </li>
+                    </ul>
+                  </div>
+                  <div class="divider"></div>
+
+
+                  <div class="add-to-cart">
+                    <form class="w-commerce-commerceaddtocartform">
+                        <div role="group" class="option-list">
+                        </div>
+                          <label  class="label">Quantity</label>
+                        <div class="product-detail-cta-wrap"><input type="number" pattern="^[0-9]+$" inputmode="numeric"
+                              id="quantity" name="commerce-add-to-cart-quantity-input"
+                              min="1" class="w-commerce-commerceaddtocartquantityinput text-field cc-quantity-field"
+                              value="1">
+                            <button nbButton class="mt-4 button"
+                            style="font: inherit;
+                            margin-right: 20px;
+                            border-bottom-width: 0px;
+                            border-left-width: 0px;
+                            border-right-width: 0px;
+                            border-top-width: 0px;
+                            cursor: pointer;
+                            display: flex;
+                            -webkit-box-align: left;
+                            align-items: center;
+                            appearance: none;
+                            padding: 12px 25px;
+                            border-radius: 0px;
+                            background-color: #1a1b1f;
+                            transition: background-color 400ms ease, opacity 400ms ease, color 400ms ease;
+                            color: #fff;
+                            font-size: 12px;
+                            line-height: 20px;
+                            letter-spacing: 2px;
+                            text-decoration: none;
+                            text-transform: uppercase;
+                            -webkit-box-pack: left;;
+                            justify-content: center;"
+                            [routerLink]="['/user/checkout']" routerLinkActive="router-link-active"  > Checkout </button>
+
+                        </div>
+                    </form>
+
+                  </div>
+
+                  
+
+
+                    <!-- <div class="title">{{novelData.title}}</div>
+                    <div class="rate">{{novelData.price | currency:'INR'}}</div>
+                    <div class="description"></div>
+                    <div class="genre">{{novelData.genre}}</div>
+                    <div class="author">{{novelData.author}}</div>
+                    <button nbButton class="mt-4" > {{novelData.price | currency:'INR'}} </button> -->
                 </nb-card-body>
             </div>
         </div>
