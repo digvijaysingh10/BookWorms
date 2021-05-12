@@ -1,0 +1,283 @@
+product-details-wrap{
+  margin-right: 10px;
+  margin-left: 10px;
+  padding: auto;
+  justify-content: space-around;
+}
+h1{
+  -webkit-text-size-adjust: 100%;
+  font-family: Montserrat, sans-serif;
+  color: #1a1b1f;
+  -webkit-box-direction: normal;
+  text-align: left;
+  box-sizing: border-box;
+  margin: .67em 0;
+  margin-top: 20px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  font-size: 36px;
+  line-height: 52px;
+
+}
+div.product-detail-price{
+  -webkit-text-size-adjust: 100%;
+  font-family: Montserrat, sans-serif;
+  color: #1a1b1f;
+  font-weight: 400;
+  -webkit-box-direction: normal;
+  text-align: left;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  opacity: 0.6;
+  font-size: 30px;
+  line-height: 52px;
+
+}
+
+div.paragraph-light{
+  -webkit-text-size-adjust: 100%;
+  font-family: Montserrat, sans-serif;
+  color: #1a1b1f;
+  font-weight: 400;
+  -webkit-box-direction: normal;
+  text-align: left;
+  box-sizing: border-box;
+  opacity: 0.6;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0px;
+  text-transform: none;
+  margin-right: 10px;
+  margin-bottom: 15px;
+  padding: auto;
+  justify-content: space-around;
+
+}
+
+div.divider.cc-dark-divider{
+  -webkit-text-size-adjust: 100%;
+  font-family: Montserrat, sans-serif;
+  color: #1a1b1f;
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: 400;
+  -webkit-box-direction: normal;
+  text-align: center;
+  box-sizing: border-box;
+  height: 1px;
+  background-color: #202020;
+  justify-content: space-around;
+  margin-right: 10px;
+  padding: auto;
+
+}
+div.product-informations{
+  -webkit-text-size-adjust: 100%;
+  font-family: Montserrat, sans-serif;
+  color: #1a1b1f;
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: 400;
+  -webkit-box-direction: normal;
+  text-align: center;
+  box-sizing: border-box;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  justify-content: space-around;
+
+}
+
+ul{
+  -webkit-text-size-adjust: 100%;
+  font-family: Montserrat, sans-serif;
+  color: #1a1b1f;
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: 400;
+  -webkit-box-direction: normal;
+  text-align: center;
+  box-sizing: border-box;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding-left: 0;
+  list-style: none;
+  justify-content: space-around;
+
+
+}
+
+li:nth-child(1){
+  -webkit-text-size-adjust: 100%;
+  font-family: Montserrat, sans-serif;
+  color: #1a1b1f;
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: 400;
+  -webkit-box-direction: normal;
+  list-style: none;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  display: flex;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+
+  margin-right: 10px;
+  padding: auto;
+
+}
+li:nth-child(2){
+  -webkit-text-size-adjust: 100%;
+  font-family: Montserrat, sans-serif;
+  color: #1a1b1f;
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: 400;
+  -webkit-box-direction: normal;
+  list-style: none;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  display: flex;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  margin-right: 10px;
+  padding: auto;
+
+}
+
+div.paragraph-light2{
+  -webkit-text-size-adjust: 100%;
+  font-family: Montserrat, sans-serif;
+  color: #1a1b1f;
+  font-weight: 400;
+  -webkit-box-direction: normal;
+  list-style: none;
+  box-sizing: border-box;
+  opacity: 0.6;
+  font-size: 14px;
+  line-height: 26px;
+  letter-spacing: 0px;
+  text-transform: uppercase;
+  margin-right: 10px;
+}
+
+div.product-detail-measurement{
+  -webkit-text-size-adjust: 100%;
+  font-family: Montserrat, sans-serif;
+  color: #1a1b1f;
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: 400;
+  -webkit-box-direction: normal;
+  list-style: none;
+  box-sizing: border-box;
+  display: flex;
+  -webkit-box-align: left;
+  align-items: center;
+}
+
+div.product-detail-unit-text{
+  -webkit-text-size-adjust: 100%;
+  font-family: Montserrat, sans-serif;
+  color: #1a1b1f;
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: 400;
+  list-style: none;
+  box-sizing: border-box;
+  margin-left: 6px;
+  margin-right: 6px;
+  text-transform: uppercase;
+}
+
+div.divider{
+  margin-right: 10px;
+}
+
+div:nth-child(4){
+  -webkit-text-size-adjust: 100%;
+  font-family: Montserrat, sans-serif;
+  color: #1a1b1f;
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: 400;
+  -webkit-box-direction: normal;
+  text-align: center;
+  box-sizing: border-box;
+  height: 1px;
+  background-color: #eee;
+}
+
+form{
+  -webkit-text-size-adjust: 100%;
+  font-family: Montserrat, sans-serif;
+  color: #1a1b1f;
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: 400;
+  -webkit-box-direction: normal;
+  text-align: center;
+  box-sizing: border-box;
+  margin-top: 15px;
+  margin-right: 0px;
+  margin-bottom: 15px;
+  margin-left: 10px;
+}
+
+label{
+  -webkit-text-size-adjust: 100%;
+  font-family: Montserrat, sans-serif;
+  color: #1a1b1f;
+  -webkit-box-direction: normal;
+  text-align: center;
+  box-sizing: border-box;
+  display: block;
+  margin-bottom: 10px;
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+ div.product-detail-cta-wrap{
+  -webkit-text-size-adjust: 100%;
+  font-family: Montserrat, sans-serif;
+  color: #1a1b1f;
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: 400;
+  text-align: center;
+  box-sizing: border-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  -webkit-box-pack: left;;
+  justify-content: center;
+  margin-left: 10px;
+}
+
+#quantity{
+  box-sizing: border-box;
+  color: inherit;
+  font: inherit;
+  display: block;
+  appearance: none;
+  border: 1px solid #e4e4e4;
+  border-radius: 0px;
+  transition: border-color 400ms ease;
+  font-size: 14px;
+  line-height: 26px;
+  height: auto;
+  padding: 8px 12px 8px 20px;
+  border-color: #e6e6e6;
+  background-color: #fff;
+  width: auto;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+}

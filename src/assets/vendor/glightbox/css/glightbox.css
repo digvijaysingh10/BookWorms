@@ -44,10 +44,10 @@
   display: -webkit-box !important;
   display: -ms-flexbox !important;
   display: flex !important;
-  -webkit-box-pack: center;
+  -webkit-box-pack: left;;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
+  -webkit-box-align: left;
   -ms-flex-align: center;
   align-items: center;
   -webkit-transform: translate3d(0, 0, 0);
@@ -65,10 +65,10 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
+  -webkit-box-align: left;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
+  -webkit-box-pack: left;;
   -ms-flex-pack: center;
   justify-content: center;
   opacity: 0;
@@ -95,7 +95,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
+  -webkit-box-pack: left;;
   -ms-flex-pack: center;
   justify-content: center;
   -webkit-box-orient: vertical;
@@ -135,7 +135,7 @@
 }
 
 .gslide-image {
-  -webkit-box-align: center;
+  -webkit-box-align: left;
   -ms-flex-align: center;
   align-items: center;
 }
@@ -448,10 +448,10 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
+  -webkit-box-pack: left;;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
+  -webkit-box-align: left;
   -ms-flex-align: center;
   align-items: center;
   -webkit-box-orient: vertical;
