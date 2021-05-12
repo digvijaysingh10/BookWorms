@@ -8,10 +8,10 @@
               <nb-list-item *ngFor="let novel of novelList">
                 <div class="card-body">
                   <div class="row">
-                    <div class="col-md-5">
+                    <div class="col-md-6">
                       <img [src]="url+novel.avatar" class="img-fluid" alt="">
                     </div>
-                    <div class="col-md-5">
+                    <div class="col-md-6">
                       <h3>{{novel.title}}</h3>
                       <h6 class="text-muted">{{novel.genre}}</h6>
                       <button [routerLink]="['/app/noveldetails', novel._id]" routerLinkActive="router-link-active" nbButton class="mt-4">{{novel.price | currency:'INR'}}</button>
