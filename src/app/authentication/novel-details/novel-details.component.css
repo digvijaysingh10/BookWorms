@@ -1,12 +1,27 @@
-product-details-wrap{
-  margin-right: 10px;
-  margin-left: 10px;
+div.bookDetail{
+  display: flex;
+  flex-direction: row;
+}
+
+#avatar{
+  justify-content: space-between;
+  align-items: center;
+  width: 805px;
+  height: 800px;
+}
+
+
+div.product-details-wrap{
+  background: rgba(4, 4, 4, 0.7);
+  color: #fff;
+  border-top: 5px solid #1bbd36;
+
 
 }
 h1{
   -webkit-text-size-adjust: 100%;
   font-family: Montserrat, sans-serif;
-  color: #1a1b1f;
+  color: #fcfcfc;
   -webkit-box-direction: normal;
   text-align: left;
   box-sizing: border-box;
@@ -21,7 +36,7 @@ h1{
 div.product-detail-price{
   -webkit-text-size-adjust: 100%;
   font-family: Montserrat, sans-serif;
-  color: #1a1b1f;
+  color: #fcfcfc;
   font-weight: 400;
   -webkit-box-direction: normal;
   text-align: left;
@@ -36,7 +51,7 @@ div.product-detail-price{
 div.paragraph-light{
   -webkit-text-size-adjust: 100%;
   font-family: Montserrat, sans-serif;
-  color: #1a1b1f;
+  color: #fcfcfc;
   font-weight: 400;
   -webkit-box-direction: normal;
   text-align: left;
@@ -53,10 +68,10 @@ div.paragraph-light{
 
 }
 
-div.divider.cc-dark-divider{
+div.divider.cc-white-divider{
   -webkit-text-size-adjust: 100%;
   font-family: Montserrat, sans-serif;
-  color: #1a1b1f;
+  color: #ffffff;
   font-size: 16px;
   line-height: 28px;
   font-weight: 400;
@@ -64,7 +79,7 @@ div.divider.cc-dark-divider{
   text-align: center;
   box-sizing: border-box;
   height: 1px;
-  background-color: #202020;
+  background-color: #ffffff;
   justify-content: space-around;
   margin-right: 10px;
   padding: auto;
@@ -73,7 +88,7 @@ div.divider.cc-dark-divider{
 div.product-informations{
   -webkit-text-size-adjust: 100%;
   font-family: Montserrat, sans-serif;
-  color: #1a1b1f;
+  color: #fcfcfc;
   font-size: 16px;
   line-height: 28px;
   font-weight: 400;
@@ -89,7 +104,7 @@ div.product-informations{
 ul{
   -webkit-text-size-adjust: 100%;
   font-family: Montserrat, sans-serif;
-  color: #1a1b1f;
+  color: #fcfcfc;
   font-size: 16px;
   line-height: 28px;
   font-weight: 400;
@@ -108,7 +123,7 @@ ul{
 li:nth-child(1){
   -webkit-text-size-adjust: 100%;
   font-family: Montserrat, sans-serif;
-  color: #1a1b1f;
+  color: #fcfcfc;
   font-size: 16px;
   line-height: 28px;
   font-weight: 400;
@@ -129,7 +144,7 @@ li:nth-child(1){
 li:nth-child(2){
   -webkit-text-size-adjust: 100%;
   font-family: Montserrat, sans-serif;
-  color: #1a1b1f;
+  color: #fcfcfc;
   font-size: 16px;
   line-height: 28px;
   font-weight: 400;
@@ -150,7 +165,7 @@ li:nth-child(2){
 div.paragraph-light2{
   -webkit-text-size-adjust: 100%;
   font-family: Montserrat, sans-serif;
-  color: #1a1b1f;
+  color: #fcfcfc;
   font-weight: 400;
   -webkit-box-direction: normal;
   list-style: none;
@@ -166,7 +181,7 @@ div.paragraph-light2{
 div.product-detail-measurement{
   -webkit-text-size-adjust: 100%;
   font-family: Montserrat, sans-serif;
-  color: #1a1b1f;
+  color: #fcfcfc;
   font-size: 16px;
   line-height: 28px;
   font-weight: 400;
@@ -181,7 +196,7 @@ div.product-detail-measurement{
 div.product-detail-unit-text{
   -webkit-text-size-adjust: 100%;
   font-family: Montserrat, sans-serif;
-  color: #1a1b1f;
+  color: #fcfcfc;
   font-size: 16px;
   line-height: 28px;
   font-weight: 400;
@@ -199,7 +214,7 @@ div.divider{
 div:nth-child(4){
   -webkit-text-size-adjust: 100%;
   font-family: Montserrat, sans-serif;
-  color: #1a1b1f;
+  color: #fcfcfc;
   font-size: 16px;
   line-height: 28px;
   font-weight: 400;
@@ -213,7 +228,7 @@ div:nth-child(4){
 form{
   -webkit-text-size-adjust: 100%;
   font-family: Montserrat, sans-serif;
-  color: #1a1b1f;
+  color: #fcfcfc;
   font-size: 16px;
   line-height: 28px;
   font-weight: 400;
@@ -229,7 +244,7 @@ form{
 label{
   -webkit-text-size-adjust: 100%;
   font-family: Montserrat, sans-serif;
-  color: #1a1b1f;
+  color: #fcfcfc;
   -webkit-box-direction: normal;
   text-align: center;
   box-sizing: border-box;
@@ -245,7 +260,7 @@ label{
  div.product-detail-cta-wrap{
   -webkit-text-size-adjust: 100%;
   font-family: Montserrat, sans-serif;
-  color: #1a1b1f;
+  color: #000000;
   font-size: 16px;
   line-height: 28px;
   font-weight: 400;
@@ -292,7 +307,7 @@ label{
   appearance: none;
   padding: 12px 25px;
 
-  background-color: #1a1b1f;
+  background-color: #fcfcfc;
   transition: background-color 400ms ease, opacity 400ms ease, color 400ms ease;
   color: #fff;
   font-size: 12px;

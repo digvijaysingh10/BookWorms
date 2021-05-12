@@ -1,8 +1,8 @@
-<div class="col-md-12 mx-auto bookDetail">
+<div>
     <nb-card *ngIf="novelData">
-        <div class="row">
+        <div class="row bookDetail">
             <div class="col-md-6" >
-                <img [src] ="url+novelData.avatar" class="img-fluid"  alt="" style="width: 460px">
+                <img id="avatar" [src] ="url+novelData.avatar"   alt="">
             </div>
 
             <div class="col-md-6 product-details-wrap">
@@ -11,12 +11,9 @@
                     <h1 class="product-detail-name">{{novelData.title}}</h1>
                     <div class="product-detail-price">{{novelData.price | currency:'INR'}}</div>
                     <div class="paragraph-light">{{novelData.desc}}</div>
-
-
-
                   </div>
 
-                  <div class="divider cc-dark-divider"></div>
+                  <div class="divider cc-white-divider"></div>
 
                   <div class="product-informations">
                     <ul role="list" class="w-list-unstyled">
