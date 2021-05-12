@@ -1,9 +1,5 @@
-<div class="row mt-5">
-    <div class="col-md-4">
 
-    </div>
-
-    <div class="col-md-8">
+    <div class="flex-container">
         <nb-card>
             <nb-card-header>
               Exchange Your Novels
@@ -12,10 +8,10 @@
               <nb-list-item *ngFor="let novel of novelList">
                 <div class="card-body">
                   <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-5">
                       <img [src]="url+novel.avatar" class="img-fluid" alt="">
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-5">
                       <h3>{{novel.title}}</h3>
                       <h6 class="text-muted">{{novel.genre}}</h6>
                       <button [routerLink]="['/app/noveldetails', novel._id]" routerLinkActive="router-link-active" nbButton class="mt-4">{{novel.price | currency:'INR'}}</button>
@@ -26,4 +22,4 @@
             </nb-list>
           </nb-card>
     </div>
-</div>
+
