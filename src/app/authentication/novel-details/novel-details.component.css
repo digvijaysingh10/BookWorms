@@ -6,8 +6,15 @@ div.bookDetail{
 #avatar{
   justify-content: space-between;
   align-items: center;
-  width: 805px;
-  height: 800px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  height: 550px;
+  margin-top: 55px;
+  margin-bottom: 55px;
+  /* width: 805px;
+  height: 800px; */
 }
 
 
@@ -15,6 +22,7 @@ div.product-details-wrap{
   background: rgba(4, 4, 4, 0.7);
   color: #fff;
   border-top: 5px solid #1bbd36;
+  margin-right: 0px;
 
 
 }
