@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { NbToastrService } from '@nebular/theme';
 import { app_config } from 'src/config';
 import Swal from 'sweetalert2';
 import { UserService } from '../services/user.service';
@@ -7,15 +8,18 @@ import { UserService } from '../services/user.service';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
+  styleUrls: ['./profile.component.css'],
 })
 export class ProfileComponent implements OnInit {
-
   url = app_config.api_url + '/';
   currentUser: any;
   updateForm;
   formReady = false;
-  constructor(private userService: UserService, private fb: FormBuilder) {}
+  constructor(
+    private userService: UserService,
+    private fb: FormBuilder,
+    private toastr: NbToastrService
+  ) {}
 
   ngOnInit(): void {
     this.currentUser = this.userService.currentUser;
@@ -57,11 +61,7 @@ export class ProfileComponent implements OnInit {
       .subscribe((data) => {
         this.userService.refreshUser();
         this.currentUser = this.userService.currentUser;
-        Swal.fire({
-          icon: 'success',
-          title: 'Success!',
-          text: 'Profile updated.',
-        });
+        this.toastr.success('Profile Updated', 'Success!');
       });
   }
 }

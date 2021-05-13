@@ -57,6 +57,7 @@ const routes: Routes = [
       { path: 'managenovel', component: ManageNovelsComponent },
       { path: 'chat', component: ChatComponent },
       { path: 'checkout', component: CheckoutComponent },
+      { path: 'profile', component: ProfileComponent },
     ],
   },
   {

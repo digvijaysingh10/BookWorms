@@ -9,6 +9,7 @@ import {
   NbLayoutModule,
   NbSidebarModule,
   NbMenuModule,
+  NbToastrModule,
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { LayoutComponent as AdminLayout } from './admin/layout/layout.component';
@@ -52,7 +53,6 @@ import { ChatComponent } from './chat/chat.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { ProfileComponent } from './profile/profile.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -76,7 +76,6 @@ import { ProfileComponent } from './profile/profile.component';
     ChatComponent,
     ContactUsComponent,
     ProfileComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -101,6 +100,7 @@ import { ProfileComponent } from './profile/profile.component';
     MatCheckboxModule,
     MatTabsModule,
     NbMenuModule.forRoot(),
+    NbToastrModule.forRoot(),
   ],
   providers: [
     {
