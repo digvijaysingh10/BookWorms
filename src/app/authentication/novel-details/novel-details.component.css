@@ -11,6 +11,11 @@ div.bookDetail{
   flex-direction: row;
 }
 
+.image{
+    background: rgba(219, 217, 217, 0.8);
+  }
+
+
 #avatar{
   justify-content: space-between;
   align-items: center;
@@ -21,6 +26,7 @@ div.bookDetail{
   height: 550px;
   margin-top: 55px;
   margin-bottom: 55px;
+
   /* width: 805px;
   height: 800px; */
 }
