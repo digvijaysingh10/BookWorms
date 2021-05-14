@@ -4,15 +4,27 @@
     <!-- always visible -->
     <nb-actions size="medium">
       <nb-action class="mt-4" nbTooltip="Home" nbTooltipIcon="home-outline" [routerLink]="['/home']" routerLinkActive="router-link-active" >
-          <h1 class="site-title">{{title}}</h1>
+          <h1 class="site-title"><Span style="color: rgb(56, 212, 56);">BOOK</Span>WORMS</h1>
       </nb-action>
       <nb-action nbTooltip="Home" nbTooltipIcon="home-outline" [routerLink]="['/home']">Home</nb-action>
+    </nb-actions>
+
+      <nb-select placeholder="Novels">
+        <nb-option value="0" [routerLink]="['/app/exchangenovel']" routerLinkActive="router-link-active" >Exchange Novels</nb-option>
+        <nb-option value="1" [routerLink]="['/app/buynovel']" routerLinkActive="router-link-active" >Purchase Novels</nb-option>
+        <nb-option value="2" [routerLink]="['/app/rentnovel']" routerLinkActive="router-link-active" >Rent Novels</nb-option>
+      </nb-select>
+
+
+      <nb-actions size="medium">
+
       <nb-action nbTooltip="Home" nbTooltipIcon="home-outline" [routerLink]="['/app/signup']">About Us</nb-action>
-      <nb-action nbTooltip="Home" nbTooltipIcon="home-outline" [routerLink]="['/app/rentnovel']">Rent Novels</nb-action>
+      <!-- <nb-action nbTooltip="Home" nbTooltipIcon="home-outline" [routerLink]="['/app/rentnovel']">Rent Novels</nb-action>
       <nb-action nbTooltip="Home" nbTooltipIcon="home-outline" [routerLink]="['/app/buynovel']">Purchase Novels</nb-action>
-      <nb-action nbTooltip="Home" nbTooltipIcon="home-outline" [routerLink]="['/app/exchangenovel']">Exchange Novels</nb-action>
+      <nb-action nbTooltip="Home" nbTooltipIcon="home-outline" [routerLink]="['/app/exchangenovel']">Exchange Novels</nb-action> -->
       <nb-action nbTooltip="Home" nbTooltipIcon="home-outline" [routerLink]="['/app/contactus']">Contact Us</nb-action>
     </nb-actions>
+
 
     <!-- visible when not logged in -->
     <nb-actions size="medium"  *ngIf="!userService.loggedin">
