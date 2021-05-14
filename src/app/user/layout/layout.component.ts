@@ -18,18 +18,29 @@ export class LayoutComponent implements OnInit {
   sidebarItems = [
     {
       title: 'Profile',
-      icon: 'person-outline',
+      icon: 'person',
       link: 'profile',
     },
     {
       title: 'Add Novels',
-      icon: 'book-open-outline',
+      icon: 'book',
       link: 'addnovel',
     },
     {
       title: 'Manage Novels',
-      icon: 'person-outline',
+      icon: 'book-open',
       link: 'managenovel',
     },
+    {
+      title: 'Request Novels',
+      icon: 'file-add',
+      link: 'requestnovels',
+    },
+    {
+      title: 'Chat',
+      icon: 'message-square',
+      link:'chat',
+    },
+
   ];
 }

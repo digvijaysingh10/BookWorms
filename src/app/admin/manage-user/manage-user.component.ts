@@ -44,7 +44,7 @@ export class ManageUserComponent implements OnInit {
           console.log(res);
           Swal.fire({
             title: 'Deleted!',
-            text: 'Your blog has been deleted.',
+            text: 'profile deleted.',
             icon: 'info',
           }).then(() => {
             this.fetchUsers();

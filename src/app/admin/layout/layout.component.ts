@@ -15,19 +15,20 @@ export class LayoutComponent implements OnInit {
   sidebarItems = [
     {
       title: 'Profile',
-      icon: 'person-outline',
+      icon: 'person',
       link: 'profile',
     },
     {
       title: 'Manage Users',
-      icon: 'person-outline',
+      icon: 'people',
       link: 'manageuser',
     },
     {
       title: 'View Dashboard',
-      icon: 'person-outline',
+      icon: 'eye',
       link: 'dashboard',
     },
+
   ];
 
   constructor(public userService: UserService) {}

@@ -16,6 +16,7 @@ import { AdminGuard } from './guards/admin.guard';
 import { LoginGuard } from './guards/login.guard';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
+import { RequestNovelsComponent } from './request-novels/request-novels.component';
 import { AddNovelComponent } from './user/add-novel/add-novel.component';
 import { CheckoutComponent } from './user/checkout/checkout.component';
 import { LayoutComponent as UserLayout } from './user/layout/layout.component';
@@ -58,6 +59,7 @@ const routes: Routes = [
       { path: 'chat', component: ChatComponent },
       { path: 'checkout', component: CheckoutComponent },
       { path: 'profile', component: ProfileComponent },
+      { path: 'requestnovels', component: RequestNovelsComponent },
     ],
   },
   {
