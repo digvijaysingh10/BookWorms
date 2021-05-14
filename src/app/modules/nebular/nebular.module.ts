@@ -11,6 +11,7 @@ import {
   NbSearchModule,
   NbSelectModule,
   NbSidebarModule,
+  NbTabsetModule,
   NbUserModule,
 } from '@nebular/theme';
 
@@ -30,6 +31,7 @@ import {
     NbListModule,
     NbChatModule,
     NbSelectModule,
+    NbTabsetModule,
   ],
   imports: [CommonModule],
 })
