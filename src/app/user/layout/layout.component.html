@@ -9,10 +9,10 @@
       <nb-action  nbTooltip="Home" nbTooltipIcon="home-outline" [routerLink]="['/home']">Home</nb-action>
     </nb-actions>
 
-      <nb-select placeholder="Novels">
-        <nb-option value="0" [routerLink]="['/app/exchangenovel']" routerLinkActive="router-link-active" >Exchange Novels</nb-option>
-        <nb-option value="1" [routerLink]="['/app/buynovel']" routerLinkActive="router-link-active" >Purchase Novels</nb-option>
-        <nb-option value="2" [routerLink]="['/app/rentnovel']" routerLinkActive="router-link-active" >Rent Novels</nb-option>
+      <nb-select placeholder="Novels"  >
+        <nb-option  [routerLink]="['/app/exchangenovel']" routerLinkActive="router-link-active" >Exchange Novels</nb-option>
+        <nb-option  [routerLink]="['/app/buynovel']" routerLinkActive="router-link-active" >Purchase Novels</nb-option>
+        <nb-option  [routerLink]="['/app/rentnovel']" routerLinkActive="router-link-active" >Rent Novels</nb-option>
       </nb-select>
 
 

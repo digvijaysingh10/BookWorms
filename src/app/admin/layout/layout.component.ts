@@ -11,6 +11,7 @@ export class LayoutComponent implements OnInit {
   url = app_config.api_url + '/';
   title = app_config.title;
 
+
   sidebarItems = [
     {
       title: 'Profile',

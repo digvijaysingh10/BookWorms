@@ -11,6 +11,7 @@ import { app_config } from 'src/config';
 export class LayoutComponent implements OnInit {
   title = app_config.title;
   url = app_config.api_url + '/';
+
   constructor(public userService: UserService) {}
 
   ngOnInit(): void {}
