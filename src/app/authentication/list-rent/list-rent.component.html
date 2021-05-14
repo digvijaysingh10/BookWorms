@@ -45,8 +45,8 @@
 
     <div class="col-md-9 flex-container">
         <nb-card >
-            <nb-card-header>
-              Rent Your Novels
+            <nb-card-header id="pname">
+              Rent Novels
             </nb-card-header>
             <nb-list>
               <nb-list-item *ngFor="let novel of novelList">
@@ -56,8 +56,8 @@
                       <img [src]="url+novel.avatar" class="img-fluid" alt="">
                     </div>
                     <div class="col-md-8">
-                      <h3>{{novel.title}}</h3>
-                      <h6 class="text-muted">{{novel.genre}}</h6>
+                      <h3 id="ft">{{novel.title}}</h3>
+                      <h6 id="ft" class="text-muted">{{novel.genre}}</h6>
                       <button [routerLink]="['/app/noveldetails', novel._id]" routerLinkActive="router-link-active"  nbButton class="mt-4">{{novel.price | currency:'INR'}}</button>
                     </div>
                   </div>
