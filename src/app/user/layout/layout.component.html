@@ -3,13 +3,8 @@
 
     <!-- always visible -->
     <nb-actions size="medium">
-<<<<<<< HEAD
       <nb-action nbTooltip="Home" nbTooltipIcon="home-outline" [routerLink]="['/home']" routerLinkActive="router-link-active" >
           <h1 class="site-title">{{title}}</h1>
-=======
-      <nb-action class="mt-4" nbTooltip="Home" nbTooltipIcon="home-outline" [routerLink]="['/home']" routerLinkActive="router-link-active" >
-          <h1 class="site-title"><Span style="color: rgb(56, 212, 56);">BOOK</Span>WORMS</h1>
->>>>>>> cc7f74a0fe927b28923eeb75440a8349f08f56fd
       </nb-action>
       <nb-action  nbTooltip="Home" nbTooltipIcon="home-outline" [routerLink]="['/home']">Home</nb-action>
     </nb-actions>
@@ -36,31 +31,18 @@
     </nb-actions>
 
     <!-- visible when logged in -->
-<<<<<<< HEAD
     <nb-user *ngIf="userService.loggedin" style="margin-left: auto;"
-=======
-    <nb-actions size="medium" *ngIf="userService.loggedin">
-      <nb-action nbTooltip="Home" nbTooltipIcon="home-outline" [routerLink]="[userService.currentUser.isadmin?'/admin':'/user']" >{{userService.currentUser.isadmin?'Admin Dashboard': 'User Dashboard'}}</nb-action>
-    </nb-actions>
-    <nb-user *ngIf="userService.loggedin"
->>>>>>> cc7f74a0fe927b28923eeb75440a8349f08f56fd
        size="large"
        [name]="userService.currentUser.fullname"
        [title]="userService.currentUser.email"
        [picture]="url+userService.currentUser.avatar"
        [routerLink]="[userService.currentUser.isadmin?'/admin':'/user']">
     </nb-user>
-<<<<<<< HEAD
     <nb-actions size="medium" *ngIf="userService.loggedin" >
       <!-- <nb-action nbTooltip="Home" nbTooltipIcon="home-outline" [routerLink]="[userService.currentUser.isadmin?'/admin':'/user']" >{{userService.currentUser.isadmin?'Admin Dashboard': 'User Dashboard'}}</nb-action> -->
       <nb-action nbTooltip="Home" nbTooltipIcon="home-outline" (click)="userService.logout()">Logout</nb-action>
     </nb-actions>
     
-=======
-    <nb-actions size="medium" *ngIf="userService.loggedin">
-      <nb-action nbTooltip="Home" nbTooltipIcon="home-outline" (click)="userService.logout()">Logout</nb-action>
-    </nb-actions>
->>>>>>> cc7f74a0fe927b28923eeb75440a8349f08f56fd
 
 </nb-layout-header>
 

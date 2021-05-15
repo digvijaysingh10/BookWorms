@@ -3,7 +3,6 @@ body {
   background: url("assets/pattern.jpg")
 }
 
-<<<<<<< HEAD
 html,
 body {
   height: 100%;
@@ -12,10 +11,6 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
-=======
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background: url("assets/pattern.jpg")  }
->>>>>>> cc7f74a0fe927b28923eeb75440a8349f08f56fd
 
 .register {
   background: url("assets/pattern.jpg") no-repeat center;
