@@ -41,7 +41,7 @@ router.get('/getbynoveltitle/:nt', (req, res) => {
 
 router.get('/getall', (req, res) => {
 
-    Model.find({})
+    Model.find({}).populate('user')
         .then(data => {
             console.log('novel data fetched');
             res.status(200).json(data);
@@ -54,7 +54,7 @@ router.get('/getall', (req, res) => {
 
 router.get('/getrent', (req, res) => {
 
-    Model.find({ rentable: true })
+    Model.find({ rentable: true }).populate('user')
         .then(data => {
             console.log('novel data fetched');
             res.status(200).json(data);
@@ -67,7 +67,7 @@ router.get('/getrent', (req, res) => {
 
 router.get('/getsell', (req, res) => {
 
-    Model.find({ soldable: true })
+    Model.find({ soldable: true }).populate('user')
         .then(data => {
             console.log('novel data fetched');
             res.status(200).json(data);
@@ -80,7 +80,7 @@ router.get('/getsell', (req, res) => {
 
 router.get('/getexchange', (req, res) => {
 
-    Model.find({ exchangable: true })
+    Model.find({ exchangable: true }).populate('user')
         .then(data => {
             console.log('novel data fetched');
             res.status(200).json(data);
@@ -106,15 +106,15 @@ router.delete('/delete/:id', (req, res) => {
 
 router.get('/getbyuser/:user', (req, res) => {
 
-  Model.find({ user: req.params.user })
-      .populate('user').then(data => {
-          console.log('novel fetched by user');
-          res.status(200).json(data);
-      })
-      .catch(err => {
-          console.error(err);
-          res.status(500).json(err);
-      })
+    Model.find({ user: req.params.user })
+        .populate('user').then(data => {
+            console.log('novel fetched by user');
+            res.status(200).json(data);
+        })
+        .catch(err => {
+            console.error(err);
+            res.status(500).json(err);
+        })
 })
 
 

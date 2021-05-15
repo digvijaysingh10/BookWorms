@@ -1,8 +1,10 @@
-<div>
-    <nb-card *ngIf="novelData" class="col-md-10" id="card">
-        <div class="row bookDetail">
-            <div class="col-md-7 image" >
-                <img id="avatar" [src] ="url+novelData.avatar"   alt="">
+<div class="col-md-10 mx-auto">
+    <nb-card *ngIf="novelData" class="bg-light">
+        <div class="row ">
+            <div class="col-md-7 mx-auto my-auto">
+                <div class="">
+                  <img class="img-fluid" [src] ="url+novelData.avatar" alt="">
+                </div>
             </div>
 
             <div class="col-md-5 product-details-wrap">
