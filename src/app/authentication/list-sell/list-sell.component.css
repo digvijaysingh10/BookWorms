@@ -59,3 +59,7 @@
 .text-muted{
   position: absolute;
 }
+
+.mat-slider{
+  width: 202px;
+}
