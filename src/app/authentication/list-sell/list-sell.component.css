@@ -26,10 +26,31 @@
   position: absolute;
   bottom: 2.5rem;
   right: 1.5rem;
+  color: rgb(34, 33, 33);
 }
 
 .avatar {
   position: absolute;
   bottom: 1.5rem;
   left: 1.5rem;
+}
+
+#cardheader{
+  display: inline-block;
+  text-align: center;
+  text-transform: uppercase;
+  word-spacing: 2mm;
+  font-size: 46px;
+  line-height: 28px;
+  font-weight: 400;
+  margin-top: 16px;
+  color: rgb(99, 100, 102);
+}
+
+.nt{
+  font-size: 23px;
+}
+
+.text-muted{
+  position: absolute;
 }

@@ -1,25 +1,37 @@
 <div class="row mt-5">
   <div class="col-md-11 mx-auto">
 
-    <nb-card>
+    <!-- <nb-card>
       <nb-card-body>
 
       </nb-card-body>
-    </nb-card>
+    </nb-card> -->
 
     <nb-card class="mt-5">
+      <nb-card-header id="cardheader">
+        Purchase Novels
+      </nb-card-header>
+
       <nb-card-body>
 
         <div class="row">
           <div class="col-md-3 mt-5" *ngFor="let novel of novelList">
-            
+
             <div class="card">
-              <div class="card-img" [ngStyle]="{backgroundImage: 'url('+url+novel.avatar+')'}"></div>
-              <div class="card-body">
-                <h4>{{novel.title}}</h4>
+              <div class="card-img" [routerLink]="['/app/noveldetails', novel._id]"
+                routerLinkActive="router-link-active"
+                [ngStyle]="{backgroundImage: 'url('+url+novel.avatar+')'}">
+              </div>
+
+              <div class="card-body"
+                [routerLink]="['/app/noveldetails', novel._id]"
+                routerLinkActive="router-link-active">
+
+                <h4 class="nt">{{novel.title}}</h4>
+
                 <p class="text-muted">{{novel.genre}}</p>
 
-                
+
                 <div class="avatar">
                   <nb-user size="medium"
                           [name]="novel.user.fullname"
@@ -28,9 +40,11 @@
                           >
                   </nb-user>
                 </div>
-               
+
                 <p class="price">{{novel.price | currency:'INR'}}</p>
-                
+                <!-- <a [routerLink]="['/app/noveldetails']" routerLinkActive="router-link-active"
+                  class="price">{{novel.price | currency:'INR'}}
+                </a> -->
 
               </div>
             </div>
@@ -39,5 +53,6 @@
 
       </nb-card-body>
     </nb-card>
-    
+
   </div>
+</div>
