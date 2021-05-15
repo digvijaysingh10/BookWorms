@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NbToastrService } from '@nebular/theme';
 
 @Component({
   selector: 'app-request-novels',
@@ -7,7 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RequestNovelsComponent implements OnInit {
 
-  constructor() { }
+  enteredValue ='';
+  newPost = '';
+
+  onAddPost(){
+
+    this.newPost = this.enteredValue
+    // this.toastr.success('Post Added', 'Successfully!');
+  }
+
+  constructor(private toastr: NbToastrService) {}
 
   ngOnInit(): void {
   }

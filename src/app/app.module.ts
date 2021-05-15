@@ -52,7 +52,7 @@ import { NovelDetailsComponent } from './authentication/novel-details/novel-deta
 import { ChatComponent } from './chat/chat.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { ProfileComponent } from './profile/profile.component';
-import { RequestNovelsComponent } from './request-novels/request-novels.component';
+import { RequestNovelsComponent } from './user/request-novels/request-novels.component';
 
 @NgModule({
   declarations: [
