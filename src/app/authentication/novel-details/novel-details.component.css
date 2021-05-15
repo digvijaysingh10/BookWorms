@@ -1,4 +1,4 @@
-#card{
+#card {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -6,17 +6,17 @@
   margin-right: auto;
 }
 
-div.bookDetail{
+div.bookDetail {
   display: flex;
   flex-direction: row;
 }
 
-.image{
-    background: rgba(219, 217, 217, 0.8);
-  }
+.image {
+  background: rgba(219, 217, 217, 0.8);
+  margin: 100px auto;
+}
 
-
-#avatar{
+#avatar {
   justify-content: space-between;
   align-items: center;
   display: block;
@@ -26,36 +26,29 @@ div.bookDetail{
   height: 550px;
   margin-top: 55px;
   margin-bottom: 55px;
-
-  /* width: 805px;
-  height: 800px; */
 }
 
-
-div.product-details-wrap{
+div.product-details-wrap {
   background: rgba(4, 4, 4, 0.7);
   color: #fff;
   border-top: 5px solid #1bbd36;
   margin-right: 0px;
-
-
 }
-h1{
+h1 {
   -webkit-text-size-adjust: 100%;
   font-family: Montserrat, sans-serif;
   color: #fcfcfc;
   -webkit-box-direction: normal;
   text-align: left;
   box-sizing: border-box;
-  margin: .67em 0;
+  margin: 0.67em 0;
   margin-top: 20px;
   font-weight: 400;
   margin-bottom: 10px;
   font-size: 36px;
   line-height: 52px;
-
 }
-div.product-detail-price{
+div.product-detail-price {
   -webkit-text-size-adjust: 100%;
   font-family: Montserrat, sans-serif;
   color: #fcfcfc;
@@ -67,10 +60,9 @@ div.product-detail-price{
   opacity: 0.6;
   font-size: 30px;
   line-height: 52px;
-
 }
 
-div.paragraph-light{
+div.paragraph-light {
   -webkit-text-size-adjust: 100%;
   font-family: Montserrat, sans-serif;
   color: #fcfcfc;
@@ -87,10 +79,9 @@ div.paragraph-light{
   margin-bottom: 15px;
   padding: auto;
   justify-content: space-around;
-
 }
 
-div.divider.cc-white-divider{
+div.divider.cc-white-divider {
   -webkit-text-size-adjust: 100%;
   font-family: Montserrat, sans-serif;
   color: #ffffff;
@@ -105,9 +96,8 @@ div.divider.cc-white-divider{
   justify-content: space-around;
   margin-right: 10px;
   padding: auto;
-
 }
-div.product-informations{
+div.product-informations {
   -webkit-text-size-adjust: 100%;
   font-family: Montserrat, sans-serif;
   color: #fcfcfc;
@@ -120,10 +110,9 @@ div.product-informations{
   margin-top: 25px;
   margin-bottom: 25px;
   justify-content: space-around;
-
 }
 
-ul{
+ul {
   -webkit-text-size-adjust: 100%;
   font-family: Montserrat, sans-serif;
   color: #fcfcfc;
@@ -138,11 +127,9 @@ ul{
   padding-left: 0;
   list-style: none;
   justify-content: space-around;
-
-
 }
 
-li:nth-child(1){
+li:nth-child(1) {
   -webkit-text-size-adjust: 100%;
   font-family: Montserrat, sans-serif;
   color: #fcfcfc;
@@ -161,9 +148,8 @@ li:nth-child(1){
 
   margin-right: 10px;
   padding: auto;
-
 }
-li:nth-child(2){
+li:nth-child(2) {
   -webkit-text-size-adjust: 100%;
   font-family: Montserrat, sans-serif;
   color: #fcfcfc;
@@ -181,10 +167,9 @@ li:nth-child(2){
   justify-content: space-between;
   margin-right: 10px;
   padding: auto;
-
 }
 
-div.paragraph-light2{
+div.paragraph-light2 {
   -webkit-text-size-adjust: 100%;
   font-family: Montserrat, sans-serif;
   color: #fcfcfc;
@@ -200,7 +185,7 @@ div.paragraph-light2{
   margin-right: 10px;
 }
 
-div.product-detail-measurement{
+div.product-detail-measurement {
   -webkit-text-size-adjust: 100%;
   font-family: Montserrat, sans-serif;
   color: #fcfcfc;
@@ -215,7 +200,7 @@ div.product-detail-measurement{
   align-items: center;
 }
 
-div.product-detail-unit-text{
+div.product-detail-unit-text {
   -webkit-text-size-adjust: 100%;
   font-family: Montserrat, sans-serif;
   color: #fcfcfc;
@@ -229,11 +214,11 @@ div.product-detail-unit-text{
   text-transform: uppercase;
 }
 
-div.divider{
+div.divider {
   margin-right: 10px;
 }
 
-div:nth-child(4){
+div:nth-child(4) {
   -webkit-text-size-adjust: 100%;
   font-family: Montserrat, sans-serif;
   color: #fcfcfc;
@@ -247,7 +232,7 @@ div:nth-child(4){
   background-color: #eee;
 }
 
-form{
+form {
   -webkit-text-size-adjust: 100%;
   font-family: Montserrat, sans-serif;
   color: #fcfcfc;
@@ -263,7 +248,7 @@ form{
   /* margin-left: 10px; */
 }
 
-label{
+label {
   -webkit-text-size-adjust: 100%;
   font-family: Montserrat, sans-serif;
   color: #fcfcfc;
@@ -279,7 +264,7 @@ label{
   text-transform: uppercase;
 }
 
- div.product-detail-cta-wrap{
+div.product-detail-cta-wrap {
   -webkit-text-size-adjust: 100%;
   font-family: Montserrat, sans-serif;
   color: #000000;
@@ -292,12 +277,12 @@ label{
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   flex-direction: column;
-  -webkit-box-pack: left;;
+  -webkit-box-pack: left;
   justify-content: center;
   /* margin-left: 10px; */
 }
 
-#quantity{
+#quantity {
   box-sizing: border-box;
   color: inherit;
   font: inherit;
@@ -318,7 +303,7 @@ label{
   text-align: center;
 }
 
-#hero{
+#hero {
   /*
   margin-right: 20px;
 
@@ -363,7 +348,7 @@ label{
   margin-right: 10px;
 }
 
-#hero:hover{
+#hero:hover {
   background: #1bbd36;
   color: #fff;
   text-decoration: none;

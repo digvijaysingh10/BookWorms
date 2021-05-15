@@ -2,50 +2,33 @@
     <nb-layout-header fixed>
 
         <!-- always visible -->
-    <nb-actions size="medium">
-      <nb-action class="mt-4" nbTooltip="Home" nbTooltipIcon="home-outline" [routerLink]="['/home']" routerLinkActive="router-link-active" >
-          <h1 class="site-title"><Span style="color: rgb(56, 212, 56);">BOOK</Span>WORMS</h1>
-      </nb-action>
-      <nb-action nbTooltip="Home" nbTooltipIcon="home-outline" [routerLink]="['/home']">Home</nb-action>
-    </nb-actions>
-
-      <nb-select placeholder="Novels" >
-        <nb-option  [routerLink]="['/app/exchangenovel']" routerLinkActive="router-link-active" >Exchange Novels</nb-option>
-        <nb-option  [routerLink]="['/app/buynovel']" routerLinkActive="router-link-active" >Purchase Novels</nb-option>
-        <nb-option  [routerLink]="['/app/rentnovel']" routerLinkActive="router-link-active" >Rent Novels</nb-option>
-      </nb-select>
-
-
-      <nb-actions size="medium">
-
-      <nb-action nbTooltip="Home" nbTooltipIcon="home-outline" [routerLink]="['/app/signup']">About Us</nb-action>
-      <!-- <nb-action nbTooltip="Home" nbTooltipIcon="home-outline" [routerLink]="['/app/rentnovel']">Rent Novels</nb-action>
-      <nb-action nbTooltip="Home" nbTooltipIcon="home-outline" [routerLink]="['/app/buynovel']">Purchase Novels</nb-action>
-      <nb-action nbTooltip="Home" nbTooltipIcon="home-outline" [routerLink]="['/app/exchangenovel']">Exchange Novels</nb-action> -->
-      <nb-action nbTooltip="Home" nbTooltipIcon="home-outline" [routerLink]="['/app/contactus']">Contact Us</nb-action>
-    </nb-actions>
+        <nb-actions size="medium">
+          <nb-action nbTooltip="Home" nbTooltipIcon="home-outline" [routerLink]="['/home']" routerLinkActive="router-link-active" >
+              <h1 class="site-title">{{title}}</h1>
+          </nb-action>
+          <nb-action nbTooltip="Home" nbTooltipIcon="home-outline" [routerLink]="['/home']">Home</nb-action>
+          <nb-action nbTooltip="Home" nbTooltipIcon="home-outline" [routerLink]="['/app/signup']">About Us</nb-action>
+          <nb-action nbTooltip="Home" nbTooltipIcon="home-outline" [routerLink]="['/app/contactus']">Contact Us</nb-action>
+        </nb-actions>
 
         <!-- visible when not logged in -->
-        <nb-actions size="medium"  *ngIf="!userService.loggedin">
+        <nb-actions size="medium"  *ngIf="!userService.loggedin" style="margin-left: auto;">
           <nb-action nbTooltip="Home" nbTooltipIcon="home-outline" [routerLink]="['/app/signup']">Register</nb-action>
           <nb-action nbTooltip="Home" nbTooltipIcon="home-outline" [routerLink]="['/app/signin']">Login</nb-action>
         </nb-actions>
 
         <!-- visible when logged in -->
-    <nb-actions size="medium" *ngIf="userService.loggedin">
-      <nb-action nbTooltip="Home" nbTooltipIcon="home-outline" [routerLink]="[userService.currentUser.isadmin?'/admin':'/user']" >{{userService.currentUser.isadmin?'Admin Dashboard': 'User Dashboard'}}</nb-action>
-    </nb-actions>
-    <nb-user *ngIf="userService.loggedin"
-       size="large"
-       [name]="userService.currentUser.fullname"
-       [title]="userService.currentUser.email"
-       [picture]="url+userService.currentUser.avatar"
-       [routerLink]="[userService.currentUser.isadmin?'/admin':'/user']">
-    </nb-user>
-    <nb-actions size="medium" *ngIf="userService.loggedin">
-      <nb-action nbTooltip="Home" nbTooltipIcon="home-outline" (click)="userService.logout()">Logout</nb-action>
-    </nb-actions>
-
+        <nb-actions size="medium" *ngIf="userService.loggedin" style="margin-left: auto;">
+          <nb-action nbTooltip="Home" nbTooltipIcon="home-outline" [routerLink]="[userService.currentUser.isadmin?'/admin':'/user']" >{{userService.currentUser.isadmin?'Admin Dashboard': 'User Dashboard'}}</nb-action>
+          <nb-action nbTooltip="Home" nbTooltipIcon="home-outline" (click)="userService.logout()">Logout</nb-action>
+        </nb-actions>
+        <nb-user *ngIf="userService.loggedin"
+           size="large"
+           [name]="userService.currentUser.fullname"
+           [title]="userService.currentUser.email"
+           [picture]="url+userService.currentUser.avatar"
+           [routerLink]="[userService.currentUser.isadmin?'/admin':'/user']">
+        </nb-user>
 
     </nb-layout-header>
     <nb-sidebar>
