@@ -53,7 +53,7 @@ const routes: Routes = [
     component: UserLayout,
     canActivate: [LoginGuard],
     children: [
-      { path: '', component: AddNovelComponent },
+      { path: '', component: RequestNovelsComponent },
       { path: 'addnovel', component: AddNovelComponent },
       { path: 'managenovel', component: ManageNovelsComponent },
       { path: 'chat', component: ChatComponent },
