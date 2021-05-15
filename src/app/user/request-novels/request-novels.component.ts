@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 import { NbToastrService } from '@nebular/theme';
 
 @Component({
@@ -8,12 +8,17 @@ import { NbToastrService } from '@nebular/theme';
 })
 export class RequestNovelsComponent implements OnInit {
 
-  enteredValue ='';
-  newPost = '';
+  enteredTitle ='';
+  enteredContent = '';
+
+  posts = [];
 
   onAddPost(){
-
-    this.newPost = this.enteredValue
+    const post = {
+      title: this.enteredTitle,
+      content: this.enteredContent,
+    }
+    this.posts.push(post)
     // this.toastr.success('Post Added', 'Successfully!');
   }
 
