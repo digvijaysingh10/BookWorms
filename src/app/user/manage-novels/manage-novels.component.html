@@ -1,4 +1,4 @@
-<mat-tab-group mat-stretch-tabs class="example-stretched-tabs mat-elevation-z4">
+<mat-tab-group  mat-stretch-tabs class="example-stretched-tabs mat-elevation-z4">
   <mat-tab label="Rent Novels">
     <nb-accordion *ngIf="rentNovels">
       <nb-accordion-item *ngFor="let novel of rentNovels">
@@ -13,7 +13,7 @@
           <hr>
           <div class="col-md-4">
             <img [src]="url+novel.avatar" class="img-fluid" alt="">
-        </div>
+          </div>
         <hr>
 
 
@@ -42,6 +42,10 @@
           <hr>
           <p>{{novel.genre}}</p>
 
+          <div class="col-md-4">
+            <img [src]="url+novel.avatar" class="img-fluid" alt="">
+        </div>
+
           <div class="row mt-5">
               <div class="col text-center">
                   <button class="col-10" nbButton (click)="updateNovel(novel)">Edit</button>
@@ -66,6 +70,10 @@
           <hr>
           <p>{{novel.genre}}</p>
 
+          <div class="col-md-4">
+            <img [src]="url+novel.avatar" class="img-fluid" alt="">
+          </div>
+
 
 
           <div class="row mt-5">
@@ -84,7 +92,7 @@
 </mat-tab-group>
 
 
-<nb-card *ngIf="showUpdateForm" style="margin-top:10%;border-radius: 0.5rem; box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12);">
+<nb-card  *ngIf="showUpdateForm" style="margin-top:10%;border-radius: 0.5rem; box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12);">
   <nb-card-body style="padding: 2rem;">
       <form [formGroup]="novelform" (ngSubmit)="submitNovelForm()">
           <h3 class="text-center">Upload Novel</h3>

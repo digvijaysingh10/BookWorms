@@ -9,7 +9,9 @@ import {
   NbIconModule,
   NbListModule,
   NbSearchModule,
+  NbSelectModule,
   NbSidebarModule,
+  NbTabsetModule,
   NbUserModule,
 } from '@nebular/theme';
 
@@ -28,6 +30,8 @@ import {
     NbCardModule,
     NbListModule,
     NbChatModule,
+    NbSelectModule,
+    NbTabsetModule,
   ],
   imports: [CommonModule],
 })

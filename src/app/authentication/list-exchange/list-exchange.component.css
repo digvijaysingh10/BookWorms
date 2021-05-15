@@ -6,7 +6,8 @@
   /* margin: 10px; */
   /* padding: 100px; */
   font-size: 30px;
-  padding-left: 21rem;
+  /* padding-left: 21rem; */
+  padding-left: 12.5rem;
   padding-bottom: 5rem;
   padding-top: 7rem;
 }
@@ -24,4 +25,21 @@
 .img-fluid{
   max-width: 250px;
   height: 400px;
+}
+
+#pname{
+  font-family:  Montserrat, sans-serif;;
+  display: inline-block;
+  text-align: center;
+  text-transform: uppercase;
+  word-spacing: 2mm;
+  font-size: 46px;
+  line-height: 28px;
+  font-weight: 400;
+  margin-top: 16px;
+  color: rgb(99, 100, 102);
+}
+
+#ft{
+  font-family:  Montserrat, sans-serif;;
 }

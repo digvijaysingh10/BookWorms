@@ -52,6 +52,11 @@ import { NovelDetailsComponent } from './authentication/novel-details/novel-deta
 import { ChatComponent } from './chat/chat.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { ProfileComponent } from './profile/profile.component';
+import { RequestNovelsComponent } from './user/request-novels/request-novels.component';
+import{ MatCardModule } from '@angular/material/card';
+import{ MatButtonModule } from '@angular/material/button';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -76,6 +81,7 @@ import { ProfileComponent } from './profile/profile.component';
     ChatComponent,
     ContactUsComponent,
     ProfileComponent,
+    RequestNovelsComponent,
   ],
   imports: [
     BrowserModule,
@@ -90,7 +96,7 @@ import { ProfileComponent } from './profile/profile.component';
     SweetAlert2Module.forRoot(),
     MatFormFieldModule,
     MatInputModule,
-
+    MatButtonModule,
     NgsRevealModule,
     MatSelectModule,
     HttpClientModule,
@@ -99,6 +105,8 @@ import { ProfileComponent } from './profile/profile.component';
     SocialLoginModule,
     MatCheckboxModule,
     MatTabsModule,
+    MatCardModule,
+    MatExpansionModule,
     NbMenuModule.forRoot(),
     NbToastrModule.forRoot(),
   ],

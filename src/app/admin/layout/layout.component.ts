@@ -11,22 +11,24 @@ export class LayoutComponent implements OnInit {
   url = app_config.api_url + '/';
   title = app_config.title;
 
+
   sidebarItems = [
     {
       title: 'Profile',
-      icon: 'person-outline',
+      icon: 'person',
       link: 'profile',
     },
     {
       title: 'Manage Users',
-      icon: 'person-outline',
+      icon: 'people',
       link: 'manageuser',
     },
     {
       title: 'View Dashboard',
-      icon: 'person-outline',
+      icon: 'eye',
       link: 'dashboard',
     },
+
   ];
 
   constructor(public userService: UserService) {}
