@@ -1,70 +1,83 @@
+<div class="row mt-5">
+  <div class="col-md-2 search">
+    <nb-card style="position: sticky;top:0;">
+      <nb-card-body>
+        <h3 class="mt-3">Search</h3>
+        <mat-form-field class="w-100 mt-4" appearance="outline">
+          <mat-label>Search Novel</mat-label>
+          <input type="text" matInput>
+        </mat-form-field>
 
-  <div class="row">
-    <div class="col-md-3">
-      <nb-card style="position: sticky;top:0;">
-        <nb-card-body>
-          <h3 class="mt-3">Search</h3>
-          <mat-form-field class="w-100 mt-4" appearance="outline">
-            <mat-label>Search Novel</mat-label>
-            <input type="text" matInput>
-          </mat-form-field>
+        <mat-form-field class="w-100 mt-2" appearance="outline">
+          <mat-label>Search Author</mat-label>
+          <input type="text" matInput>
+        </mat-form-field>
 
-          <mat-form-field class="w-100 mt-2" appearance="outline">
-            <mat-label>Search Author</mat-label>
-            <input type="text" matInput>
-          </mat-form-field>
+        <mat-form-field class="w-100 mt-2" appearance="outline">
+          <mat-label>Search Uploader</mat-label>
+          <input type="text" matInput>
+        </mat-form-field>
 
-          <mat-form-field class="w-100 mt-2" appearance="outline">
-            <mat-label>Search Uploader</mat-label>
-            <input type="text" matInput>
-          </mat-form-field>
+        <hr>
+        <h3 class="mt-3">Filters</h3>
+        <mat-form-field class="w-100 mt-4" appearance="outline">
+          <mat-label>Genre</mat-label>
+          <mat-select>
+            <mat-option value="">Fantasy</mat-option>
+            <mat-option value="">Mystry</mat-option>
+            <mat-option value="">Romance</mat-option>
+            <mat-option value="">Sci-Fi</mat-option>
+          </mat-select>
+        </mat-form-field>
 
-          <hr>
-          <h3 class="mt-3">Filters</h3>
-          <mat-form-field class="w-100 mt-4" appearance="outline">
-            <mat-label>Genre</mat-label>
-            <mat-select>
-              <mat-option value="">Fantasy</mat-option>
-              <mat-option value="">Mystry</mat-option>
-              <mat-option value="">Romance</mat-option>
-              <mat-option value="">Sci-Fi</mat-option>
-            </mat-select>
-          </mat-form-field>
+        <mat-slider thumbLabel tickInterval="100" step="100" min="0" max="100000" aria-label="units"></mat-slider>
 
-          <mat-slider
-          thumbLabel
-  tickInterval="100"
-  step="100"
-  min="0"
-  max="100000"
-  aria-label="units"
-  ></mat-slider>
+      </nb-card-body>
+    </nb-card>
+  </div>
 
-        </nb-card-body>
-      </nb-card>
-    </div>
 
-    <div class="col-md-9 flex-container">
-        <nb-card>
-            <nb-card-header id="pname">
-              Exchange Novels
-            </nb-card-header>
-            <nb-list>
-              <nb-list-item *ngFor="let novel of novelList">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col-md-4">
-                      <img [src]="url+novel.avatar" class="img-fluid" alt="">
-                    </div>
-                    <div class="col-md-8">
-                      <h3 id="ft">{{novel.title}}</h3>
-                      <h6 id="ft" class="text-muted">{{novel.genre}}</h6>
-                      <button [routerLink]="['/app/noveldetails', novel._id]" routerLinkActive="router-link-active" nbButton class="mt-4">{{novel.price | currency:'INR'}}</button>
-                    </div>
-                  </div>
+  <div class="col-md-10 mx-auto">
+    <nb-card class="mt-5">
+      <nb-card-header id="cardheader">
+        Exchange Novels
+      </nb-card-header>
+
+      <nb-card-body>
+
+        <div class="row">
+          <div class="col-md-3 mt-5" *ngFor="let novel of novelList">
+
+            <div class="card">
+              <div class="card-img" [routerLink]="['/app/noveldetails', novel._id]"
+                routerLinkActive="router-link-active" [ngStyle]="{backgroundImage: 'url('+url+novel.avatar+')'}">
+              </div>
+
+              <div class="card-body" [routerLink]="['/app/noveldetails', novel._id]"
+                routerLinkActive="router-link-active">
+
+                <h4 class="nt">{{novel.title}}</h4>
+
+                <p class="text-muted">{{novel.genre}}</p>
+
+
+                <div class="avatar">
+                  <nb-user size="medium" [name]="novel.user.fullname" title="Default" [picture]="url+novel.user.avatar">
+                  </nb-user>
                 </div>
-              </nb-list-item>
-            </nb-list>
-          </nb-card>
-    </div>
 
+                <p class="price">{{novel.price | currency:'INR'}}</p>
+                <!-- <a [routerLink]="['/app/noveldetails']" routerLinkActive="router-link-active"
+                class="price">{{novel.price | currency:'INR'}}
+              </a> -->
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </nb-card-body>
+    </nb-card>
+
+  </div>
+</div>

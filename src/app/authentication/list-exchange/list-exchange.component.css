@@ -1,34 +1,45 @@
-.flex-container {
-  display: flex;
-  flex-direction: row;
-
-  background-image: linear-gradient(125deg, #d3dfd2, #4c8077 91%);
-  /* margin: 10px; */
-  /* padding: 100px; */
-  font-size: 30px;
-  /* padding-left: 21rem; */
-  padding-left: 12.5rem;
-  padding-bottom: 5rem;
-  padding-top: 7rem;
+.search{
+  margin-top: 2.5rem;
 }
 
-.flex-container > div > .row {
-  background-color: #f1f1f1;
-  margin: 10px;
-  padding: 20px;
-  font-size: 30px;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  flex-basis: auto;
-}
-.img-fluid{
-  max-width: 250px;
-  height: 400px;
+.card-img {
+  height: 25rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
 }
 
-#pname{
-  font-family:  Montserrat, sans-serif;;
+.card {
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+  transition-duration: 300ms;
+}
+
+.card:hover {
+  box-shadow: 0px 5px 6px -3px rgba(0, 0, 0, 0.2),
+    0px 9px 12px 1px rgba(0, 0, 0, 0.14), 0px 3px 16px 2px rgba(0, 0, 0, 0.12);
+  transform: translateY(-10px);
+}
+
+.card-body {
+  height: 12rem;
+  padding: 1.5rem;
+}
+
+.price {
+  position: absolute;
+  bottom: 2.5rem;
+  right: 1.5rem;
+  color: rgb(34, 33, 33);
+}
+
+.avatar {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+}
+
+#cardheader{
   display: inline-block;
   text-align: center;
   text-transform: uppercase;
@@ -40,6 +51,11 @@
   color: rgb(99, 100, 102);
 }
 
-#ft{
-  font-family:  Montserrat, sans-serif;;
+.nt{
+  font-size: 23px;
 }
+
+.text-muted{
+  position: absolute;
+}
+
