@@ -1,0 +1,24 @@
+mat-expansion-panel{
+  width: 80%;
+  margin: auto;
+}
+mat-card{
+  width: 80%;
+  margin: auto;
+}
+mat-form-field, textarea {
+  width: 100%;
+}
+
+mat-expansion-panel-header{
+  color:#1bbd36;
+  font-size: 23px;
+  padding-left: 25rem;
+  padding-top: 10px;
+
+}
+
+button{
+  background-color: #1bbd36;
+  color: white;
+}

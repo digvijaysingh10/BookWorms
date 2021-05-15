@@ -1,11 +1,12 @@
 body {
   font-family: Raleway;
+  background: url("assets/pattern.jpg")
 }
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background: url("assets/pattern.jpg")  }
 
 .register {
-  background: url("assets/register_back.png") no-repeat center;
+  background: url("assets/pattern.jpg") no-repeat center;
   background-attachment: fixed;
 }

@@ -1,4 +1,13 @@
-<textarea rows="6" [(ngModel)]="enteredValue"></textarea><hr>
-<button (click)="onAddPost()">Save Post</button>
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header><B>Post And Request Novels</B></mat-expansion-panel-header>
+    <mat-card>
+      <mat-form-field>
+        <textarea matInput rows="6" [(ngModel)]="enteredValue"></textarea>
+      </mat-form-field>
+      <button mat-raised-button (click)="onAddPost()">Save Post</button>
+    </mat-card>
+  </mat-expansion-panel>
+</mat-accordion>
 
 <p>{{newPost}}</p>

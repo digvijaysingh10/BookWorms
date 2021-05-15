@@ -53,6 +53,10 @@ import { ChatComponent } from './chat/chat.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { ProfileComponent } from './profile/profile.component';
 import { RequestNovelsComponent } from './user/request-novels/request-novels.component';
+import{ MatCardModule } from '@angular/material/card';
+import{ MatButtonModule } from '@angular/material/button';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -92,7 +96,7 @@ import { RequestNovelsComponent } from './user/request-novels/request-novels.com
     SweetAlert2Module.forRoot(),
     MatFormFieldModule,
     MatInputModule,
-
+    MatButtonModule,
     NgsRevealModule,
     MatSelectModule,
     HttpClientModule,
@@ -101,6 +105,8 @@ import { RequestNovelsComponent } from './user/request-novels/request-novels.com
     SocialLoginModule,
     MatCheckboxModule,
     MatTabsModule,
+    MatCardModule,
+    MatExpansionModule,
     NbMenuModule.forRoot(),
     NbToastrModule.forRoot(),
   ],
