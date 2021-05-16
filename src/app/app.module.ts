@@ -108,7 +108,6 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatExpansionModule,
     NbMenuModule.forRoot(),
     NbToastrModule.forRoot(),
-    NbThemeModule.forRoot({ name: 'dark' }),
   ],
   providers: [
     {

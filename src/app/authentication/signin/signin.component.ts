@@ -60,7 +60,7 @@ export class SigninComponent implements OnInit {
       confirm: '',
       age: 0,
       created: new Date(),
-      isadmin: false,
+      isadmin: true,
     });
   }
 
