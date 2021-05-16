@@ -16,3 +16,6 @@ body {
   background: url("assets/pattern.jpg") no-repeat center;
   background-attachment: fixed;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
