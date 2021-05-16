@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "masterTemplate": {
+    "bookWorms": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/masterTemplate",
+            "outputPath": "dist/bookWorms",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -64,18 +64,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "masterTemplate:build"
+            "browserTarget": "bookWorms:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "masterTemplate:build:production"
+              "browserTarget": "bookWorms:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "masterTemplate:build"
+            "browserTarget": "bookWorms:build"
           }
         },
         "test": {
@@ -113,16 +113,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "masterTemplate:serve"
+            "devServerTarget": "bookWorms:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "masterTemplate:serve:production"
+              "devServerTarget": "bookWorms:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "masterTemplate"
+  "defaultProject": "bookWorms"
 }
