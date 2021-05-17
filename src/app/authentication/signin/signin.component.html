@@ -12,7 +12,13 @@
 				<input type="text" placeholder="Name" name="fullname" formControlName="fullname"/>
 				<input type="email" placeholder="Email" name="email" formControlName="email"/>
 				<input type="password" placeholder="Password" name="password" formControlName="password"/>
-		  <input type="password" placeholder="Confirm Password" name="confirm" formControlName="confirm"/>
+		    <input type="password" placeholder="Confirm Password" name="confirm" formControlName="confirm"/>
+        <input type="file" class="form-control w-50 mx-auto mt-4 "
+                          (change)="uploadAvatar($event)">
+
+                      <img [src]="imgURL" alt="" *ngIf="imgURL" class="img-fluid mt-3"
+                          style="height: 100px; width: 100px; border: 2px solid rgb(20, 17, 17);">
+
 				<button>Sign Up</button>
 			</form>
 		</div>
@@ -46,5 +52,5 @@
 			</div>
 		</div>
 	</div>
-	
+
 </div>
