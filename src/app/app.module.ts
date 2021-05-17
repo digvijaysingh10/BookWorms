@@ -56,6 +56,7 @@ import { RequestNovelsComponent } from './user/request-novels/request-novels.com
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { NgxSliderModule } from '@angular-slider/ngx-slider';
 
 @NgModule({
   declarations: [
@@ -106,6 +107,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatTabsModule,
     MatCardModule,
     MatExpansionModule,
+    NgxSliderModule,
     NbMenuModule.forRoot(),
     NbToastrModule.forRoot(),
   ],

@@ -13,7 +13,9 @@ export class LayoutComponent implements OnInit {
 
   constructor(public userService: UserService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log(this.userService.currentUser);
+  }
 
   sidebarItems = [
     {
@@ -39,8 +41,7 @@ export class LayoutComponent implements OnInit {
     {
       title: 'Chat',
       icon: 'message-square',
-      link:'chat',
+      link: 'chat',
     },
-
   ];
 }

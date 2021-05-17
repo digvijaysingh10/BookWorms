@@ -1,4 +1,4 @@
-mat-expansion-panel {
+/* mat-expansion-panel {
   width: 80%;
   margin: auto;
 }
@@ -9,14 +9,12 @@ mat-card {
 mat-form-field,
 textarea {
   width: 100%;
-}
+} */
 
-mat-expansion-panel-header {
+.exp-header {
   color: #1bbd36;
   font-size: 23px;
-  padding-left: 25rem;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  font-weight: bold;
 }
 
 .postreq {

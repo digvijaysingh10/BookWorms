@@ -30,7 +30,10 @@
           </mat-select>
         </mat-form-field>
 
-        <mat-slider thumbLabel  min="0" max="9999" color="warn" aria-label="units"></mat-slider>
+        <ngx-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options"></ngx-slider>
+
+
+        <button class="mt-5" nbButton (click)="applyFilter()">Apply Filter</button>
 
       </nb-card-body>
     </nb-card>

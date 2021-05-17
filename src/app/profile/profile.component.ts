@@ -58,8 +58,6 @@ export class ProfileComponent implements OnInit {
       });
   }
 
-
-
   uploadAvatar(event: any) {
     let files = event.target.files;
     if (files.length === 0) return;
@@ -96,6 +94,7 @@ export class ProfileComponent implements OnInit {
 
   updateProfile() {
     let formdata = this.updateForm.value;
+    formdata.avatar = this.avatarImage;
     this.userService
       .update(this.currentUser._id, formdata)
       .subscribe((data) => {
