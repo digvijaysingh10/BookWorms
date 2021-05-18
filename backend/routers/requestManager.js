@@ -15,4 +15,17 @@ router.get('/getall', (req, res) => {
   })
 
 
+  router.post('/add', (req, res) => {
+    new Model(req.body).save()
+        .then(data => {
+            console.log('Novel Request Added');
+            res.status(200).json({ message: 'success' });
+        })
+        .catch(err => {
+            console.error(err);
+            res.status(500).json(err);
+        })
+})
+
+
   module.exports = router;

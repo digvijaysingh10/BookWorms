@@ -1,24 +1,23 @@
-<mat-accordion>
-  <mat-expansion-panel>
-    <mat-expansion-panel-header>
-      <p class="exp-header text-center mt-4 mb-4 w-100">Post And Request Novels</p>
-    </mat-expansion-panel-header>
-    <mat-card>
-      <mat-form-field class="mt-5 w-100" appearance="outline">
-        <mat-label>Title</mat-label>
-        <input matInput type="text" [(ngModel)]="enteredTitle">
-      </mat-form-field>
-      <mat-form-field class="mt-2 w-100" appearance="outline">
-        <mat-label>Description</mat-label>
-        <textarea matInput rows="6" [(ngModel)]="enteredContent"></textarea>
-      </mat-form-field>
-      <button mat-raised-button (click)="onAddPost()">Save Post</button>
-    </mat-card>
-  </mat-expansion-panel>
-</mat-accordion>
+<mat-card>
+  <mat-card-header>
+    <p class="exp-header text-center mt-4 mb-4 w-100">Post And Request Novels</p>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-form-field class="mt-5 w-100" appearance="outline">
+      <mat-label>Title</mat-label>
+      <input matInput type="text" [(ngModel)]="enteredTitle">
+    </mat-form-field>
+    <mat-form-field class="mt-2 w-100" appearance="outline">
+      <mat-label>Description</mat-label>
+      <textarea matInput rows="6" [(ngModel)]="enteredContent"></textarea>
+    </mat-form-field>
+    <button mat-raised-button (click)="onAddPost()">Save Post</button>
+  </mat-card-content>
+</mat-card>
 
-<mat-accordion multi= "true" *ngIf= "posts.length > 0">
-  <mat-expansion-panel class="postreq" *ngFor = "let post of posts">
+
+<mat-accordion multi="true" *ngIf="posts.length > 0">
+  <mat-expansion-panel class="postreq" *ngFor="let post of posts">
     <mat-expansion-panel-header>
       {{ post.title }}
     </mat-expansion-panel-header>
@@ -27,4 +26,4 @@
 </mat-accordion>
 
 
-<p class="mat-body-1 info-text" *ngIf = "posts.length <= 0">No Post Yet!</p>
+<p class="mat-body-1 info-text" *ngIf="posts.length <= 0">No Post Yet!</p>
