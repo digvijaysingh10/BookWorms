@@ -21,6 +21,8 @@ import { AddNovelComponent } from './user/add-novel/add-novel.component';
 import { CheckoutComponent } from './user/checkout/checkout.component';
 import { LayoutComponent as UserLayout } from './user/layout/layout.component';
 import { ManageNovelsComponent } from './user/manage-novels/manage-novels.component';
+import { ListRequestComponent } from './list-request/list-request.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/app/signin', pathMatch: 'full' },
@@ -35,6 +37,8 @@ const routes: Routes = [
       { path: 'buynovel', component: ListSellComponent },
       { path: 'contactus', component: ContactUsComponent },
       { path: 'noveldetails/:id', component: NovelDetailsComponent },
+      { path: 'listrequest', component: ListRequestComponent },
+      { path: 'aboutus', component: AboutUsComponent },
     ],
   },
 
