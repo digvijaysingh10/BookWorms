@@ -58,6 +58,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { ListRequestComponent } from './list-request/list-request.component';
 
 @NgModule({
   declarations: [
@@ -84,6 +85,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
     ProfileComponent,
     RequestNovelsComponent,
     AboutUsComponent,
+    ListRequestComponent,
   ],
   imports: [
     BrowserModule,
