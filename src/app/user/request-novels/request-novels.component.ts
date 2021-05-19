@@ -9,14 +9,14 @@ import { NbToastrService } from '@nebular/theme';
 export class RequestNovelsComponent implements OnInit {
 
   enteredTitle ='';
-  enteredContent = '';
+  enteredDescription = '';
 
   posts = [];
 
   onAddPost(){
     const post = {
       title: this.enteredTitle,
-      content: this.enteredContent,
+      content: this.enteredDescription,
     }
     this.posts.push(post)
     // this.toastr.success('Post Added', 'Successfully!');
