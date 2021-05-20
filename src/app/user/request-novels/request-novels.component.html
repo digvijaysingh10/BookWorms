@@ -5,11 +5,11 @@
   <mat-card-content>
     <mat-form-field class="mt-5 w-100" appearance="outline">
       <mat-label>Title</mat-label>
-      <input matInput type="text" [(ngModel)]="enteredTitle">
+      <input matInput type="text" #title [(ngModel)]="enteredTitle">
     </mat-form-field>
     <mat-form-field class="mt-2 w-100" appearance="outline">
       <mat-label>Description</mat-label>
-      <textarea matInput rows="6" [(ngModel)]="enteredContent"></textarea>
+      <textarea matInput rows="6" #description [(ngModel)]="enteredContent"></textarea>
     </mat-form-field>
     <button mat-raised-button (click)="onAddPost()">Save Post</button>
   </mat-card-content>
