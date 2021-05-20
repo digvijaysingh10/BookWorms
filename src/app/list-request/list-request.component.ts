@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { app_config } from 'src/config';
 import { RequestService } from '../services/request.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-list-request',
@@ -11,7 +12,9 @@ export class ListRequestComponent implements OnInit {
 
   requestList;
   url = app_config.api_url + '/';
-  constructor(private requestService: RequestService) { }
+  constructor(
+    private requestService: RequestService
+    ) { }
 
   ngOnInit(): void {
     this.fetchRequests();
