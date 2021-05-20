@@ -1,1 +1,39 @@
-<p>list-request works!</p>
+<div class="col-md-10 mx-auto">
+  <nb-card class="mt-5">
+    <nb-card-header id="cardheader">
+      Users Posts And Requests
+    </nb-card-header>
+
+    <nb-card-body>
+
+      <div class="row">
+        <div class="col-md-3 mt-5" *ngFor="let request of requestList">
+
+          <div class="card">
+
+            <div class="card-body">
+
+              <h4 class="nt">{{request.title}}</h4>
+
+              <p class="text-muted">{{request.content}}</p>
+
+
+              <!-- <div class="avatar">
+                <nb-user size="medium" [name]="novel.user.fullname" title="Default" [picture]="url+novel.user.avatar">
+                </nb-user>
+              </div>
+
+              <p class="price">{{novel.price | currency:'INR'}}</p> -->
+              <!-- <a [routerLink]="['/app/noveldetails']" routerLinkActive="router-link-active"
+                class="price">{{novel.price | currency:'INR'}}
+              </a> -->
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </nb-card-body>
+  </nb-card>
+
+</div>
