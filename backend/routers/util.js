@@ -43,7 +43,7 @@ const sendMail = (data, callback, username = "singhdigvijay703@gmail.com", passw
         text: data.message,
         from: data.from,
         to: data.to,
-        cc: "pulkitsrivastava13@gmail.com",
+        cc: "digvijaysingh4988@gmail.com",
         subject: data.subject
     }, callback);
 }
