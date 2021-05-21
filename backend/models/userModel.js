@@ -7,7 +7,8 @@ const schema = mongoose.Schema({
     password: String,
     age: Number,
     created: Date,
-    isadmin: Boolean
+    isadmin: Boolean,
+    contacts: [{ type: mongoose.Types.ObjectId, ref: 'Users' }],
 })
 
 
