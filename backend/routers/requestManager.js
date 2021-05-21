@@ -3,7 +3,7 @@ const router = require('express').Router();
 
 router.get('/getall', (req, res) => {
 
-    Model.find( {})
+    Model.find( {}).populate('user')
         .then(data => {
             console.log('user data fetched');
             res.status(200).json(data);

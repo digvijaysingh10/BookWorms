@@ -23,6 +23,7 @@ export class ListRequestComponent implements OnInit {
   fetchRequests() {
     this.requestService.getAll().subscribe((data) => {
       this.requestList = data;
+      console.log(data);
     });
   }
 }

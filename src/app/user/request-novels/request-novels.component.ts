@@ -25,6 +25,7 @@ export class RequestNovelsComponent implements OnInit {
         const post = {
           title: this.enteredTitle,
           content: this.enteredContent,
+          user: this.userservice.currentUser._id
         }
         this.requestservice.addrequest(post).subscribe((res) => {
           console.log(res);
@@ -36,6 +37,15 @@ export class RequestNovelsComponent implements OnInit {
 
 
   ngOnInit(): void {
+    document
+      .getElementsByTagName('nb-layout-column')[0]
+      .classList.add('register');
+  }
+
+  ngOnDestroy() {
+    document
+      .getElementsByTagName('nb-layout-column')[0]
+      .classList.remove('register');
   }
 
 }
