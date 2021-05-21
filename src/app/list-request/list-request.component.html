@@ -7,22 +7,28 @@
     <nb-card-body>
 
       <div class="row">
-        <div class="col-md-3 mt-5" *ngFor="let request of requestList">
+        <div class="col-md-4 mt-5" *ngFor="let request of requestList">
 
           <div class="card">
 
-             <div class="avatar">
+
+
+            <div class="card-body">
+
+              <div >
               <nb-user size="medium" [name]="request.user.fullname" [picture]="url+request.user.avatar">
               </nb-user>
             </div>
-
-            <div class="card-body">
 
               <h4 class="nt">{{request.title}}</h4>
 
               <p class="text-muted">{{request.content}}</p>
 
             </div>
+
+            <nb-card-action>
+              <button nbButton status="primary"><nb-icon icon="heart"></nb-icon>Primary</button>
+            </nb-card-action>
           </div>
         </div>
       </div>
