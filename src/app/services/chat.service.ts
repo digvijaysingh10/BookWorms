@@ -16,6 +16,10 @@ export class ChatService {
     console.log(this.socket);
   }
 
+  register(id) {
+    this.socket.emit('register', id);
+  }
+
   send(data) {
     this.socket.emit('sendmsg', data);
   }

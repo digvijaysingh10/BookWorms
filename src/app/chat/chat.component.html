@@ -1,5 +1,18 @@
 <div class="col-md-10 mx-auto" style="height: 45rem;">
-    <nb-chat>
+  <div class="row">
+    <div class="col-md-3">
+      <nb-card>
+        <nb-card-body>
+          <nb-list>
+            <nb-list-item *ngFor="let contact of userService.currentUser.contacts">
+              <p>{{ contact.fullname }}</p>
+            </nb-list-item>
+          </nb-list>
+        </nb-card-body>
+      </nb-card>
+    </div>
+    <div class="col-md-9">
+      <nb-chat>
         <nb-chat-message *ngFor="let msg of messageList"
                          [message]="msg.text"
                          [reply]="msg.reply"
@@ -10,4 +23,7 @@
         <nb-chat-form (send)="sendMessage($event)">
         </nb-chat-form>
       </nb-chat>
+    </div>
+  </div>
+    
 </div>

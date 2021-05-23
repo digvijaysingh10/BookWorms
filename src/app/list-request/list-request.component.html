@@ -26,9 +26,8 @@
 
             </div>
 
-            <nb-card-action>
-              <button nbButton status="primary"><nb-icon icon="heart"></nb-icon></button>
-              <button nbButton status="info"><nb-icon icon="message-circle"></nb-icon></button>
+            <nb-card-action style="padding: 1rem;">
+              <button nbButton status="primary" (click)="repondToUser(request.user._id)"><nb-icon icon="heart"></nb-icon>Respond</button>
             </nb-card-action>
           </div>
         </div>

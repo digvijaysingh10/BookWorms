@@ -61,6 +61,7 @@ export class SigninComponent implements OnInit {
       age: 0,
       created: new Date(),
       isadmin: false,
+      contacts: Array,
     });
   }
 

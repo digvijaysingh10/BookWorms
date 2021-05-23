@@ -18,15 +18,21 @@ const io = require('socket.io')(server, {
     }
 });
 
+let users = {};
+
 io.on('connection', (socket) => {
     console.log('client connected!!');
 
+    socket.on('register', id => {
+        users[id] = socket;
+        // console.log(users);
+    })
+
     socket.on('sendmsg', (data) => {
         console.log('a message from client');
-        console.log(data);
 
         data.reply = false;
-        socket.broadcast.emit('recmsg', data);
+        socket.to(users[data.contact].id).emit('recmsg', data);
     })
 
 })
