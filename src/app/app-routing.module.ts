@@ -50,6 +50,7 @@ const routes: Routes = [
       { path: '', component: DashboardComponent },
       { path: 'dashboard', component: DashboardComponent },
       { path: 'manageuser', component: ManageUserComponent },
+      { path: 'profile', component: ProfileComponent },
     ],
   },
   {

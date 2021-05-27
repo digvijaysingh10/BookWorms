@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NbSidebarService } from '@nebular/theme';
 import { UserService } from 'src/app/services/user.service';
 import { app_config } from 'src/config';
 
@@ -11,7 +12,7 @@ export class LayoutComponent implements OnInit {
   url = app_config.api_url + '/';
   title = app_config.title;
 
-  constructor(public userService: UserService) {}
+  constructor(public userService: UserService, private sidebar: NbSidebarService,) {}
 
   ngOnInit(): void {
     console.log(this.userService.currentUser);
@@ -44,4 +45,8 @@ export class LayoutComponent implements OnInit {
       link: 'chat',
     },
   ];
+
+  toggle() {
+    this.sidebar.toggle();
+  }
 }

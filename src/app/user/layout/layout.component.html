@@ -3,6 +3,10 @@
 
     <!-- always visible -->
     <nb-actions size="medium">
+      <nb-action>
+        <button nbButton status="primary" (click)="toggle()"><nb-icon icon="menu-2-outline" status="control"></nb-icon></button>
+      </nb-action>
+
       <nb-action nbTooltip="Home" nbTooltipIcon="home-outline" [routerLink]="['/home']" routerLinkActive="router-link-active" >
           <h1 class="site-title">BOOK<span style="color: #1bbd36;">WORMS</span></h1>
       </nb-action>
@@ -46,7 +50,8 @@
 
 </nb-layout-header>
 
-<nb-sidebar>
+
+<nb-sidebar responsive>
   <nb-menu [items]="sidebarItems">
 
   </nb-menu>

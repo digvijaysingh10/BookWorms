@@ -59,6 +59,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ListRequestComponent } from './list-request/list-request.component';
+import { OderingSystemComponent } from './odering-system/odering-system.component';
 
 @NgModule({
   declarations: [
@@ -86,6 +87,7 @@ import { ListRequestComponent } from './list-request/list-request.component';
     RequestNovelsComponent,
     AboutUsComponent,
     ListRequestComponent,
+    OderingSystemComponent,
   ],
   imports: [
     BrowserModule,
