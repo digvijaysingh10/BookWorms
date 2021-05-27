@@ -28,7 +28,7 @@ router.get('/getbyemail/:email', (req, res) => {
 
 router.get('/getbyid/:id', (req, res) => {
 
-    Model.findById(req.params.id)
+    Model.findById(req.params.id).populate('contacts')
         .then(data => {
             console.log('user fetched by id');
             res.status(200).json(data);

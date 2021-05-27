@@ -4,7 +4,7 @@
       <nb-card>
         <nb-card-body>
           <nb-list>
-            <nb-list-item *ngFor="let contact of userService.currentUser.contacts">
+            <nb-list-item *ngFor="let contact of userService.currentUser.contacts" (click)="selectUser(contact)">
               <p>{{ contact.fullname }}</p>
             </nb-list-item>
           </nb-list>
@@ -12,17 +12,29 @@
       </nb-card>
     </div>
     <div class="col-md-9">
-      <nb-chat>
-        <nb-chat-message *ngFor="let msg of messageList"
-                         [message]="msg.text"
-                         [reply]="msg.reply"
-                         [sender]="msg.user.fullname"
-                         [date]="msg.created"
-                         [avatar]="url+msg.user.avatar">
-        </nb-chat-message>
-        <nb-chat-form (send)="sendMessage($event)">
-        </nb-chat-form>
-      </nb-chat>
+
+      <nb-card>
+        <nb-card-header>
+          <nb-user *ngIf="selContact"
+            size="large"
+            [name]="selContact.fullname"
+            [picture]="url+selContact.avatar">
+          </nb-user>
+        </nb-card-header>
+        <nb-card-body>
+          <nb-chat>
+            <nb-chat-message *ngFor="let msg of messageList"
+                             [message]="msg.text"
+                             [reply]="msg.reply"
+                             [sender]="msg.user.fullname"
+                             [date]="msg.created"
+                             [avatar]="url+msg.user.avatar">
+            </nb-chat-message>
+            <nb-chat-form (send)="sendMessage($event)">
+            </nb-chat-form>
+          </nb-chat>
+        </nb-card-body>
+      </nb-card>
     </div>
   </div>
     

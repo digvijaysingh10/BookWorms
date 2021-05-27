@@ -23,46 +23,19 @@ export class ChatComponent implements OnInit {
     this.chatService.receive().subscribe((data: any) => {
       console.log(data);
       this.messageList.push(data);
+      this.selContact = data.user;
       if (!this.alreadyInContact(data.user._id)) {
         this.userService
           .addContact(this.userService.currentUser._id, data.user._id)
           .subscribe((res) => {
             console.log('contact added');
+            this.userService.refreshUser();
           });
       }
     });
 
     this.selContact = this.userService.currentUser.contacts[0];
     // this.initMessages();
-  }
-
-  initMessages() {
-    let message1 = {
-      text: 'Hey',
-      user: this.userService.currentUser,
-      reply: true,
-      created: new Date(),
-    };
-
-    let message2 = {
-      text: 'Helo',
-      user: this.userService.currentUser,
-      reply: true,
-      created: new Date(),
-    };
-
-    let message3 = {
-      text: 'I want to buy your book',
-      user: this.userService.currentUser,
-      reply: true,
-      created: new Date(),
-    };
-
-    this.messageList.push(message1);
-    this.messageList.push(message2);
-    this.messageList.push(message3);
-
-    console.log(this.messageList);
   }
 
   sendMessage(e) {
@@ -83,5 +56,9 @@ export class ChatComponent implements OnInit {
       if (contact._id == id) return true;
     }
     return false;
+  }
+
+  selectUser(contact) {
+    this.selContact = contact;
   }
 }

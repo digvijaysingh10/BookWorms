@@ -32,7 +32,10 @@ io.on('connection', (socket) => {
         console.log('a message from client');
 
         data.reply = false;
-        socket.to(users[data.contact].id).emit('recmsg', data);
+        let user = users[data.contact];
+        if (user) {
+            socket.to(user.id).emit('recmsg', data);
+        }
     })
 
 })
