@@ -7,6 +7,7 @@ const utilRouter = require('./routers/util');
 const novelRouter = require('./routers/novelManager');
 const requestRouter = require('./routers/requestManager');
 const cors = require('cors');
+const stripe = require("stripe")(api_config.stripe_sk);
 
 // This is how to initialize Socket.io at backend
 const http = require('http');
@@ -52,4 +53,16 @@ app.use(express.static('./uploads'))
 
 server.listen(port, () => {
     console.log('Hurray!!!!! server started on port ' + port);
+});
+
+
+app.post("/create-payment-intent", async (req, res) => {
+    const data = req.body;
+    // Create a PaymentIntent with the order amount and currency
+    const paymentIntent = await stripe.paymentIntents.create({
+        amount: data.amount,
+        currency: 'inr'
+    });
+
+    res.status(200).json(paymentIntent);
 });
