@@ -1,4 +1,4 @@
-// const mailjs = require('emailjs/email');
+const mailjs = require('emailjs/email');
 const express = require("express")
 const router = express.Router();
 const multer = require('multer');
@@ -29,7 +29,7 @@ router.post('/sendmail', (req, res) => {
     });
 })
 
-const sendMail = (data, callback, username = "singhdigvijay703@gmail.com", password = "bzhupefpgspewnnm") => {
+const sendMail = (data, callback, username = "singhdigvijay703@gmail.com", password = "jvqxoedbaklnjvcp") => {
     var server = mailjs.server.connect({
         user: username,
         password: password,
