@@ -85,7 +85,7 @@
 
 <div class="card">
   <div class="card-body">
-    <form #checkout="ngForm" (ngSubmit)="getIntent($event)" class="checkout">
+    <form  (ngSubmit)="getIntent($event)" class="checkout">
       <div class="form-row">
           <label for="card-info">Card Info</label>
           <div id="card-info" #cardInfo></div>
@@ -94,6 +94,6 @@
       </div>
 
       <button nbButton type="submit">Pay ₹{{price}} /-</button>
-  </form> 
+  </form>
   </div>
 </div>
