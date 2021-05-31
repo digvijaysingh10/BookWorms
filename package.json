@@ -27,6 +27,7 @@
     "@nebular/theme": "^7.0.0",
     "@sweetalert2/ngx-sweetalert2": "^9.0.0",
     "angularx-social-login": "^3.5.6",
+    "canvasjs": "^1.8.3",
     "eva-icons": "^1.1.2",
     "ngx-scrollreveal": "^3.0.0",
     "rxjs": "~6.6.0",
