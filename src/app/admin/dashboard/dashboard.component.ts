@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { NovelService } from 'src/app/services/novel.service';
 import { OrderService } from 'src/app/services/order.service';
 import { UserService } from 'src/app/services/user.service';
+import * as CanvasJS from '../../../assets/canvasjs.min';
 
 
 @Component({
