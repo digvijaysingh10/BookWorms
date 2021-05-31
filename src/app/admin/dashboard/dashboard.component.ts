@@ -97,8 +97,8 @@ export class DashboardComponent implements OnInit {
     });
   }
 
-  prepareComData(companies) {
-    this.getDatewiseValues(companies, 'created').subscribe((data) => {
+  prepareNovelData(novels) {
+    this.getDatewiseValues(novels, 'created').subscribe((data) => {
       console.log(data);
       let regData = data;
       this.drawchart(
