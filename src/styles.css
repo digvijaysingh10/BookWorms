@@ -1,6 +1,6 @@
 body {
   font-family: Raleway;
-  background: url("assets/pattern.jpg")
+  background: url("assets/img/pattern.jpg")
 }
 
 html,
@@ -13,7 +13,7 @@ body {
 }
 
 .register {
-  background: url("assets/pattern.jpg") no-repeat center;
+  background: url("assets/img/pattern.jpg") no-repeat center;
   background-attachment: fixed;
 }
 
