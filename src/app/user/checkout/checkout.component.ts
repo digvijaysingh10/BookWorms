@@ -36,6 +36,7 @@ export class CheckoutComponent implements OnInit {
     const style = {
       base: {
         lineHeight: '24px',
+        
         fontFamily: 'monospace',
         fontSmoothing: 'antialiased',
         fontSize: '19px',
