@@ -1,6 +1,89 @@
-<nb-layout>
-    <nb-layout-column>
-        <button nbButton>Thats a button</button>
+<div class="row">
+  <div class="col-md-10 mx-auto">
+      <nb-card accent="danger">
+          <nb-card-body>
+              <div class="row">
+                  <div class="col-2">
+                      <div class="icon-container">
+                          <nb-icon icon="people" style="font-size: 5rem;width: 100%;" status="control"></nb-icon>
+                      </div>
+                  </div>
+                  <div class="col-9">
+                      <div class="row">
+                          <div class="col-8 mt-4">
+                              <h3>Total Users : </h3>
+                          </div>
 
-    </nb-layout-column>
-</nb-layout>
+                          <div class="col-4 mx-auto " *ngIf="usersList">
+                              <p class="figure">{{usersList.length| number:'2.0'}}</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </nb-card-body>
+      </nb-card>
+  </div>
+</div>
+
+
+
+
+<div class="row">
+  <div class="col-md-10 mx-auto">
+      <nb-card accent="success">
+
+          <nb-card-body>
+              <div id="regByDate" style="height: 20rem;"></div>
+          </nb-card-body>
+        </nb-card>
+  </div>
+</div>
+<div class="row mt-5">
+  <div class="col-md-10 mx-auto">
+      <nb-card accent="danger">
+          <nb-card-body>
+              <div class="row">
+                  <div class="col-2">
+                      <div class="icon-container">
+                          <nb-icon icon="browser" style="font-size: 5rem;width: 100%;" status="control"></nb-icon>
+                      </div>
+                  </div>
+                  <div class="col-9">
+                      <div class="row">
+                          <div class="col-8 mt-4">
+                              <h3>Total Novels </h3>
+                          </div>
+
+                          <div class="col-4 mx-auto" *ngIf="novelsList">
+                              <p class="figure">{{novelsList.length| number:'2.0'}}</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </nb-card-body>
+      </nb-card>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4 mx-auto">
+      <nb-card accent="success">
+      <nb-card-body>
+            <div id="sellNovels" style="height: 20rem;"></div>
+          </nb-card-body>
+      </nb-card>
+  </div>
+  <div class="col-md-4 mx-auto">
+    <nb-card accent="success">
+        <nb-card-body>
+        <div id="rentNovels" style="height: 20rem;"></div>
+        </nb-card-body>
+    </nb-card>
+</div>
+<div class="col-md-4 mx-auto">
+  <nb-card accent="success">
+      <nb-card-body>
+      <div id="exchangeNovels" style="height: 20rem;"></div>
+      </nb-card-body>
+  </nb-card>
+</div>
+</div>

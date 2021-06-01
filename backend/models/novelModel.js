@@ -14,6 +14,7 @@ const schema = mongoose.Schema({
     exchangable: Boolean,
     soldable: Boolean,
     rentPrice: Number,
+    trade: Boolean,
     comments: [{ type: mongoose.Types.ObjectId, ref: 'comments' }]
 })
 
