@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { title } from 'node:process';
 import { Observable } from 'rxjs';
 import { NovelService } from 'src/app/services/novel.service';
 import { OrderService } from 'src/app/services/order.service';
@@ -38,6 +39,7 @@ export class DashboardComponent implements OnInit {
     this.userService.getAll().subscribe((res) => {
       this.usersList = res;
       this.loadingUsers = false;
+      this.prepareRegData(this.usersList);
     });
   }
 
@@ -48,11 +50,15 @@ export class DashboardComponent implements OnInit {
     console.log(this.exchangeNovels);
     this.sellNovels = this.novelsList.filter((novel) => novel.soldable);
     console.log(this.sellNovels);
+    this.prepareNovelData(this.sellNovels,'sellNovels', 'Novel For Sale');
+    this.prepareNovelData(this.rentNovels, 'rentNovels', 'Novel For Rent');
+    this.prepareNovelData(this.exchangeNovels, 'exchangeNovels', 'Novel For Exchange');
+    // this.prepareNovelData(this.novelsList);
   }
 
   fetchNovels() {
     this.novelService
-      .getNovelByUser(this.userService.currentUser._id)
+      .getAll()
       .subscribe((res) => {
         this.novelsList = res;
         this.loadingNovels = false;
@@ -97,14 +103,14 @@ export class DashboardComponent implements OnInit {
     });
   }
 
-  prepareNovelData(novels) {
+  prepareNovelData(novels, chartId, title) {
     this.getDatewiseValues(novels, 'created').subscribe((data) => {
       console.log(data);
       let regData = data;
       this.drawchart(
-        'companyByDate',
+        chartId,
         regData,
-        'Company Registration Data',
+        title,
         'registration(s)',
         'No. of Registrations'
       );

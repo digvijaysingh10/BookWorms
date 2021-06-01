@@ -23,6 +23,7 @@ import { LayoutComponent as UserLayout } from './user/layout/layout.component';
 import { ManageNovelsComponent } from './user/manage-novels/manage-novels.component';
 import { ListRequestComponent } from './list-request/list-request.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { ManageNovelsComponent as novelManagement } from './admin/manage-novels/manage-novels.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/app/signin', pathMatch: 'full' },
@@ -51,6 +52,7 @@ const routes: Routes = [
       { path: 'dashboard', component: DashboardComponent },
       { path: 'manageuser', component: ManageUserComponent },
       { path: 'profile', component: ProfileComponent },
+      { path: 'managenovels', component: novelManagement }
     ],
   },
   {

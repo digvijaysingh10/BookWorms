@@ -29,6 +29,11 @@ export class LayoutComponent implements OnInit {
       icon: 'eye',
       link: 'dashboard',
     },
+    {
+      title: 'Manage Novels',
+      icon: 'book-open',
+      link: 'managenovels'
+    }
 
   ];
 

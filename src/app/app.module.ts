@@ -60,6 +60,7 @@ import { NgxSliderModule } from '@angular-slider/ngx-slider';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ListRequestComponent } from './list-request/list-request.component';
 import { OderingSystemComponent } from './odering-system/odering-system.component';
+import { ManageNovelsComponent as novelManagement } from './admin/manage-novels/manage-novels.component';
 
 @NgModule({
   declarations: [
@@ -88,6 +89,7 @@ import { OderingSystemComponent } from './odering-system/odering-system.componen
     AboutUsComponent,
     ListRequestComponent,
     OderingSystemComponent,
+    novelManagement
   ],
   imports: [
     BrowserModule,
@@ -116,6 +118,7 @@ import { OderingSystemComponent } from './odering-system/odering-system.componen
     NgxSliderModule,
     NbMenuModule.forRoot(),
     NbToastrModule.forRoot(),
+
   ],
   providers: [
     {

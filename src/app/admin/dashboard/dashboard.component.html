@@ -14,7 +14,7 @@
                               <h3>Total Users : </h3>
                           </div>
 
-                          <div class="col-4 mx-auto">
+                          <div class="col-4 mx-auto " *ngIf="usersList">
                               <p class="figure">{{usersList.length| number:'2.0'}}</p>
                           </div>
                       </div>
@@ -54,7 +54,7 @@
                               <h3>Total Novels </h3>
                           </div>
 
-                          <div class="col-4 mx-auto">
+                          <div class="col-4 mx-auto" *ngIf="novelsList">
                               <p class="figure">{{novelsList.length| number:'2.0'}}</p>
                           </div>
                       </div>
@@ -65,24 +65,25 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-md-10 mx-auto">
+  <div class="col-md-4 mx-auto">
       <nb-card accent="success">
-
-          <nb-card-body>
-              <!--
-            <canvas baseChart width="400" height="400"
-              [datasets]="userChartData['plotData']"
-              [labels]="userChartData['labels']"
-              [options]="userChartData['options']"
-              [legend]="userChartData['legend']"
-              [chartType]="userChartData['chartType']">
-          </canvas> -->
-          <div id="companyByDate" style="height: 20rem;"></div>
-          <!--
-          <div>
-              <canvas id="myChart"></canvas>
-            </div> -->
+      <nb-card-body>
+            <div id="sellNovels" style="height: 20rem;"></div>
           </nb-card-body>
       </nb-card>
   </div>
+  <div class="col-md-4 mx-auto">
+    <nb-card accent="success">
+        <nb-card-body>
+        <div id="rentNovels" style="height: 20rem;"></div>
+        </nb-card-body>
+    </nb-card>
+</div>
+<div class="col-md-4 mx-auto">
+  <nb-card accent="success">
+      <nb-card-body>
+      <div id="exchangeNovels" style="height: 20rem;"></div>
+      </nb-card-body>
+  </nb-card>
+</div>
 </div>
