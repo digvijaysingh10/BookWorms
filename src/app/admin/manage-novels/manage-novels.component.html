@@ -76,7 +76,7 @@
 
 
 
-          <!-- <div class="row mt-5">
+          <div class="row mt-5">
               <div class="col text-center">
                   <button class="col-10" nbButton (click)="updateNovel(novel)">Edit</button>
               </div>
@@ -84,7 +84,7 @@
               <div class="col text-center">
                   <button class="col-10" nbButton hero (click)="deleteNovel(novel._id)" status  ="danger">Delete</button>
               </div>
-          </div> -->
+          </div>
         </nb-accordion-item-body>
       </nb-accordion-item>
   </nb-accordion>
@@ -92,19 +92,10 @@
 </mat-tab-group>
 
 
-<nb-card  *ngIf="showUpdateForm" style="margin-top:10%;border-radius: 0.5rem; box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12);">
+<!-- <nb-card  *ngIf="showUpdateForm" style="margin-top:10%;border-radius: 0.5rem; box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12);">
   <nb-card-body style="padding: 2rem;">
       <form [formGroup]="novelform" (ngSubmit)="submitNovelForm()">
           <h3 class="text-center">Upload Novel</h3>
-          <!-- <div class="row mt-4">
-              <div class="col-6">
-                  <button class="w-100" nbButton status="danger"><nb-icon icon="google"></nb-icon>GOOGLE</button>
-              </div>
-              <div class="col-6">
-                  <button class="w-100" nbButton status="primary"><nb-icon icon="facebook"></nb-icon>FACEBOOK</button>
-              </div>
-          </div>
-          <h5 class="text-center mt-3">OR</h5> -->
           <div class="row mt-5">
               <div class="col-md-6">
                   <mat-form-field class="mt-2 w-100" appearance="outline">
@@ -171,17 +162,6 @@
           <button class="w-100 mt-5" nbButton status="primary">Submit</button>
 
 
-      </form>
-      <!-- <div class="mt-3">
-
-          <a style="font-family: Roboto;text-decoration: none;" [routerLink]="['/app/signin']">Already Registered? Login Here</a>
-          <div class="float-end">
-              <a style="font-family: Roboto;text-decoration: none;" [routerLink]="['/app/reset']">Forgot Password?</a>
-          </div>
-      </div> -->
-
-
-
-
+        </form>
   </nb-card-body>
-</nb-card>
+</nb-card> -->
