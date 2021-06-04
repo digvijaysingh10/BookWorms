@@ -14,4 +14,8 @@ export class OrderService {
   getAll() {
     return this.http.get(this.url + '/getall');
   }
+
+  getbyid(id) {
+    return this.http.get(this.url + '/getbyid/' + id);
+  }
 }

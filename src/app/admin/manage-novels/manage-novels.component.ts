@@ -58,89 +58,89 @@ export class ManageNovelsComponent implements OnInit {
       });
   }
 
-  deleteNovel(id) {
-    Swal.fire({
-      title: 'Are you sure?',
-      text: "You won't be able to revert this!",
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, delete it!',
-    }).then((result) => {
-      if (result.isConfirmed) {
-        this.novelService.deleteNovel(id).subscribe((res) => {
-          console.log(res);
-          Swal.fire({
-            title: 'Deleted!',
-            text: 'Your blog has been deleted.',
-            icon: 'info',
-          }).then(() => {
-            this.fetchNovels();
-          });
-        });
-      }
-    });
-  }
+  // deleteNovel(id) {
+  //   Swal.fire({
+  //     title: 'Are you sure?',
+  //     text: "You won't be able to revert this!",
+  //     icon: 'warning',
+  //     showCancelButton: true,
+  //     confirmButtonColor: '#3085d6',
+  //     cancelButtonColor: '#d33',
+  //     confirmButtonText: 'Yes, delete it!',
+  //   }).then((result) => {
+  //     if (result.isConfirmed) {
+  //       this.novelService.deleteNovel(id).subscribe((res) => {
+  //         console.log(res);
+  //         Swal.fire({
+  //           title: 'Deleted!',
+  //           text: 'Your blog has been deleted.',
+  //           icon: 'info',
+  //         }).then(() => {
+  //           this.fetchNovels();
+  //         });
+  //       });
+  //     }
+  //   });
+  // }
 
-  updateNovel(noveldata) {
-    console.log(noveldata);
-    this.novelToUpdate = noveldata;
-    this.initNovelForm(noveldata);
-  }
+  // updateNovel(noveldata) {
+  //   console.log(noveldata);
+  //   this.novelToUpdate = noveldata;
+  //   this.initNovelForm(noveldata);
+  // }
 
-  initNovelForm(novelData) {
-    this.novelform = this.fb.group(novelData);
-    this.showUpdateForm = true;
-  }
+  // initNovelForm(novelData) {
+  //   this.novelform = this.fb.group(novelData);
+  //   this.showUpdateForm = true;
+  // }
 
-  uploadNovel(event: any) {
-    let files = event.target.files;
-    if (files.length === 0) return;
+  // uploadNovel(event: any) {
+  //   let files = event.target.files;
+  //   if (files.length === 0) return;
 
-    var mimeType = files[0].type;
-    if (mimeType.match(/image\/*/) == null) {
-      Swal.fire('Images Only');
-      return;
-    }
-    this.preview(event.target.files);
-    let formData = new FormData();
-    this.novelImage = files[0].name;
-    formData.append('image', files[0], files[0].name);
-    this.novelService.uploadAvatar(formData).subscribe((response) => {
-      console.log(response);
-    });
-  }
+  //   var mimeType = files[0].type;
+  //   if (mimeType.match(/image\/*/) == null) {
+  //     Swal.fire('Images Only');
+  //     return;
+  //   }
+  //   this.preview(event.target.files);
+  //   let formData = new FormData();
+  //   this.novelImage = files[0].name;
+  //   formData.append('image', files[0], files[0].name);
+  //   this.novelService.uploadAvatar(formData).subscribe((response) => {
+  //     console.log(response);
+  //   });
+  // }
 
-  preview(files) {
-    if (files.length === 0) return;
+  // preview(files) {
+  //   if (files.length === 0) return;
 
-    var mimeType = files[0].type;
-    if (mimeType.match(/image\/*/) == null) {
-      return;
-    }
+  //   var mimeType = files[0].type;
+  //   if (mimeType.match(/image\/*/) == null) {
+  //     return;
+  //   }
 
-    var reader = new FileReader();
-    reader.readAsDataURL(files[0]);
-    reader.onload = (_event) => {
-      this.imgURL = reader.result;
-    };
-  }
+  //   var reader = new FileReader();
+  //   reader.readAsDataURL(files[0]);
+  //   reader.onload = (_event) => {
+  //     this.imgURL = reader.result;
+  //   };
+  // }
 
-  submitNovelForm() {
-    let formdata = this.novelform.value;
-    // formdata.avatar = this.novelImage;
+  // submitNovelForm() {
+  //   let formdata = this.novelform.value;
+  //   // formdata.avatar = this.novelImage;
 
-    this.novelService.update(formdata._id, formdata).subscribe((res) => {
-      console.log(formdata);
-      console.log(res);
-      Swal.fire({
-        icon: 'success',
-        title: 'Great!',
-        text: 'Novel Successfully Saved!!!',
-      }).then(() => {
-        this.router.navigate(['/user/addnovel']);
-      });
-    });
-  }
+  //   this.novelService.update(formdata._id, formdata).subscribe((res) => {
+  //     console.log(formdata);
+  //     console.log(res);
+  //     Swal.fire({
+  //       icon: 'success',
+  //       title: 'Great!',
+  //       text: 'Novel Successfully Saved!!!',
+  //     }).then(() => {
+  //       this.router.navigate(['/user/addnovel']);
+  //     });
+  //   });
+  // }
 }
