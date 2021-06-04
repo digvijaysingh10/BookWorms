@@ -30,7 +30,7 @@ export class LayoutComponent implements OnInit {
       link: 'dashboard',
     },
     {
-      title: 'Manage Novels',
+      title: 'List Novels',
       icon: 'book-open',
       link: 'managenovels'
     }
