@@ -1,20 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { title } from 'node:process';
 import { Observable } from 'rxjs';
 import { NovelService } from 'src/app/services/novel.service';
 import { OrderService } from 'src/app/services/order.service';
 import { UserService } from 'src/app/services/user.service';
 import * as CanvasJS from '../../../assets/canvasjs.min';
 
-
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent implements OnInit {
-
   usersList: any;
   loadingUsers = true;
   novelsList: any;
@@ -28,7 +25,7 @@ export class DashboardComponent implements OnInit {
     public novelService: NovelService,
     public orderService: OrderService,
     private router: Router
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.fetchUsers();
@@ -50,21 +47,23 @@ export class DashboardComponent implements OnInit {
     console.log(this.exchangeNovels);
     this.sellNovels = this.novelsList.filter((novel) => novel.soldable);
     console.log(this.sellNovels);
-    this.prepareNovelData(this.sellNovels,'sellNovels', 'Novel For Sale');
+    this.prepareNovelData(this.sellNovels, 'sellNovels', 'Novel For Sale');
     this.prepareNovelData(this.rentNovels, 'rentNovels', 'Novel For Rent');
-    this.prepareNovelData(this.exchangeNovels, 'exchangeNovels', 'Novel For Exchange');
+    this.prepareNovelData(
+      this.exchangeNovels,
+      'exchangeNovels',
+      'Novel For Exchange'
+    );
     // this.prepareNovelData(this.novelsList);
   }
 
   fetchNovels() {
-    this.novelService
-      .getAll()
-      .subscribe((res) => {
-        this.novelsList = res;
-        this.loadingNovels = false;
-        console.log(this.novelsList);
-        this.filterNovels();
-      });
+    this.novelService.getAll().subscribe((res) => {
+      this.novelsList = res;
+      this.loadingNovels = false;
+      console.log(this.novelsList);
+      this.filterNovels();
+    });
   }
 
   drawchart(id, datapoints, title, unit, xlabel) {
@@ -164,5 +163,4 @@ export class DashboardComponent implements OnInit {
 
     return count;
   }
-
 }
