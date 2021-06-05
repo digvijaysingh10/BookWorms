@@ -1,7 +1,8 @@
 <div class="col-md-8 mx-auto my-auto mt-5" #body>
 	<div class="container" id="container">
 		<div class="form-container sign-up-container">
-			<form [formGroup]="signupform" (ngSubmit)="submitSignupForm()">
+			<!-- <form [formGroup]="signupform" (ngSubmit)="submitSignupForm()" novalidate [mustMatch]="['password', 'confirmPassword']"> -->
+      <form [formGroup]="signupform" (ngSubmit)="submitSignupForm()" >
 				<h1>Create Account</h1>
 				<div class="social-container">
 					<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -23,7 +24,7 @@
 			</form>
 		</div>
 		<div class="form-container sign-in-container">
-			<form [formGroup]="signinform" (ngSubmit)="submitSigninForm()">
+			<form class="needs-validation" novalidate [formGroup]="signinform" (ngSubmit)="submitSigninForm()">
 				<h1>Sign in</h1>
 				<div class="social-container">
 					<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
