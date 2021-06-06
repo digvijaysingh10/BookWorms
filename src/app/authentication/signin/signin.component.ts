@@ -182,6 +182,7 @@ export class SigninComponent implements OnInit {
     });
   }
 
+
   loginWithGoogle(): void {
     this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID);
   }
