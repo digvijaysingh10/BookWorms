@@ -36,7 +36,7 @@ export class CheckoutComponent implements OnInit {
     const style = {
       base: {
         lineHeight: '24px',
-        
+
         fontFamily: 'monospace',
         fontSmoothing: 'antialiased',
         fontSize: '19px',
@@ -78,11 +78,7 @@ export class CheckoutComponent implements OnInit {
         } else {
           if (result.paymentIntent.status === 'succeeded') {
             console.log(result);
-            that.Swal.fire({
-              icons: 'success',
-              title: 'Hurray!',
-              text: 'Payment done',
-            });
+            that.router.navigate(['/user/manageorder']);
           }
         }
       });

@@ -151,14 +151,28 @@
     <div class="container" data-aos="fade-up">
 
       <div class="row">
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100" *ngFor="let request of requestList">
-          <div class="icon-box iconbox-blue">
-            <div >
-              <nb-user [name]="request.user.fullname" [picture]="url+request.user.avatar">
-              </nb-user>
+        <div class="col-md-4 mt-5" *ngFor="let request of requestList">
+
+          <div class="card">
+
+
+
+            <div class="card-body">
+
+              <div >
+                <img class="avatar" [src]="url+request.user.avatar" alt="">
+                <p>{{request.user.fullname}}</p>
             </div>
-              <h4>{{request.title}}</h4>
+
+              <h4 class="nt">{{request.title}}</h4>
+
               <p class="text-muted">{{request.content}}</p>
+
+            </div>
+
+            <nb-card-action style="padding: 1rem;">
+              <button class="btn btn-primary" [routerLink]="['/app/listrequest']" >View More</button>
+            </nb-card-action>
           </div>
         </div>
       </div>

@@ -6,6 +6,7 @@ const userRouter = require('./routers/userManager');
 const utilRouter = require('./routers/util');
 const novelRouter = require('./routers/novelManager');
 const requestRouter = require('./routers/requestManager');
+const orderRouter = require('./routers/orderManager');
 const cors = require('cors');
 const stripe = require("stripe")(api_config.stripe_sk);
 
@@ -48,6 +49,7 @@ app.use('/user', userRouter);
 app.use('/util', utilRouter);
 app.use('/novel', novelRouter);
 app.use('/request', requestRouter);
+app.use('/order', orderRouter);
 
 app.use(express.static('./uploads'))
 

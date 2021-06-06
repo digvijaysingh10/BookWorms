@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import {
   GoogleLoginProvider,
@@ -52,17 +52,33 @@ export class SigninComponent implements OnInit {
   }
 
   initSignupForm() {
-    this.signupform = this.fb.group({
-      fullname: '',
-      avatar: '',
-      email: '',
-      password: '',
-      confirm: '',
-      age: 0,
-      created: new Date(),
-      isadmin: false,
-      contacts: Array,
-    });
+    this.signupform = this.fb.group(
+      {
+        fullname: ['', Validators.required],
+        avatar: '',
+        email: ['', [Validators.required, Validators.email]],
+        password: ['', Validators.required],
+        confirm: ['', Validators.required],
+        age: 0,
+        created: new Date(),
+        isadmin: false,
+        contacts: Array,
+      },
+      { validator: this.matchPassword('password', 'confirm') }
+    );
+  }
+
+  matchPassword(password, repassword) {
+    return (registerForm) => {
+      let control1 = registerForm.controls[password];
+      let control2 = registerForm.controls[repassword];
+
+      if (control1.value !== control2.value) {
+        control2.setErrors({ match: true });
+      } else {
+        control2.setErrors(null);
+      }
+    };
   }
 
   uploadAvatar(event: any) {
@@ -100,6 +116,14 @@ export class SigninComponent implements OnInit {
   }
 
   submitSignupForm() {
+    if (!this.signupform.valid) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Ooops!',
+        text: 'Please enter valid details',
+      });
+      return;
+    }
     let formdata = this.signupform.value;
     formdata.avatar = this.avatarImage;
     this.userService.addUser(formdata).subscribe((res) => {
@@ -123,7 +147,6 @@ export class SigninComponent implements OnInit {
 
   submitSigninForm() {
     let formdata = this.signinform.value;
-
     this.userService.getUserByEmail(formdata.email).subscribe((userdata) => {
       if (userdata) {
         if (userdata['password'] == formdata['password']) {

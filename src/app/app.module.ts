@@ -61,6 +61,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { ListRequestComponent } from './list-request/list-request.component';
 import { OderingSystemComponent } from './odering-system/odering-system.component';
 import { ManageNovelsComponent as novelManagement } from './admin/manage-novels/manage-novels.component';
+import { CheckoutComponent } from './user/checkout/checkout.component';
+import { ManageUserOrdersComponent } from './user/manage-user-orders/manage-user-orders.component';
 
 @NgModule({
   declarations: [
@@ -89,7 +91,9 @@ import { ManageNovelsComponent as novelManagement } from './admin/manage-novels/
     AboutUsComponent,
     ListRequestComponent,
     OderingSystemComponent,
-    novelManagement
+    novelManagement,
+    CheckoutComponent,
+    ManageUserOrdersComponent,
   ],
   imports: [
     BrowserModule,
@@ -118,7 +122,6 @@ import { ManageNovelsComponent as novelManagement } from './admin/manage-novels/
     NgxSliderModule,
     NbMenuModule.forRoot(),
     NbToastrModule.forRoot(),
-
   ],
   providers: [
     {

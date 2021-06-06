@@ -19,6 +19,7 @@ router.get('/getbyid/:id', (req, res) => {
         .then(data => {
             console.log('novel fetched by id');
             res.status(200).json(data);
+            
         })
         .catch(err => {
             console.error(err);
