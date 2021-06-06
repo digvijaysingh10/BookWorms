@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import {
   GoogleLoginProvider,
+  FacebookLoginProvider,
   SocialAuthService,
   SocialUser,
 } from 'angularx-social-login';
@@ -186,6 +187,10 @@ export class SigninComponent implements OnInit {
   loginWithGoogle(): void {
     this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID);
   }
+
+  signInWithFB(): void {
+    this.socialAuthService.signIn(FacebookLoginProvider.PROVIDER_ID);
+   }
 
   logOut(): void {
     this.socialAuthService.signOut();
