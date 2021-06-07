@@ -80,8 +80,12 @@
 </div>
 </div> -->
 
-
-
+<div *ngIf="orderdata.rent">
+  Rent
+</div>
+<div *ngIf="orderdata.purchase">
+  purchase
+</div>
 
 <div class="card">
   <div class="card-body">
@@ -93,7 +97,7 @@
           <div id="card-errors" role="alert" *ngIf="error">{{ error }}</div>
       </div>
 
-      <button nbButton type="submit">Pay ₹{{price}} /-</button>
+      <button nbButton type="submit">Pay ₹{{getPrice()}} /-</button>
   </form>
   </div>
 </div>
