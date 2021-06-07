@@ -23,8 +23,8 @@ export class CheckoutComponent implements OnInit {
   card: any;
   cardHandler = this.onChange.bind(this);
   error: any;
-  price = 100;
   url = app_config.api_url + '/create-payment-intent';
+  orderdata = JSON.parse(sessionStorage.getItem('orderdata'));
 
   constructor(
     private cd: ChangeDetectorRef,
@@ -49,6 +49,8 @@ export class CheckoutComponent implements OnInit {
         },
       },
     };
+
+    console.log(this.orderdata);
 
     this.card = elements.create('card', { style });
     this.card.mount(this.cardInfo.nativeElement);
@@ -91,10 +93,20 @@ export class CheckoutComponent implements OnInit {
 
   getIntent(e) {
     e.preventDefault();
-    this.http.post(this.url, { amount: this.price * 100 }).subscribe((data) => {
-      console.log(data);
-      this.completePayment(data['client_secret'], this);
-      console.log(this.card);
-    });
+    this.http
+      .post(this.url, { amount: this.getPrice() * 100 })
+      .subscribe((data) => {
+        console.log(data);
+        this.completePayment(data['client_secret'], this);
+        console.log(this.card);
+      });
+  }
+
+  getPrice() {
+    if (this.orderdata.rent) {
+      return this.orderdata.novel.rentPrice;
+    } else if (this.orderdata.purchase) {
+      return this.orderdata.novel.price;
+    }
   }
 }

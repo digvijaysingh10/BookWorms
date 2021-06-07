@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NovelService } from 'src/app/services/novel.service';
 import { app_config } from 'src/config';
 
@@ -13,7 +13,8 @@ export class NovelDetailsComponent implements OnInit {
   url = app_config.api_url + '/';
   constructor(
     private actRoute: ActivatedRoute,
-    private novelService: NovelService
+    private novelService: NovelService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -23,4 +24,22 @@ export class NovelDetailsComponent implements OnInit {
       console.log(data);
     });
   }
+
+  purchase() {
+    let obj = {};
+    obj['purchase'] = true;
+    obj['novel'] = this.novelData;
+    sessionStorage.setItem('orderdata', JSON.stringify(obj));
+    this.router.navigate(['/user/checkout']);
+  }
+
+  rent() {
+    let obj = {};
+    obj['rent'] = true;
+    obj['novel'] = this.novelData;
+    sessionStorage.setItem('orderdata', JSON.stringify(obj));
+    this.router.navigate(['/user/checkout']);
+  }
+
+  exchange() {}
 }

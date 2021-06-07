@@ -46,8 +46,9 @@
                               id="quantity" name="commerce-add-to-cart-quantity-input"
                               min="1" class="w-commerce-commerceaddtocartquantityinput text-field cc-quantity-field"
                               value="1">
-                            <button nbButton class="mt-4 button" id="hero"
-                            [routerLink]="['/user/checkout']" routerLinkActive="router-link-active"  > Checkout </button>
+                            <button *ngIf="novelData.soldable" nbButton class="mt-4 button" id="hero" (click)="purchase()"> Purchase </button>
+                            <button *ngIf="novelData.rentable" nbButton class="mt-4 button" id="hero" (click)="rent()"> Rent </button>
+                            <button *ngIf="novelData.exchangable" nbButton class="mt-4 button" id="hero" (click)="checkout()"> Exchange </button>
 
                         </div>
                     </form>
