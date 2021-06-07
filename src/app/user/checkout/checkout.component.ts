@@ -6,6 +6,8 @@ import {
   OnInit,
   ViewChild,
 } from '@angular/core';
+import { Router } from '@angular/router';
+import { OrderService } from 'src/app/services/order.service';
 import { UserService } from 'src/app/services/user.service';
 import { app_config } from 'src/config';
 import Swal from 'sweetalert2';
@@ -27,7 +29,9 @@ export class CheckoutComponent implements OnInit {
   constructor(
     private cd: ChangeDetectorRef,
     private http: HttpClient,
-    private userService: UserService
+    private userService: UserService,
+    private router: Router,
+    private orderService: OrderService
   ) {}
 
   ngOnInit(): void {}
@@ -77,6 +81,7 @@ export class CheckoutComponent implements OnInit {
           console.log(result.error.message);
         } else {
           if (result.paymentIntent.status === 'succeeded') {
+            // Swal.fire
             console.log(result);
             that.router.navigate(['/user/manageorder']);
           }
