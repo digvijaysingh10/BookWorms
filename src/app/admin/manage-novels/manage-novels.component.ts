@@ -36,6 +36,15 @@ export class ManageNovelsComponent implements OnInit {
 
   ngOnInit(): void {
     this.fetchNovels();
+    document
+      .getElementsByTagName('nb-layout-column')[0]
+      .classList.add('admindb');
+  }
+
+  ngOnDestroy() {
+    document
+      .getElementsByTagName('nb-layout-column')[0]
+      .classList.remove('admindb');
   }
 
   filterNovels() {

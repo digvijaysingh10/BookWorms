@@ -20,6 +20,15 @@ export class ManageUserComponent implements OnInit {
 
   ngOnInit(): void {
     this.fetchUsers();
+    document
+      .getElementsByTagName('nb-layout-column')[0]
+      .classList.add('admindb');
+  }
+
+  ngOnDestroy() {
+    document
+      .getElementsByTagName('nb-layout-column')[0]
+      .classList.remove('admindb');
   }
 
   fetchUsers() {

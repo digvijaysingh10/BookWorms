@@ -39,7 +39,17 @@ export class LayoutComponent implements OnInit {
 
   constructor(public userService: UserService,  private sidebar: NbSidebarService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    document
+      .getElementsByTagName('nb-layout-column')[0]
+      .classList.add('admindb');
+  }
+
+  ngOnDestroy() {
+    document
+      .getElementsByTagName('nb-layout-column')[0]
+      .classList.remove('admindb');
+  }
 
   toggle() {
     this.sidebar.toggle();
