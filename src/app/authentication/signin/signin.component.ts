@@ -33,9 +33,9 @@ export class SigninComponent implements OnInit {
 
   ngOnInit(): void {
     this.initSignupForm();
-    // document
-    //   .getElementsByTagName('nb-layout-column')[0]
-    //   .classList.add('register');
+    document
+      .getElementsByTagName('nb-layout-column')[0]
+      .classList.add('register1');
 
     this.initSigninForm();
 
@@ -49,7 +49,7 @@ export class SigninComponent implements OnInit {
   ngOnDestroy() {
     document
       .getElementsByTagName('nb-layout-column')[0]
-      .classList.remove('register');
+      .classList.remove('register1');
   }
 
   initSignupForm() {
