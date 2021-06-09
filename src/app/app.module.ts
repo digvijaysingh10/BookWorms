@@ -63,6 +63,7 @@ import { OderingSystemComponent } from './odering-system/odering-system.componen
 import { ManageNovelsComponent as novelManagement } from './admin/manage-novels/manage-novels.component';
 import { CheckoutComponent } from './user/checkout/checkout.component';
 import { ManageUserOrdersComponent } from './user/manage-user-orders/manage-user-orders.component';
+import Swiper from 'swiper/bundle';
 
 @NgModule({
   declarations: [
@@ -122,6 +123,7 @@ import { ManageUserOrdersComponent } from './user/manage-user-orders/manage-user
     NgxSliderModule,
     NbMenuModule.forRoot(),
     NbToastrModule.forRoot(),
+    Swiper
   ],
   providers: [
     {
