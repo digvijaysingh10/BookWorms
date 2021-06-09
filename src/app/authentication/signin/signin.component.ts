@@ -33,9 +33,9 @@ export class SigninComponent implements OnInit {
 
   ngOnInit(): void {
     this.initSignupForm();
-    // document
-    //   .getElementsByTagName('nb-layout-column')[0]
-    //   .classList.add('register');
+    document
+      .getElementsByTagName('nb-layout-column')[0]
+      .classList.add('register');
 
     this.initSigninForm();
 
@@ -183,14 +183,13 @@ export class SigninComponent implements OnInit {
     });
   }
 
-
   loginWithGoogle(): void {
     this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID);
   }
 
   signInWithFB(): void {
     this.socialAuthService.signIn(FacebookLoginProvider.PROVIDER_ID);
-   }
+  }
 
   logOut(): void {
     this.socialAuthService.signOut();

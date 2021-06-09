@@ -10,6 +10,10 @@ export class OrderService {
   url = app_config.api_url + '/order';
   constructor(private http: HttpClient, private router: Router) {}
 
+  addOrder(data) {
+    return this.http.post(this.url + '/add', data);
+  }
+
   getAll() {
     return this.http.get(this.url + '/getall');
   }

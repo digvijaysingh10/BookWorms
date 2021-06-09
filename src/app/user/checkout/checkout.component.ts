@@ -67,6 +67,22 @@ export class CheckoutComponent implements OnInit {
     this.cd.detectChanges();
   }
 
+  saveOrder() {
+    let order = {};
+    order['user'] = this.userService.currentUser._id;
+    order['data'] = this.orderdata;
+    order['created'] = new Date();
+
+    this.orderService.addOrder(order).subscribe((res) => {
+      console.log(res);
+      Swal.fire({
+        icon: 'success',
+        title: 'Hurray!',
+        text: 'You have successfully placed order',
+      });
+    });
+  }
+
   completePayment(secret, obj) {
     const that = obj;
     stripe
@@ -85,6 +101,7 @@ export class CheckoutComponent implements OnInit {
           if (result.paymentIntent.status === 'succeeded') {
             // Swal.fire
             console.log(result);
+            that.saveOrder();
             that.router.navigate(['/user/manageorder']);
           }
         }
