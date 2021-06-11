@@ -30,6 +30,15 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     this.fetchUsers();
     this.fetchNovels();
+    document
+      .getElementsByTagName('nb-layout-column')[0]
+      .classList.add('admindb');
+  }
+
+  ngOnDestroy() {
+    document
+      .getElementsByTagName('nb-layout-column')[0]
+      .classList.remove('admindb');
   }
 
   fetchUsers() {

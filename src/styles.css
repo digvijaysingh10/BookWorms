@@ -17,6 +17,16 @@ body {
   background-attachment: fixed;
 }
 
+.register1 {
+  background: url("./assets/img/signup.png") no-repeat center;
+  background-attachment: fixed;
+}
+
+.admindb {
+  background: url("./assets/img/admin_dashboard.png") no-repeat center;
+  background-attachment: fixed;
+}
+
 html,
 body {
   height: 100%;
