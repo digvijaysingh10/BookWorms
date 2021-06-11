@@ -10,6 +10,7 @@ import {
   NbSidebarModule,
   NbMenuModule,
   NbToastrModule,
+  NbDialogModule,
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { LayoutComponent as AdminLayout } from './admin/layout/layout.component';
@@ -64,6 +65,8 @@ import { ManageNovelsComponent as novelManagement } from './admin/manage-novels/
 import { CheckoutComponent } from './user/checkout/checkout.component';
 import { ManageUserOrdersComponent } from './user/manage-user-orders/manage-user-orders.component';
 import { SwiperModule } from 'swiper/angular';
+import { RequestDialogComponent } from './request-dialog/request-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -95,6 +98,7 @@ import { SwiperModule } from 'swiper/angular';
     novelManagement,
     CheckoutComponent,
     ManageUserOrdersComponent,
+    RequestDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -123,7 +127,9 @@ import { SwiperModule } from 'swiper/angular';
     NgxSliderModule,
     NbMenuModule.forRoot(),
     NbToastrModule.forRoot(),
-    SwiperModule
+    SwiperModule,
+    NbDialogModule.forChild(),
+    MatDialogModule,
   ],
   providers: [
     {

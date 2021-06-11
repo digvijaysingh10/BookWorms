@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { NbDialogService } from '@nebular/theme';
 import { app_config } from 'src/config';
+import { RequestDialogComponent } from '../request-dialog/request-dialog.component';
 import { RequestService } from '../services/request.service';
 import { UserService } from '../services/user.service';
 
@@ -15,7 +18,8 @@ export class ListRequestComponent implements OnInit {
   constructor(
     private requestService: RequestService,
     private userService: UserService,
-    private router: Router
+    private router: Router,
+    public dialog: MatDialog
   ) {}
 
   ngOnInit(): void {
@@ -37,5 +41,12 @@ export class ListRequestComponent implements OnInit {
         this.userService.refreshUser();
         this.router.navigate(['/user/chat']);
       });
+  }
+
+  open(data) {
+    const dialogRef = this.dialog.open(RequestDialogComponent, {
+      width: '1250px',
+      data: data,
+    });
   }
 }

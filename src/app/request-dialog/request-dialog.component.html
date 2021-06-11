@@ -1,0 +1,41 @@
+<div class="col-md-10 mx-auto">
+    <nb-card class="mt-5">
+      <nb-card-header id="cardheader">
+        Users Posts And Requests
+      </nb-card-header>
+  
+      <nb-card-body>
+  
+        <div class="row">
+          <div class="col-md-4 mt-5">
+  
+            <div class="card">
+  
+  
+  
+              <div class="card-body">
+  
+                <div >
+                <nb-user size="medium" [name]="requestData.user.fullname" [picture]="url+requestData.user.avatar">
+                </nb-user>
+              </div>
+  
+                <h4 class="nt">{{requestData.title}}</h4>
+  
+                <p class="text-muted">{{requestData.content}}</p>
+  
+              </div>
+  
+              <!-- <nb-card-action style="padding: 1rem;">
+                <button nbButton status="primary" (click)="repondToUser(request.user._id)"><nb-icon icon="heart"></nb-icon>Respond</button>
+                <button nbButton status="primary" (click)="open()"><nb-icon icon="heart"></nb-icon>Open</button>
+              </nb-card-action> -->
+            </div>
+          </div>
+        </div>
+  
+      </nb-card-body>
+    </nb-card>
+  
+  </div>
+  
