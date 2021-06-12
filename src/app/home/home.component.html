@@ -175,8 +175,12 @@
                 <button class="btn btn-primary" [routerLink]="['/app/listrequest']" >View More</button>
               </nb-card-action> -->
 
-                <button class="btn btn-primary" (click)="repondToUser(request.user._id)">Respond</button>
-                <button class="btn btn-primary" (click)="open(request)">Open</button>
+              <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button class="btn btn-primary me-md-2" type="button" (click)="open(request)">open</button>
+                <button class="btn btn-primary" type="button" (click)="repondToUser(request.user._id)">Response</button>
+              </div>
+                <!-- <button class="btn btn-primary" >Respond</button>
+                <button class="btn btn-primary" >Open</button> -->
 
           </div>
         </div>
