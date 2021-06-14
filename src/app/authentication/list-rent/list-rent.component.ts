@@ -1,3 +1,4 @@
+import { LabelType, Options } from '@angular-slider/ngx-slider';
 import { Component, OnInit } from '@angular/core';
 import { NovelService } from 'src/app/services/novel.service';
 import { app_config } from 'src/config';
@@ -11,6 +12,23 @@ export class ListRentComponent implements OnInit {
 
   novelList;
   url = app_config.api_url + '/';
+  selGenre = 'all';
+  minValue: number = 0;
+  maxValue: number = 5000;
+  options: Options = {
+    floor: this.minValue,
+    ceil: this.maxValue,
+    translate: (value: number, label: LabelType): string => {
+      switch (label) {
+        case LabelType.Low:
+          return '<b>Min </b> ₹' + value;
+        case LabelType.High:
+          return '<b>Max </b> ₹' + value;
+        default:
+          return '$' + value;
+      }
+    },
+  };
   constructor(private novelService: NovelService) {}
 
   ngOnInit(): void {
