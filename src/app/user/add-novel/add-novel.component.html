@@ -54,7 +54,7 @@
             <div class="row">
               <div class="col-md-6">
                 <mat-form-field class="mt-2 w-100" appearance="outline">
-                  <mat-label>price</mat-label>
+                  <mat-label>Price</mat-label>
                   <input type="number" matInput formControlName="price">
                 </mat-form-field>
               </div>
@@ -64,11 +64,13 @@
                   <input type="number" matInput formControlName="rentprice">
                 </mat-form-field>
               </div>
+              <hr>
               <div class="col-md-6">
                 <label class="mt-2">Upload Image</label><br>
                 <input type="file" class="form-control" (change)="uploadNovel($event)">
               </div>
             </div>
+
             <img [src]="imgURL" *ngIf="imgURL" alt="" class="img-fluid mt-4">
             <hr>
 
