@@ -45,7 +45,7 @@ export class ListRequestComponent implements OnInit {
 
   open(data) {
     const dialogRef = this.dialog.open(RequestDialogComponent, {
-      width: '1250px',
+      width: '400px',
       data: data,
     });
   }

@@ -10,18 +10,19 @@ import { app_config } from 'src/config';
 })
 export class ListExchangeComponent implements OnInit {
   novelList;
+  selGenre = 'all';
   url = app_config.api_url + '/';
   minValue: number = 0;
-  maxValue: number = 9999;
+  maxValue: number = 5000;
   options: Options = {
-    floor: 0,
-    ceil: 500,
+    floor: this.minValue,
+    ceil: this.maxValue,
     translate: (value: number, label: LabelType): string => {
       switch (label) {
         case LabelType.Low:
-          return '<b>Max </b> ₹' + value;
-        case LabelType.High:
           return '<b>Min </b> ₹' + value;
+        case LabelType.High:
+          return '<b>Max </b> ₹' + value;
         default:
           return '$' + value;
       }
@@ -36,8 +37,35 @@ export class ListExchangeComponent implements OnInit {
   fetchNovels() {
     this.novelService.getExchangeNovel().subscribe((data) => {
       this.novelList = data;
+      console.log(data);
     });
   }
 
-  applyFilter() {}
+  searchNovelByTitle(name) {
+    this.novelService.getExchangeNovel().subscribe((data: any) => {
+      this.novelList = data.filter((novel) =>
+        novel.title.toLowerCase().includes(name.toLowerCase())
+      );
+      console.log(this.novelList);
+    });
+  }
+
+  applyFilter() {
+    this.novelService.getAll().subscribe((data: any) => {
+      if (this.selGenre == 'all') {
+        this.novelList = data.filter(
+          (novel) => novel.price > this.minValue && novel.price < this.maxValue
+        );
+      } else {
+        this.novelList = data.filter(
+          (novel) =>
+            novel.price > this.minValue &&
+            novel.price < this.maxValue &&
+            novel.genre.toLowerCase().includes(this.selGenre.toLowerCase())
+        );
+      }
+
+      console.log(this.novelList);
+    });
+  }
 }

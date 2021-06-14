@@ -18,7 +18,8 @@ export class HomeComponent implements OnInit {
     private requestService: RequestService,
     private userService: UserService,
     private router: Router,
-    public dialog: MatDialog) {}
+    public dialog: MatDialog
+  ) {}
 
   ngOnInit(): void {
     this.fetchRequests();
@@ -42,7 +43,7 @@ export class HomeComponent implements OnInit {
 
   open(data) {
     const dialogRef = this.dialog.open(RequestDialogComponent, {
-      width: '1250px',
+      width: '400px',
       data: data,
     });
   }

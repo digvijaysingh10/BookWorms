@@ -5,7 +5,7 @@
         <h3 class="mt-3">Search</h3>
         <mat-form-field class="w-100 mt-4" appearance="outline">
           <mat-label>Search Novel</mat-label>
-          <input type="text" matInput>
+          <input type="text" #name matInput (change)="searchNovelByTitle(name.value)">
         </mat-form-field>
 
         <mat-form-field class="w-100 mt-2" appearance="outline">
@@ -22,11 +22,12 @@
         <h3 class="mt-3">Filters</h3>
         <mat-form-field class="w-100 mt-4" appearance="outline">
           <mat-label>Genre</mat-label>
-          <mat-select>
-            <mat-option value="">Fantasy</mat-option>
-            <mat-option value="">Mystry</mat-option>
-            <mat-option value="">Romance</mat-option>
-            <mat-option value="">Sci-Fi</mat-option>
+          <mat-select [(ngModel)]="selGenre">
+            <mat-option value="fantasy">Fantasy</mat-option>
+            <mat-option value="mystry">Mystry</mat-option>
+            <mat-option value="romance">Romance</mat-option>
+            <mat-option value="sci-fi">Sci-Fi</mat-option>
+            <mat-option value="kids">Kids</mat-option>
           </mat-select>
         </mat-form-field>
 
