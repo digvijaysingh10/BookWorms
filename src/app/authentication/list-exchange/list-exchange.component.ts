@@ -10,8 +10,8 @@ import { app_config } from 'src/config';
 })
 export class ListExchangeComponent implements OnInit {
   novelList;
-  selGenre = 'all';
   url = app_config.api_url + '/';
+  selGenre = 'all';
   minValue: number = 0;
   maxValue: number = 5000;
   options: Options = {
