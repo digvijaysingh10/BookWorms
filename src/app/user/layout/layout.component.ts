@@ -25,6 +25,11 @@ export class LayoutComponent implements OnInit {
       link: 'profile',
     },
     {
+      title: 'Chat',
+      icon: 'message-square',
+      link: 'chat',
+    },
+    {
       title: 'Add Novels',
       icon: 'book',
       link: 'addnovel',
@@ -38,11 +43,6 @@ export class LayoutComponent implements OnInit {
       title: 'Request Novels',
       icon: 'file-add',
       link: 'requestnovels',
-    },
-    {
-      title: 'Chat',
-      icon: 'message-square',
-      link: 'chat',
     },
     {
       title: 'Manage Orders',
