@@ -46,7 +46,7 @@ export class LayoutComponent implements OnInit {
     },
     {
       title: 'Manage Orders',
-      icon: '',
+      icon: 'shopping-cart',
       link: 'manageorder',
     },
   ];
