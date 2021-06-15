@@ -44,6 +44,11 @@ export class LayoutComponent implements OnInit {
       icon: 'message-square',
       link: 'chat',
     },
+    {
+      title: 'Manage Orders',
+      icon: '',
+      link: 'manageorder',
+    },
   ];
 
   toggle() {
