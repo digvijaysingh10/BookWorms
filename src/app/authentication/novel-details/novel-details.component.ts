@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NovelService } from 'src/app/services/novel.service';
+import { UserService } from 'src/app/services/user.service';
 import { app_config } from 'src/config';
 
 @Component({
@@ -14,6 +15,7 @@ export class NovelDetailsComponent implements OnInit {
   constructor(
     private actRoute: ActivatedRoute,
     private novelService: NovelService,
+    private userService : UserService,
     private router: Router
   ) {}
 
@@ -41,5 +43,13 @@ export class NovelDetailsComponent implements OnInit {
     this.router.navigate(['/user/checkout']);
   }
 
-  exchange() {}
+  repondToUser(user_id) {
+    this.userService
+      .addContact(this.userService.currentUser._id, user_id)
+      .subscribe((res) => {
+        console.log(res);
+        this.userService.refreshUser();
+        this.router.navigate(['/user/chat']);
+      });
+  }
 }
