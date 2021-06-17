@@ -49,7 +49,7 @@
                             <button *ngIf="novelData.soldable" nbButton class="mt-4 button" id="hero" (click)="purchase()"> Purchase </button>
                             <button *ngIf="novelData.rentable" nbButton class="mt-4 button" id="hero" (click)="rent()"> Rent </button>
                             <!-- <button *ngIf="novelData.exchangable" nbButton class="mt-4 button" id="hero" (click)="checkout()"> Exchange </button> -->
-                            <button *ngIf="novelData.exchangable" nbButton class="mt-4 button" id="hero" (click)="repondToUser(request.user._id)">Exchange</button>
+                            <button *ngIf="novelData.exchangable" nbButton class="mt-4 button" id="hero" (click)="repondToUser(novelData.user._id)">Exchange</button>
                         </div>
                     </form>
 
