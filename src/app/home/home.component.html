@@ -11,19 +11,16 @@
         <li><a [routerLink]="['/home']" routerLinkActive="router-link-active">Home</a></li>
 
 
-        <li class="dropdown"><a href="#"><span>About</span> <i class="bi bi-chevron-down"></i></a>
+        <li class="dropdown"><a [routerLink]="['/app/aboutus']" routerLinkActive="router-link-active" ><span>About</span> <i class="bi bi-chevron-down"></i></a>
           <ul>
-            <li><a href="#">About Us</a></li>
+            <li><a [routerLink]="['/app/aboutus']" routerLinkActive="router-link-active" >About Us</a></li>
             <li><a href="team.html">Team</a></li>
-            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a [routerLink]="['/app/listrequests']" routerLinkActive="router-link-active" >posts</a></li>
             <li class="dropdown"><a href="#"><span>List Novels</span> <i class="bi bi-chevron-right"></i></a>
               <ul>
                 <li><a [routerLink]="['/app/buynovel']" routerLinkActive="router-link-active">Purchase Novels</a></li>
-                <li><a [routerLink]="['/app/exchangenovel']" routerLinkActive="router-link-active">Exchange Novels</a>
-                </li>
+                <li><a [routerLink]="['/app/exchangenovel']" routerLinkActive="router-link-active">Exchange Novels</a></li>
                 <li><a [routerLink]="['/app/rentnovel']" routerLinkActive="router-link-active">Rent Novels</a></li>
-                <li><a href="#">Deep Drop Down 4</a></li>
-                <li><a href="#">Deep Drop Down 5</a></li>
               </ul>
             </li>
           </ul>
@@ -39,9 +36,9 @@
         </li>
 
         <!-- <li><a [routerLink]="['/app/exchangenovel']" routerLinkActive="router-link-active" >Novels</a></li> -->
-        <li><a [routerLink]="['/profile']" routerLinkActive="router-link-active">Portfolio</a></li>
+        <li><a [routerLink]="['/profile']" routerLinkActive="router-link-active">Profile</a></li>
         <li><a href="pricing.html">Pricing</a></li>
-        <li><a href="blog.html">Blog</a></li>
+        <li><a [routerLink]="['/app/listrequests']" routerLinkActive="router-link-active">Posts</a></li>
         <li><a [routerLink]="['/app/contactus']" routerLinkActive="router-link-active">Contact</a></li>
 
       </ul>
