@@ -33,14 +33,28 @@ export class ListRequestComponent implements OnInit {
     });
   }
 
+  alreadyAdded(user_id) {
+    for (let user of this.userService.currentUser.contacts) {
+      if (user._id == user_id) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   repondToUser(user_id) {
-    this.userService
-      .addContact(this.userService.currentUser._id, user_id)
-      .subscribe((res) => {
-        console.log(res);
-        this.userService.refreshUser();
-        this.router.navigate(['/user/chat']);
-      });
+    if (!this.alreadyAdded(user_id)) {
+      this.userService
+        .addContact(this.userService.currentUser._id, user_id)
+        .subscribe((res) => {
+          console.log(res);
+          this.userService.refreshUser();
+          this.router.navigate(['/user/chat']);
+        });
+    } else {
+      console.log('not exists');
+      this.router.navigate(['/user/chat']);
+    }
   }
 
   open(data) {
