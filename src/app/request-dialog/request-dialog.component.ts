@@ -25,6 +25,7 @@ export class RequestDialogComponent implements OnInit {
   ngOnInit(): void {
     console.log(this.requestData);
   }
+
   repondToUser(user_id) {
     this.userService
       .addContact(this.userService.currentUser._id, user_id)
