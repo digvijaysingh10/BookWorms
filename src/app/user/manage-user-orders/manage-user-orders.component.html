@@ -1,50 +1,50 @@
-<mat-tab-group  mat-stretch-tabs class="example-stretched-tabs mat-elevation-z4">
-    <mat-tab label="Rent Novels">
-      <nb-accordion *ngIf="!loading">
-        <nb-accordion-item *ngFor="let order of ordersList">
-          <nb-accordion-item-header>
-            {{order.data.novel.title}}
-          </nb-accordion-item-header>
-          <nb-accordion-item-body>
+<mat-tab-group mat-stretch-tabs class="example-stretched-tabs mat-elevation-z4">
+  <mat-tab label="Rent Novels">
+    <nb-accordion *ngIf="!loading">
+      <nb-accordion-item *ngFor="let order of rentOrders">
+        <nb-accordion-item-header>
+          {{order.data.novel.title}}
+        </nb-accordion-item-header>
+        <nb-accordion-item-body>
 
-            {{order.created | date}}
-            <hr>
-            <!-- <p>{{novel.genre}}</p> -->
-            <hr>
-            <div class="col-md-4">
-              <img [src]="url+order.data.novel.avatar" class="img-fluid" alt="">
-            </div>
-            <hr>
-            <p class="price">{{order.data.novel.price | currency:'INR'}}</p>
+          {{order.created | date}}
+          <hr>
+          <!-- <p>{{novel.genre}}</p> -->
+          <hr>
+          <div class="col-md-4">
+            <img [src]="url+order.data.novel.avatar" class="img-fluid" alt="">
+          </div>
+          <hr>
+          <p class="price">{{order.data.novel.price | currency:'INR'}}</p>
           <hr>
 
-          </nb-accordion-item-body>
-        </nb-accordion-item>
+        </nb-accordion-item-body>
+      </nb-accordion-item>
     </nb-accordion>
-    </mat-tab>
+  </mat-tab>
 
-    <mat-tab label="Purchased Novels">
-      <nb-accordion *ngIf="!loading">
-        <nb-accordion-item *ngFor="let order of ordersList">
-          <nb-accordion-item-header>
-            {{order.data.novel.title}}
-          </nb-accordion-item-header>
-          <nb-accordion-item-body>
+  <mat-tab label="Purchased Novels">
+    <nb-accordion *ngIf="!loading">
+      <nb-accordion-item *ngFor="let order of purchaseOrders">
+        <nb-accordion-item-header>
+          {{order.data.novel.title}}
+        </nb-accordion-item-header>
+        <nb-accordion-item-body>
 
-            {{order.created | date}}
-            <hr>
-            <!-- <p>{{novel.genre}}</p> -->
-            <hr>
-            <div class="col-md-4">
-              <img [src]="url+order.data.novel.avatar" class="img-fluid" alt="">
-            </div>
-            <hr>
-            <p class="price">{{order.data.novel.price | currency:'INR'}}</p>
+          {{order.created | date}}
+          <hr>
+          <!-- <p>{{novel.genre}}</p> -->
+          <hr>
+          <div class="col-md-4">
+            <img [src]="url+order.data.novel.avatar" class="img-fluid" alt="">
+          </div>
+          <hr>
+          <p class="price">{{order.data.novel.price | currency:'INR'}}</p>
           <hr>
 
-          </nb-accordion-item-body>
-        </nb-accordion-item>
+        </nb-accordion-item-body>
+      </nb-accordion-item>
     </nb-accordion>
-    </mat-tab>
+  </mat-tab>
 
-  </mat-tab-group>
+</mat-tab-group>

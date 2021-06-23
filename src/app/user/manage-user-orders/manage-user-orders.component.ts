@@ -14,6 +14,8 @@ import Swal from 'sweetalert2';
 export class ManageUserOrdersComponent implements OnInit {
   url = app_config.api_url + '/';
   ordersList: any;
+  rentOrders;
+  purchaseOrders;
   loading = true;
 
   constructor(
@@ -33,6 +35,13 @@ export class ManageUserOrdersComponent implements OnInit {
       .subscribe((data) => {
         console.log(data);
         this.ordersList = data;
+        this.loading = false;
+        this.filterOrders(data);
       });
+  }
+
+  filterOrders(list) {
+    this.purchaseOrders = list.filter((order) => order.data.purchase);
+    this.rentOrders = list.filter((order) => order.data.rent);
   }
 }
