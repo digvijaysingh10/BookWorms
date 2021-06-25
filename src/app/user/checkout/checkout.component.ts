@@ -6,6 +6,7 @@ import {
   OnInit,
   ViewChild,
 } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { OrderService } from 'src/app/services/order.service';
 import { UserService } from 'src/app/services/user.service';
@@ -23,6 +24,7 @@ export class CheckoutComponent implements OnInit {
   card: any;
   cardHandler = this.onChange.bind(this);
   error: any;
+  checkOutDetails: any;
   url = app_config.api_url + '/create-payment-intent';
   orderdata = JSON.parse(sessionStorage.getItem('orderdata'));
 
@@ -31,7 +33,9 @@ export class CheckoutComponent implements OnInit {
     private http: HttpClient,
     private userService: UserService,
     private router: Router,
-    private orderService: OrderService
+    private orderService: OrderService,
+    private fb: FormBuilder,
+
   ) {}
 
   ngOnInit(): void {}
@@ -124,6 +128,27 @@ export class CheckoutComponent implements OnInit {
       return this.orderdata.novel.rentPrice;
     } else if (this.orderdata.purchase) {
       return this.orderdata.novel.price;
+    }
+  }
+
+  initcheckOutDetails() {
+    this.checkOutDetails = this.fb.group(
+      {
+        fullname: ['', Validators.required],
+        email: ['', [Validators.required, Validators.email]],
+        address: ['', Validators.required],
+        created: new Date(),
+      });
+  }
+
+  submitCheckOutDetails(){
+    if (!this.checkOutDetails.valid) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Ooops!',
+        text: 'Please enter valid details',
+      });
+      return;
     }
   }
 }
