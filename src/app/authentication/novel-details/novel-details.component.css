@@ -326,7 +326,7 @@ div.product-detail-cta-wrap {
   justify-content: center; */
   font: inherit;
   font-family: Montserrat, sans-serif;
-  font-weight: 5rem;
+  font-weight: 500;
   font-size: 14px;
   border-bottom-width: 0px;
   border-left-width: 0px;
@@ -341,11 +341,12 @@ div.product-detail-cta-wrap {
   line-height: 20px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   -webkit-animation-delay: 0.8s;
   animation-delay: 0.8s;
   border: 2px solid #1bbd36;
   margin-right: 10px;
+  height: 2.5rem;
 }
 
 #hero:hover {
