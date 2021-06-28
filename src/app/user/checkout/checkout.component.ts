@@ -74,6 +74,7 @@ export class CheckoutComponent implements OnInit {
   saveOrder() {
     let order = {};
     order['user'] = this.userService.currentUser._id;
+    this.orderdata['address']=this.checkOutDetails.value;
     order['data'] = this.orderdata;
     order['created'] = new Date();
 
@@ -137,6 +138,9 @@ export class CheckoutComponent implements OnInit {
         fullname: ['', Validators.required],
         email: ['', [Validators.required, Validators.email]],
         address: ['', Validators.required],
+        city: ['', Validators.required],
+        state: ['', Validators.required],
+        pin: ['', Validators.required],
         created: new Date(),
       });
   }

@@ -22,7 +22,7 @@
           </nb-user>
         </nb-card-header>
         <nb-card-body>
-          <nb-chat>
+          <nb-chat style="height: 37rem;">
             <nb-chat-message *ngFor="let msg of messageList"
                              [message]="msg.text"
                              [reply]="msg.reply"
@@ -37,5 +37,5 @@
       </nb-card>
     </div>
   </div>
-    
+
 </div>
