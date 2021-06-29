@@ -77,31 +77,6 @@
           </div>
         </div>
       </div>
-
-      <!-- Slide 2 -->
-      <div class="carousel-item" style="background-image: url(assets/img/slide/slide-2.jpg);">
-        <div class="carousel-container">
-          <div class="carousel-content animate__animated animate__fadeInUp">
-            <h2>Lorem Ipsum Dolor</h2>
-            <p>Some of the novels are now very rare and are neither being published nor available in shops or at any
-              website.</p>
-            <div class="text-center"><a href="" class="btn-get-started">Read More</a></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Slide 3 -->
-      <div class="carousel-item" style="background-image: url(assets/img/slide/slide-3.jpg);">
-        <div class="carousel-container">
-          <div class="carousel-content animate__animated animate__fadeInUp">
-            <h2>Sequi ea ut et est quaerat</h2>
-            <p>On this site People can post their novels collection on our website, so that people who need those
-              novels, can get it from our website.</p>
-            <div class="text-center"><a href="" class="btn-get-started">Read More</a></div>
-          </div>
-        </div>
-      </div>
-
     </div>
 
     <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
@@ -163,7 +138,7 @@
                 routerLinkActive="router-link-active" [ngStyle]="{backgroundImage: 'url('+url+novel.avatar+')'}">
               </div>
 
-              
+
               <div class="card-body" [routerLink]="['/app/noveldetails', novel._id]"
                 routerLinkActive="router-link-active">
                 <h4 class="nt">{{novel.title}}</h4>
