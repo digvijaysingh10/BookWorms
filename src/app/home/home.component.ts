@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit {
 
   fetchNovels() {
     this.novelService.getAll().subscribe((data) => {
-      this.novelList = data.slice(0,12);
+      this.novelList = data;
       console.log(data);
     });
   }
