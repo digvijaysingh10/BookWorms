@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { app_config } from 'src/config';
 import { RequestDialogComponent } from '../request-dialog/request-dialog.component';
+import { NovelService } from '../services/novel.service';
 import { RequestService } from '../services/request.service';
 import { UserService } from '../services/user.service';
 
@@ -13,16 +14,27 @@ import { UserService } from '../services/user.service';
 })
 export class HomeComponent implements OnInit {
   requestList;
+  novelList;
   url = app_config.api_url + '/';
   constructor(
     private requestService: RequestService,
     private userService: UserService,
+    private novelService: NovelService,
     private router: Router,
     public dialog: MatDialog
   ) {}
 
   ngOnInit(): void {
     this.fetchRequests();
+    this.fetchNovels();
+  }
+
+
+  fetchNovels() {
+    this.novelService.getAll().subscribe((data) => {
+      this.novelList = data.slice(0,12);
+      console.log(data);
+    });
   }
 
   fetchRequests() {

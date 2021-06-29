@@ -11,7 +11,8 @@
         <li><a [routerLink]="['/home']" routerLinkActive="router-link-active">Home</a></li>
 
 
-        <li class="dropdown"><a [routerLink]="['/app/aboutus']" routerLinkActive="router-link-active" ><span>About</span> <i class="bi bi-chevron-down"></i></a>
+        <li class="dropdown"><a [routerLink]="['/app/aboutus']" routerLinkActive="router-link-active"><span>About</span>
+            <i class="bi bi-chevron-down"></i></a>
           <!-- <ul>
             <li><a [routerLink]="['/app/aboutus']" routerLinkActive="router-link-active" >About Us</a></li>
             <li><a href="team.html">Team</a></li>
@@ -138,25 +139,48 @@
               <h4 class="nt">{{request.title}}</h4>
               <p class="text-muted">{{request.content.substring(0, 100)}} ...</p>
             </div>
-            <!-- <nb-card-action style="padding: 1rem;">
-                <button class="btn btn-primary" [routerLink]="['/app/listrequest']" >View More</button>
-              </nb-card-action> -->
-
-              <div class="d-grid gap-2 d-md-flex">
-                <button type="button" class="btn btn-warning px-3" (click)="open(request)"><i class="fas fa-regular fa-expand" aria-hidden="true"></i></button>
-                <button type="button" class="btn btn-warning px-3" (click)="repondToUser(request.user._id)"><i class="fas fa-paper-plane" aria-hidden="true"></i></button>
-              </div>
-                <!-- <button class="btn btn-primary" >Respond</button>
-                <button class="btn btn-primary" >Open</button> -->
-
+            <div class="d-grid gap-2 d-md-flex">
+              <button type="button" class="btn btn-warning px-3" (click)="open(request)"><i
+                  class="fas fa-regular fa-expand" aria-hidden="true"></i></button>
+              <button type="button" class="btn btn-warning px-3" (click)="repondToUser(request.user._id)"><i
+                  class="fas fa-paper-plane" aria-hidden="true"></i></button>
+            </div>
           </div>
         </div>
       </div>
       <br>
-      <button class="btn btn-danger"
-      [routerLink]="['/app/listrequest']"
-      routerLinkActive="router-link-active">
-      View More</button>
+      <button class="btn btn-danger" [routerLink]="['/app/listrequest']" routerLinkActive="router-link-active">
+        View More</button>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 mt-5" *ngFor="let novel of novelList">
+          <div class="card">
+              <div class="card-img" [routerLink]="['/app/noveldetails', novel._id]"
+                routerLinkActive="router-link-active" [ngStyle]="{backgroundImage: 'url('+url+novel.avatar+')'}">
+              </div>
+
+              <div class="card-body" [routerLink]="['/app/noveldetails', novel._id]"
+                routerLinkActive="router-link-active">
+
+                <h4 class="nt">{{novel.title}}</h4>
+
+                <p class="text-muted">{{novel.genre}}</p>
+
+
+                <div class="avatar">
+                  <nb-user size="medium" [name]="novel.user.fullname" title="User" [picture]="url+novel.user.avatar">
+                  </nb-user>
+                </div>
+                <p class="price">{{novel.price | currency:'INR'}}</p>
+              </div>
+            </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
