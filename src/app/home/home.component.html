@@ -162,19 +162,20 @@
               <div class="card-img" [routerLink]="['/app/noveldetails', novel._id]"
                 routerLinkActive="router-link-active" [ngStyle]="{backgroundImage: 'url('+url+novel.avatar+')'}">
               </div>
-
               <div class="card-body" [routerLink]="['/app/noveldetails', novel._id]"
                 routerLinkActive="router-link-active">
-
                 <h4 class="nt">{{novel.title}}</h4>
-
                 <p class="text-muted">{{novel.genre}}</p>
-
-
-                <div class="avatar">
-                  <nb-user size="medium" [name]="novel.user.fullname" title="User" [picture]="url+novel.user.avatar">
-                  </nb-user>
+                <br>
+                <div>
+                  <img class="avatar" [src]="url+novel.user.avatar" alt="">
+                  <B> {{novel.user.fullname}}</B>
                 </div>
+
+                <!-- <div class="avatar">
+                  <nb-user size="medium" [name]="novel.user.fullname" [picture]="url+novel.user.avatar">
+                  </nb-user>
+                </div> -->
                 <p class="price">{{novel.price | currency:'INR'}}</p>
               </div>
             </div>
