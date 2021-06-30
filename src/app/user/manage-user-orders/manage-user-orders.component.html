@@ -15,8 +15,12 @@
             <img [src]="url+order.data.novel.avatar" class="img-fluid" alt="">
           </div>
           <hr>
-          <p class="price">{{order.data.novel.price | currency:'INR'}}</p>
+          <p class="price">{{order.data.novel.rentPrice | currency:'INR'}}</p>
           <hr>
+
+          <div class="col text-center">
+            <button class="col-10" nbButton hero (click)="cancelOrder(order._id)" status  ="danger">Cancel Order</button>
+        </div>
 
         </nb-accordion-item-body>
       </nb-accordion-item>

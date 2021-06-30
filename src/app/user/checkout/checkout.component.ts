@@ -74,7 +74,6 @@ export class CheckoutComponent implements OnInit {
   saveOrder() {
     let order = {};
     order['user'] = this.userService.currentUser._id;
-    this.orderdata['address']=this.checkOutDetails.value;
     order['data'] = this.orderdata;
     order['created'] = new Date();
 
@@ -131,28 +130,4 @@ export class CheckoutComponent implements OnInit {
       return this.orderdata.novel.price;
     }
   }
-
-  // initcheckOutDetails() {
-  //   this.checkOutDetails = this.fb.group(
-  //     {
-  //       fullname: ['', Validators.required],
-  //       email: ['', [Validators.required, Validators.email]],
-  //       address: ['', Validators.required],
-  //       city: ['', Validators.required],
-  //       state: ['', Validators.required],
-  //       pin: ['', Validators.required],
-  //       created: new Date(),
-  //     });
-  // }
-
-  // submitCheckOutDetails(){
-  //   if (!this.checkOutDetails.valid) {
-  //     Swal.fire({
-  //       icon: 'error',
-  //       title: 'Ooops!',
-  //       text: 'Please enter valid details',
-  //     });
-  //     return;
-  //   }
-  // }
 }
