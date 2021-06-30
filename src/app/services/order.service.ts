@@ -25,4 +25,8 @@ export class OrderService {
   getUserOrders(id) {
     return this.http.get(this.url + '/getbyuser/' + id);
   }
+
+  cancelOrder(id) {
+    return this.http.delete(this.url + '/delete/' + id);
+  }
 }

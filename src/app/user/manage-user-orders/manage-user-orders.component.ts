@@ -44,4 +44,29 @@ export class ManageUserOrdersComponent implements OnInit {
     this.purchaseOrders = list.filter((order) => order.data.purchase);
     this.rentOrders = list.filter((order) => order.data.rent);
   }
+
+  cancelOrder(id) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, Cancel it!',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.orderService.cancelOrder(id).subscribe((res) => {
+          console.log(res);
+          Swal.fire({
+            title: 'Order Cancelled!',
+            text: 'You have cancelled the order.',
+            icon: 'info',
+          }).then(() => {
+            this.fetchUserOrder();
+          });
+        });
+      }
+    });
+  }
 }
