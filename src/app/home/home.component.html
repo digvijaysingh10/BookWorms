@@ -108,9 +108,10 @@
             <div class="card-body">
               <div>
                 <img class="avatar" [src]="url+request.user.avatar" alt="">
+                <br><br><br>
                 <B> {{request.user.fullname}}</B>
               </div>
-              <br>
+
               <h4 class="nt">{{request.title}}</h4>
               <p class="text-muted">{{request.content.substring(0, 100)}} ...</p>
             </div>
@@ -145,7 +146,7 @@
                 <p class="text-muted">{{novel.genre}}</p>
                 <br>
                 <div>
-                  <img class="avatar" [src]="url+novel.user.avatar" alt="">
+                  <img class="avatar1" [src]="url+novel.user.avatar" alt="">
                   <B> {{novel.user.fullname}}</B>
                 </div>
 

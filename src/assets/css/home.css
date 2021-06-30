@@ -2081,6 +2081,12 @@ section {
 }
 
 .avatar {
+  position: absolute;
+  width: 3rem;
+  border-radius: 100%;
+}
+
+.avatar1 {
   border-radius: 100%;
   width: 3rem;
 }

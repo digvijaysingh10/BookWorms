@@ -29,11 +29,8 @@
   color: rgb(34, 33, 33);
 }
 
-.avatar {
-  position: absolute;
-  bottom: 1.5rem;
-  left: 1.5rem;
-}
+
+
 
 #cardheader{
   display: inline-block;
