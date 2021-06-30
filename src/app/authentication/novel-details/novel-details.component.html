@@ -11,7 +11,7 @@
                 <nb-card-body style="padding: 5rem;">
                   <div class="product-detail-main-details">
                     <h1 class="product-detail-name">{{novelData.title}}</h1>
-                    <div class="product-detail-price">{{novelData.price | currency:'INR'}}</div>
+                    <div class="product-detail-price"><small>Price</small>   {{novelData.price | currency:'INR'}}<br><small>Rent Price</small>   {{novelData.rentPrice | currency:'INR'}}</div>
                     <div class="paragraph-light">{{novelData.desc}}</div>
                   </div>
 
