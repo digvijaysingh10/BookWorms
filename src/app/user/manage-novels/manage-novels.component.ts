@@ -72,7 +72,7 @@ export class ManageNovelsComponent implements OnInit {
           console.log(res);
           Swal.fire({
             title: 'Deleted!',
-            text: 'Your blog has been deleted.',
+            text: 'Your Novel has been deleted.',
             icon: 'info',
           }).then(() => {
             this.fetchNovels();
