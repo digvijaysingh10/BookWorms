@@ -1,0 +1,19 @@
+nb-card{
+/* width: 80%; */
+margin-left:9rem;
+margin-right:9rem;
+background-color: rgb(236, 236, 227);
+}
+nb-card-header{
+/* text-align: center; */
+line-height: 24px;
+}
+.img{
+  margin-left: 6rem;
+  margin-right: 6rem;
+}
+.details{
+  text-align: center;
+  text-decoration: grey;
+  text-transform: uppercase;
+}
