@@ -8,7 +8,8 @@
         <nb-accordion-item-body>
 
           {{order.created | date}}
-          <!-- <p>{{novel.genre}}</p> -->
+          <hr>
+          <p>{{order.data.novel.genre}}</p>
           <hr>
           <div class="col-md-4">
             <img [src]="url+order.data.novel.avatar" class="img-fluid" alt="">
@@ -35,7 +36,8 @@
         <nb-accordion-item-body>
 
           {{order.created | date}}
-          <!-- <p>{{novel.genre}}</p> -->
+          <hr>
+          {{order.data.novel.genre}}
           <hr>
           <div class="col-md-4">
             <img [src]="url+order.data.novel.avatar" class="img-fluid" alt="">
