@@ -19,8 +19,8 @@
           <hr>
 
           <div class="col text-center">
-            <button class="col-10" nbButton hero (click)="cancelOrder(order._id)" status  ="danger">Cancel Order</button>
-        </div>
+            <button class="col-10" nbButton hero (click)="cancelOrder(order._id)" status="danger">Cancel Order</button>
+          </div>
 
         </nb-accordion-item-body>
       </nb-accordion-item>
@@ -35,21 +35,26 @@
         </nb-accordion-item-header>
         <nb-accordion-item-body>
 
-          {{order.created | date}}
-          <hr>
-          {{order.data.novel.genre}}
-          <hr>
-          <div class="col-md-4">
-            <img [src]="url+order.data.novel.avatar" class="img-fluid" alt="">
-          </div>
-          <hr>
-          <p class="price">{{order.data.novel.price | currency:'INR'}}</p>
-          <hr>
-
-          <div class="col text-center">
-            <button class="col-10" nbButton hero (click)="cancelOrder(order._id)" status  ="danger">Cancel Order</button>
-        </div>
-
+          <nb-card>
+            <nb-card-body>
+              <div class="details">
+                {{order.created | date}}
+                <hr>
+                {{order.data.novel.genre}}
+                <hr>
+                <div class="col-md-4">
+                  <img [src]="url+order.data.novel.avatar" class="img-fluid" alt="">
+                </div>
+                <hr>
+                <p class="price">{{order.data.novel.price | currency:'INR'}}</p>
+                <hr>
+                <div class="col text-center">
+                  <button class="col-10" nbButton hero (click)="cancelOrder(order._id)" status="danger">Cancel
+                    Order</button>
+                </div>
+              </div>
+            </nb-card-body>
+          </nb-card>
         </nb-accordion-item-body>
       </nb-accordion-item>
     </nb-accordion>
