@@ -4,11 +4,7 @@
 			<!-- <form [formGroup]="signupform" (ngSubmit)="submitSignupForm()" novalidate [mustMatch]="['password', 'confirmPassword']"> -->
       <form [formGroup]="signupform" (ngSubmit)="submitSignupForm()" >
 				<h1>Create Account</h1>
-				<div class="social-container">
-					<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-					<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-					<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-				</div>
+
 				<span>or use your email for registration</span>
 				<input type="text" placeholder="Name" name="fullname" formControlName="fullname"/>
 				<input type="email" placeholder="Email" name="email" formControlName="email"/>
@@ -26,16 +22,7 @@
 		<div class="form-container sign-in-container">
 			<form class="needs-validation" novalidate [formGroup]="signinform" (ngSubmit)="submitSigninForm()">
 				<h1>Sign in</h1>
-				<div class="social-container">
-					<!-- <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-					<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-					<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a> -->
-          <a class="btn   m-1" href="#!" role="button" (click)="loginWithGoogle()"><i class="fab fa-google"
-            style="font-size: 2.5rem;"></i></a>
-
-          <a class="btn   m-1" href="#!" role="button" (click)="signInWithFB()"><i class="fab fa-facebook"
-              style="font-size: 2.6rem;"></i></a>
-				</div>
+				
 				<span>or use your account</span>
 				<input type="email" placeholder="Email" name="email" formControlName="email"/>
 				<input type="password" placeholder="Password" name="password" formControlName="password" />
